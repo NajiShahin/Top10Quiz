@@ -12,5 +12,15 @@ namespace QuizWebsite.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult Classic()
+        {
+            return View();
+        }
+
+        public IActionResult Unlimited()
+        {
+            return View();
+        }
     }
 }
