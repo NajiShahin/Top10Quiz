@@ -7,5 +7,9 @@ namespace QuizWebsite.Core.Entities
 {
     public class Question : EntityBase
     {
+        public string QuestionText { get; set; }
+        public Guid CategoryId { get; set; }
+        public Category Category { get; set; }
+        public ICollection<Answer> Answers { get; set; }
     }
 }
