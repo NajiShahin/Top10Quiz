@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QuizWebsite.Core.Entities;
+using QuizWebsite.Infrastructure.Data.Seeding;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,9 @@ namespace QuizWebsite.Infrastructure.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            CategorySeeder.Seed(modelBuilder);
+            QuestionSeeder.Seed(modelBuilder);
+            AnswerSeeder.Seed(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
     }
