@@ -8,6 +8,7 @@ namespace QuizWebsite.Core.Interfaces
     public interface IQuestionService
     {
         ICollection<Question> GetQuestionsRandomOrder();
+        ICollection<Question> GetQuestions();
         Question GetQuestionById(Guid id);
         Question GetRandomQuestion();
     }
