@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizWebsite.Web.Models
 {
-    public class SingePlayerUnlimitedVm
+    public class SinglePlayerUnlimitedVm
     {
         public Player Player { get; set; }
         public List<Question> Questions { get; set; }
