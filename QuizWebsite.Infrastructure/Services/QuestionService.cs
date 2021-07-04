@@ -23,7 +23,9 @@ namespace QuizWebsite.Infrastructure.Services
 
         public ICollection<Question> GetQuestions()
         {
-            return dbContext.Questions.ToList();
+            return dbContext.Questions
+                .Include(q => q.Category)
+                .Include(q => q.Answers).ToList();
         }
 
         public ICollection<Question> GetQuestionsRandomOrder()
