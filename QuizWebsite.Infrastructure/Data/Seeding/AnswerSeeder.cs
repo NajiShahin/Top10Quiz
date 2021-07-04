@@ -30,7 +30,6 @@ new Answer { Id = Guid.NewGuid(), AnswerText = "India", ExtraInfo = "1,380,004,3
 new Answer { Id = Guid.NewGuid(), AnswerText = "USA", ExtraInfo = "331,002,651", QuestionId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Points = 3 },
 new Answer { Id = Guid.NewGuid(), AnswerText = "The United States", ExtraInfo = "331,002,651", QuestionId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Points = 3 },
 new Answer { Id = Guid.NewGuid(), AnswerText = "United States", ExtraInfo = "331,002,651", QuestionId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Points = 3 },
-new Answer { Id = Guid.NewGuid(), AnswerText = "USA", ExtraInfo = "331,002,651", QuestionId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Points = 3 },
 new Answer { Id = Guid.NewGuid(), AnswerText = "Indonesia", ExtraInfo = "273,523,615", QuestionId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Points = 4 },
 new Answer { Id = Guid.NewGuid(), AnswerText = "Pakistan", ExtraInfo = "220,892,340", QuestionId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Points = 5 },
 new Answer { Id = Guid.NewGuid(), AnswerText = "Brazil", ExtraInfo = "212,559,417", QuestionId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Points = 6 },
