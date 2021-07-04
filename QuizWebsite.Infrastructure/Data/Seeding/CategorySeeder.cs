@@ -11,7 +11,7 @@ namespace QuizWebsite.Infrastructure.Data.Seeding
         public static void Seed(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
-new Category { Id = Guid.Parse("00000000-0000-0000-0000-000000000001"), Name = "Countries" }
+new Category { Id = Guid.Parse("00000000-0000-0000-0000-100000000001"), Name = "Countries" }
 
                 );
         }
