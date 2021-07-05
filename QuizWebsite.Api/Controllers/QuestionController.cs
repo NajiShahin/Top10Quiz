@@ -31,7 +31,7 @@ namespace QuizWebsite.Api.Controllers
             var question = await questionService.GetByIdAsync(id);
             if (question == null)
             {
-                return NotFound($"Event with ID {id} does not exist");
+                return NotFound($"Question with ID {id} does not exist");
             }
             return Ok(question);
         }
