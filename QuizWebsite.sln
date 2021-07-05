@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizWebsite.Web", "QuizWebsite.Web\QuizWebsite.Web.csproj", "{B3ACC7F6-4A70-4A56-B1A5-553A0850F7D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizWebsite.Web", "QuizWebsite.Web\QuizWebsite.Web.csproj", "{B3ACC7F6-4A70-4A56-B1A5-553A0850F7D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizWebsite.Core", "QuizWebsite.Core\QuizWebsite.Core.csproj", "{9CF0377A-7D7A-4076-820B-A4FF34C89712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizWebsite.Core", "QuizWebsite.Core\QuizWebsite.Core.csproj", "{9CF0377A-7D7A-4076-820B-A4FF34C89712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizWebsite.Infrastructure", "QuizWebsite.Infrastructure\QuizWebsite.Infrastructure.csproj", "{4ADC3694-F635-4B89-BDCE-B070D49462D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizWebsite.Infrastructure", "QuizWebsite.Infrastructure\QuizWebsite.Infrastructure.csproj", "{4ADC3694-F635-4B89-BDCE-B070D49462D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizWebsite.Api", "QuizWebsite.Api\QuizWebsite.Api.csproj", "{B2873459-FDC7-4D98-8768-C7C1D056A7AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizWebsite.Vue", "QuizWebsite.Vue\QuizWebsite.Vue.csproj", "{93C2B6C6-CCDF-468D-9090-E681AB0E3664}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{4ADC3694-F635-4B89-BDCE-B070D49462D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ADC3694-F635-4B89-BDCE-B070D49462D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ADC3694-F635-4B89-BDCE-B070D49462D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2873459-FDC7-4D98-8768-C7C1D056A7AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2873459-FDC7-4D98-8768-C7C1D056A7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2873459-FDC7-4D98-8768-C7C1D056A7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2873459-FDC7-4D98-8768-C7C1D056A7AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93C2B6C6-CCDF-468D-9090-E681AB0E3664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C2B6C6-CCDF-468D-9090-E681AB0E3664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C2B6C6-CCDF-468D-9090-E681AB0E3664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C2B6C6-CCDF-468D-9090-E681AB0E3664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
