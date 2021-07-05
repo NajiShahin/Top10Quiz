@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\QuizWebsite.Core\QuizWebsite.Core.csproj" />
+    <ProjectReference Include="..\QuizWebsite.Infrastructure\QuizWebsite.Infrastructure.csproj" />
   </ItemGroup>
 
 
