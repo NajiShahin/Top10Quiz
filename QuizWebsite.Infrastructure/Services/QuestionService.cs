@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QuizWebsite.Core.Entities;
-using QuizWebsite.Core.Interfaces;
 using QuizWebsite.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Text;
 
 namespace QuizWebsite.Infrastructure.Services
 {
-    public class QuestionService : IQuestionService
+    public class QuestionService
     {
         protected readonly ApplicationDbContext dbContext;
         public QuestionService(ApplicationDbContext dbContext)
