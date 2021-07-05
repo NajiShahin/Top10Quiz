@@ -1,1 +1,15 @@
-﻿
+﻿@model SinglePlayerUnlimitedVm
+
+<b>score: @Model.Player.Score</b>
+
+
+@foreach (var question in Model.Questions)
+{
+    <div class="mt-2">
+        @question.QuestionText <br />
+        @foreach (var answer in question.Answers)
+        {
+            @answer.AnswerText <br />
+        }
+    </div>
+}
