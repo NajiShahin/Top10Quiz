@@ -13,8 +13,4 @@
     <ProjectReference Include="..\QuizWebsite.Core\QuizWebsite.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
