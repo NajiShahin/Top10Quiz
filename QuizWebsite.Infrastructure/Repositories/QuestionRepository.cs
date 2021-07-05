@@ -22,7 +22,10 @@ namespace QuizWebsite.Infrastructure.Repositories
         }
         public override IQueryable<Question> GetAllAsync()
         {
-            return _dbContext.Questions.AsNoTracking();
+            return _dbContext.Questions.AsNoTracking()
+                .Include(q => q.Answers)
+                .Include(q => q.Category)
+                .AsNoTracking();
         }
     }
 }
