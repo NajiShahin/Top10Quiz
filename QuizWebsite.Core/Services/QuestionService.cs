@@ -5,6 +5,7 @@ using QuizWebsite.Core.Interfaces.Repositories;
 using QuizWebsite.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +40,7 @@ namespace QuizWebsite.Core.Services
         public async Task<QuestionResponseDto> GetByIdAsync(Guid id)
         {
             var result = await questionRepository.GetByIdAsync(id);
-
+            OrderByPoints(result);
             var dto = mapper.Map<QuestionResponseDto>(result);
             return dto;
         }
@@ -47,6 +48,7 @@ namespace QuizWebsite.Core.Services
         public async Task<IEnumerable<QuestionResponseDto>> ListAllAsync()
         {
             var result = await questionRepository.ListAllAsync();
+            OrderByPoints(result);
             var dto = mapper.Map<IEnumerable<QuestionResponseDto>>(result);
             return dto;
         }
@@ -57,6 +59,19 @@ namespace QuizWebsite.Core.Services
             var result = await questionRepository.UpdateAsync(questionEntity);
             var dto = mapper.Map<QuestionResponseDto>(result);
             return dto;
+        }
+
+        private void OrderByPoints(IEnumerable<Question> list)
+        {
+            for (int i = 0; i < list.Count(); i++)
+            {
+                list.ToList()[i].Answers = list.ToList()[i].Answers.OrderBy(e => e.Points).ToList();
+            }
+        }
+
+        private void OrderByPoints(Question question)
+        {
+            question.Answers = question.Answers.OrderBy(e => e.Points).ToList();
         }
     }
 }
