@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuizWebsite.Core.Dtos;
 using QuizWebsite.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,32 @@ namespace QuizWebsite.Api.Controllers
                 return NotFound($"Question with ID {id} does not exist");
             }
             return Ok(question);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(QuestionRequestDto questionRequest)
+        {
+            var questionResponseDto = await questionService.AddAsync(questionRequest);
+            return CreatedAtAction(nameof(Get), new { id = questionResponseDto.Id }, questionResponseDto);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(QuestionRequestDto questionRequest)
+        {
+            var questionResponseDto = await questionService.UpdateAsync(questionRequest);
+            return Ok(questionResponseDto);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var questionDto = await questionService.GetByIdAsync(id);
+            if (questionDto == null)
+            {
+                return NotFound($"Question with ID {id} does not exist");
+            }
+            await questionService.DeleteAsync(id);
+            return Ok();
         }
     }
 }
