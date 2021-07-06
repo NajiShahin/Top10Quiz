@@ -45,6 +45,12 @@ namespace QuizWebsite.Api
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
+
+            services.AddSwaggerGen(c =>
+            {
+
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +60,15 @@ namespace QuizWebsite.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ChessMate API");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 
