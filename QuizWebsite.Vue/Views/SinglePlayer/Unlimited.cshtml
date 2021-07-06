@@ -1,5 +1,29 @@
-﻿<div id="app">
-    {{question}}
+﻿<div id="app" class="horizontal-center m-2">
+    <b class="float-left">Score: {{score}}</b>
+    <b class="float-right">Answered: {{currentQuestion}}</b> <br />
+    <h3 class="text-center m-3">{{question[currentQuestion].questionText}}</h3>
+    <center>
+        <div class="center-block input-group mb-3">
+            <input type="text" name="name" value="" class="radius mr-4" />
+            <button class="btn btn-dark" v-on:click="showQuestions">Confirm</button>
+        </div>
+    </center>
+    <div class="horizontal-center">
+        <table class="w-100 horizontal-center">
+            <tr v-for="index in 5" class="text-center">
+                <td class="unanswered text-center">
+                    <b v-if="answers.length == 10">{{answers[index-1].answerText}}</b>
+                    <b v-else>{{index}}</b>
+                </td>
+                <td class="text-center unanswered">
+                    <b v-if="answers.length == 10">{{answers[index+4].answerText}}</b>
+                    <b v-else>{{index+5}}</b>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
 </div>
 
 
@@ -7,21 +31,37 @@
     var app = new Vue({
         el: "#app",
         data: {
-            question: {
+            score: 0,
+            currentQuestion: 0,
+            question: [{
+                questionText: "",
+                category: {
+                    name: "",
+                    id: ""
+                },
+                answers: {
+                    answerText: ""
+                }
+            }],
 
-            }
+            answers: []
         },
         created: function () {
             axios
                 .get("https://localhost:5001/api/question")
                 .then(response => this.question = response.data)
-                .then(respons => console.log(respons.data))
+
         },
         methods: {
-            goToGame: function () {
-
+            showQuestions: function () {
+                if (this.answers.length != 10) {
+                    for (var i = 1; i < 11; i++) {
+                        this.answers.push(this.question[this.currentQuestion].answers.filter(function (el) {
+                            return el.points == i
+                        })[0]);
+                    }
+                }
             }
-
         },
     });
 
