@@ -95,7 +95,9 @@ body {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
-
+.p-33{
+    width:33%;
+}
 .unanswered:hover{
     background-color: #e3e3e3;
 }

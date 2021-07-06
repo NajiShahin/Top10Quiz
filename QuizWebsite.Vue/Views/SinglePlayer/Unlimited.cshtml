@@ -1,11 +1,18 @@
 ﻿<div id="app" class="horizontal-center m-2">
-    <b class="float-left">Score: {{score}}</b>
-    <b class="float-right">Answered: {{currentQuestion}}</b> <br />
+    <table class="w-100">
+        <tr>
+            <td class="text-left p-33"><b>Score: {{score}}</b></td>
+            <td class="text-center p-33"><b>Question: {{currentQuestion + 1}}</b></td>
+            <td class="text-right p-33"><b>Answered: {{currentQuestion}}</b> </td>
+        </tr>
+
+    </table>    
+    
     <h3 class="text-center m-3">{{question[currentQuestion].questionText}}</h3>
     <center>
         <div class="center-block input-group mb-3">
-            <input type="text" name="name" value="" class="radius mr-4" />
-            <button class="btn btn-dark" v-on:click="showQuestions">Confirm</button>
+            <input type="text" name="name" value="" class="radius mr-4" v-model="answer" />
+            <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
         </div>
     </center>
     <div class="horizontal-center">
@@ -44,7 +51,8 @@
                 }
             }],
 
-            answers: []
+            answers: [],
+            answer:""
         },
         created: function () {
             axios
@@ -53,14 +61,25 @@
 
         },
         methods: {
-            showQuestions: function () {
+            ShowQuestions: function () {
                 if (this.answers.length != 10) {
+                    this.answers = [];
                     for (var i = 1; i < 11; i++) {
                         this.answers.push(this.question[this.currentQuestion].answers.filter(function (el) {
                             return el.points == i
                         })[0]);
                     }
                 }
+            },
+            Submit: function () {
+                if (this.answers.length != 10) {
+                    this.answers = [];
+                    console.log(this.question[this.currentQuestion].answers.filter(x => //Is there same value with toUpper and removeSpaces
+                        x.answerText.toUpperCase().replace(/ /g, '') == this.answer.toUpperCase().replace(/ /g, '')));
+                }
+            },
+            NextQuestion: function () {
+                this.currentQuestion++;
             }
         },
     });
