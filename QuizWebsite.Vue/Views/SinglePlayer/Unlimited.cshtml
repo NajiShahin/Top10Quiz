@@ -2,12 +2,12 @@
     <table class="w-100">
         <tr>
             <td class="text-left p-33"><b>Score: {{score}}</b></td>
-            <td class="text-center p-33"><b>Question: {{currentQuestion + 1}}</b></td>
-            <td class="text-right p-33"><b>Answered: {{currentQuestion}}</b> </td>
+            <td class="text-center p-33"><b>Guesses: {{guesses}}</b></td>
+            <td class="text-right p-33"><b>Question: {{currentQuestion + 1}}</b> </td>
         </tr>
 
-    </table>    
-    
+    </table>
+
     <h3 class="text-center m-3">{{question[currentQuestion].questionText}}</h3>
     <center>
         <div class="center-block input-group mb-3">
@@ -52,7 +52,8 @@
             }],
 
             answers: [],
-            answer:""
+            answer: "",
+            guesses: 0
         },
         created: function () {
             axios
@@ -61,7 +62,7 @@
 
         },
         methods: {
-            ShowQuestions: function () {
+            ShowAllQuestions: function () {
                 if (this.answers.length != 10) {
                     this.answers = [];
                     for (var i = 1; i < 11; i++) {
@@ -72,11 +73,14 @@
                 }
             },
             Submit: function () {
-                if (this.answers.length != 10) {
-                    this.answers = [];
-                    console.log(this.question[this.currentQuestion].answers.filter(x => //Is there same value with toUpper and removeSpaces
-                        x.answerText.toUpperCase().replace(/ /g, '') == this.answer.toUpperCase().replace(/ /g, '')));
+                let correctAnswer = this.question[this.currentQuestion].answers.filter(x => //Is there same value with toUpper and removeSpaces
+                    x.answerText.toUpperCase().replace(/ /g, '') == this.answer.toUpperCase().replace(/ /g, ''));
+
+                if (correctAnswer.length == 1) {
+                    this.score += correctAnswer[0].points
                 }
+
+                this.guesses++
             },
             NextQuestion: function () {
                 this.currentQuestion++;
