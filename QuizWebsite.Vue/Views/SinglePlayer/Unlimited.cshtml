@@ -1,1 +1,38 @@
-﻿
+﻿<div id="app">
+    <div id="response" hidden>{{info}}</div>
+    <a class="mt-2" v-on:click="goToGame" href="#">Visit website</a>
+    <div>Puzzle Rating: <strong>{{info.puzzle.rating}}</strong></div>
+    <div>Times played: <strong>{{info.puzzle.plays}}</strong></div>
+    <div class="mb-2"><strong>{{info.game.players[0].name}} vs {{info.game.players[1].name}}</strong></div>
+    <button class="btn btn-info mb-2" v-on:click="Retry">Retry</button>
+    <button class="btn btn-info mb-2" id="NextMove">Show next move</button>
+</div>
+
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            info: {
+                game: {
+                    pgn: ""
+                }
+            }
+        },
+        created: function () {
+            axios
+                .get("https://localhost:5001/api/question")
+                .then(response => this.info = response.data)
+                .then(response => showBoard())
+
+        },
+        methods: {
+            goToGame: function () {
+
+            }
+
+        },
+    });
+
+
+</script>
