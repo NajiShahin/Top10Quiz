@@ -51,9 +51,12 @@
                 }
             }],
 
+            answered: [false, false, false, false, false,
+                false, false, false, false, false],
             answers: [],
             answer: "",
-            guesses: 0
+            guesses: 0,
+            guessed: false
         },
         created: function () {
             axios
@@ -72,18 +75,35 @@
                     }
                 }
             },
+            ShowGuessedAnswers: function () {
+                this.answers = [];
+                for (var i = 0; i < 10; i++) {
+                    if (this.answered[i]) {
+                        this.answers.push(this.question[this.currentQuestion].answers.filter(function (el) {
+                            return el.points == i + 1
+                        })[0]);
+                    } else {
+                        this.answers.push({
+                            answerText: i + 1
+                        });
+                    }
+                }
+            },
             Submit: function () {
                 let correctAnswer = this.question[this.currentQuestion].answers.filter(x => //Is there same value with toUpper and removeSpaces
                     x.answerText.toUpperCase().replace(/ /g, '') == this.answer.toUpperCase().replace(/ /g, ''));
 
-                if (correctAnswer.length == 1) {
+                if (correctAnswer.length == 1 && this.answered[correctAnswer[0].points - 1] != true) {
                     this.score += correctAnswer[0].points
+                    this.answered[correctAnswer[0].points - 1] = true
+                    this.ShowGuessedAnswers();
                 }
-
+                this.guessed = true
                 this.guesses++
             },
             NextQuestion: function () {
                 this.currentQuestion++;
+                this.guessed = false
             }
         },
     });
