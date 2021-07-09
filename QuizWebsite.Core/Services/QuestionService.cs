@@ -53,6 +53,16 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
+        public async Task<IEnumerable<QuestionResponseDto>> ListAllAsyncRandomOrder()
+        {
+            var result = await questionRepository.ListAllAsync();
+            OrderByPoints(result);
+            result = Shuffle(result.ToList());
+            var dto = mapper.Map<IEnumerable<QuestionResponseDto>>(result);
+            
+            return dto;
+        }
+
         public async Task<QuestionResponseDto> UpdateAsync(QuestionRequestDto questionRequest)
         {
             var questionEntity = mapper.Map<Question>(questionRequest);
@@ -72,6 +82,22 @@ namespace QuizWebsite.Core.Services
         private void OrderByPoints(Question question)
         {
             question.Answers = question.Answers.OrderBy(e => e.Points).ToList();
+        }
+
+        public List<Question> Shuffle(List<Question> list)
+        {
+            Random rng = new Random();
+
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                var value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+            return list;
         }
     }
 }
