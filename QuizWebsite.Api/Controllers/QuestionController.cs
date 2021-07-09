@@ -26,6 +26,13 @@ namespace QuizWebsite.Api.Controllers
             return Ok(questions);
         }
 
+        [HttpGet("Randomize")]
+        public async Task<IActionResult> GetRandomOrder()
+        {
+            var questions = await questionService.ListAllAsyncRandomOrder();
+            return Ok(questions);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
