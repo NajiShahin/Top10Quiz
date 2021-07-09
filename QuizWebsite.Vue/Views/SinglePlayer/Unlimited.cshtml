@@ -11,7 +11,7 @@
     <h3 class="text-center m-3">{{question[currentQuestion].questionText}}</h3>
     <center>
         <div class="center-block input-group mb-3">
-            <input type="text" name="name" value="" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit"/>
+            <input type="text" name="name" value="" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
             <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
         </div>
     </center>
@@ -105,6 +105,8 @@
                     this.answered[correctAnswer[0].points - 1] = true
                     this.ShowGuessedAnswers();
                 }
+
+                this.answer = ""
                 this.guessed = true
                 this.guesses++
             },
