@@ -9,6 +9,7 @@ namespace QuizWebsite.Core.Interfaces.Services
     public interface IQuestionService
     {
         Task<IEnumerable<QuestionResponseDto>> ListAllAsync();
+        Task<IEnumerable<QuestionResponseDto>> ListAllAsyncRandomOrder();
         Task<QuestionResponseDto> GetByIdAsync(Guid id);
         Task<QuestionResponseDto> AddAsync(QuestionRequestDto questionRequest);
         Task<QuestionResponseDto> UpdateAsync(QuestionRequestDto questionRequest);
