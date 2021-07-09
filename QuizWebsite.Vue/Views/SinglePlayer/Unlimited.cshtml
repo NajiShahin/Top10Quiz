@@ -97,7 +97,7 @@
                 }
             },
             Submit: function () {
-                let correctAnswer = this.question[this.currentQuestion].answers.filter(x => //Is there same value with toUpper and removeSpaces
+                let correctAnswer = this.question[this.currentQuestion].answers.filter(x => //Is there same value with toUpper() and removeSpaces()
                     x.answerText.toUpperCase().replace(/ /g, '') == this.answer.toUpperCase().replace(/ /g, ''));
 
                 if (correctAnswer.length == 1 && this.answered[correctAnswer[0].points - 1] != true) {
