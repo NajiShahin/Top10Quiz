@@ -64,7 +64,7 @@
         },
         created: function () {
             axios
-                .get("https://localhost:5001/api/question")
+                .get("https://localhost:5001/api/question/randomize")
                 .then(response => this.question = response.data)
 
         },
