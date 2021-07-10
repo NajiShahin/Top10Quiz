@@ -8,7 +8,10 @@
 
     </table>
 
-    <h3 class="text-center m-3">{{question[currentQuestion].questionText}}</h3>
+    <center class="m-3">
+        <div v-if="question[0].id == ''" class="loader text-center"></div>
+        <h3 class="text-center" v-else>{{question[currentQuestion].questionText}}</h3>
+    </center>
     <center>
         <div class="center-block input-group mb-3">
             <input type="text" name="name" value="" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
@@ -52,7 +55,8 @@
                 },
                 answers: {
                     answerText: ""
-                }
+                },
+                id: ""
             }],
 
             answered: [false, false, false, false, false,
@@ -66,7 +70,6 @@
             axios
                 .get(RandomQuestionListUrl)
                 .then(response => this.question = response.data)
-
         },
         methods: {
             ShowAllQuestions: function () {
@@ -76,7 +79,6 @@
                         return el.points == i
                     })[0]);
                 }
-                console.log(this.answers)
                 this.answered = [true, true, true, true, true,
                     true, true, true, true, true]
 
