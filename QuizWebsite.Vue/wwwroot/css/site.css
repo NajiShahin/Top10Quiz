@@ -120,6 +120,12 @@ body {
     box-shadow: 0px 0px 2px #808080;
 }
 
+.flex-h-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .loader {
     border: 8px solid #dedede; /* Light grey */
     border-top: 8px solid #808080; /* Blue */
