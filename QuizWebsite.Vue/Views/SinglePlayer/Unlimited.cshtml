@@ -101,7 +101,7 @@
 
                 if (correctAnswer.length == 1 && this.answered[correctAnswer[0].place - 1] != true) {
                     this.score += correctAnswer[0].points
-                    this.answered[correctAnswer[0].points - 1] = true
+                    this.answered[correctAnswer[0].place - 1] = true
                     this.ShowGuessedAnswers();
                     var audio = new Audio('../audio/correct.mp3');
                     audio.play();
