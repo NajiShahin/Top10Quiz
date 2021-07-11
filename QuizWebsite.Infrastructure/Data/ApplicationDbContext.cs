@@ -11,6 +11,8 @@ namespace QuizWebsite.Infrastructure.Data
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<CategoryQuestions> CategoryQuestions { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
         base(options)
@@ -18,9 +20,23 @@ namespace QuizWebsite.Infrastructure.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CategoryQuestions>()
+                .ToTable("CategoryQuestions")
+                .HasKey(ue => new { ue.CategoryId, ue.QuestionId });
+            modelBuilder.Entity<CategoryQuestions>()
+                .HasOne(ue => ue.Category)
+                .WithMany(e => e.CategoryQuestions)
+                .HasForeignKey(ue => ue.CategoryId);
+            modelBuilder.Entity<CategoryQuestions>()
+                .HasOne(ue => ue.Question)
+                .WithMany(u => u.CategoryQuestions)
+                .HasForeignKey(ue => ue.QuestionId);
+
+
             CategorySeeder.Seed(modelBuilder);
             QuestionSeeder.Seed(modelBuilder);
             AnswerSeeder.Seed(modelBuilder);
+            CategoryQuestionsSeeder.Seed(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
     }
