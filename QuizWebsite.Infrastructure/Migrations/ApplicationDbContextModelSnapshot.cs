@@ -49,7 +49,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("502f7886-ce1a-452f-aaed-fae2f0ea72e8"),
+                            Id = new Guid("d7e23041-d8e5-4d70-8c6f-f1696644cec6"),
                             AnswerText = "Russia",
                             ExtraInfo = "17,098,242 Km²",
                             Place = 1,
@@ -58,7 +58,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d6432d9d-79e8-4733-be60-0ce80c4bc871"),
+                            Id = new Guid("26806cb4-f137-4518-abd6-ca4231504f7a"),
                             AnswerText = "Canada",
                             ExtraInfo = "9,984,670 Km²",
                             Place = 2,
@@ -67,7 +67,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7ae39bd9-8332-4917-8eb9-4f4607d2af8c"),
+                            Id = new Guid("a8b283c3-4fec-48e8-bf6a-c0ba1dc5c87c"),
                             AnswerText = "USA",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -76,7 +76,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bf218dbd-e000-469d-9ca5-31713f4b9d82"),
+                            Id = new Guid("171a1da4-5c45-4189-b704-98d4d2d5754d"),
                             AnswerText = "The United States",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -85,7 +85,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ac13c7ed-38db-4dc9-a40e-b42c493447f3"),
+                            Id = new Guid("f992e765-0190-44ee-8f28-08a667ec5471"),
                             AnswerText = "United States",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -94,7 +94,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6e5a5741-6cc8-44ff-844c-25d0b1de8f46"),
+                            Id = new Guid("c6c30f45-81fa-4c5f-bed2-9d3cda2c9926"),
                             AnswerText = "China",
                             ExtraInfo = "9,596,960 Km²",
                             Place = 4,
@@ -103,7 +103,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6ba0a792-3a18-4b25-a639-a72fbaed813c"),
+                            Id = new Guid("3909d5fd-ed02-4119-9dfc-29365b84afee"),
                             AnswerText = "Brazil",
                             ExtraInfo = "8,515,770 Km²",
                             Place = 5,
@@ -112,7 +112,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("260099ff-b3ff-42c8-a8db-a0b43458a5b4"),
+                            Id = new Guid("b864f94b-398f-4ec9-a79e-c1960c45ecd3"),
                             AnswerText = "Australia",
                             ExtraInfo = "7,741,220 Km²",
                             Place = 6,
@@ -121,7 +121,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("de8d3d6a-9ba1-4cdd-8202-47a6577223b3"),
+                            Id = new Guid("eaab1be7-6565-4e11-a6d2-6e1200c2bb0c"),
                             AnswerText = "India",
                             ExtraInfo = "3,287,263 Km²",
                             Place = 7,
@@ -130,7 +130,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ccfc228e-6ac9-43fe-93ed-86a3eff412c9"),
+                            Id = new Guid("0fcc753c-a3a9-4b24-b000-d07d0a7d8d90"),
                             AnswerText = "Argentina",
                             ExtraInfo = "2,780,400 Km²",
                             Place = 8,
@@ -139,7 +139,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("775b5ec3-178b-42ed-a12d-daadba3ba9d0"),
+                            Id = new Guid("200cfe0f-cb2a-4125-ab01-4cf433862a0c"),
                             AnswerText = "Kazakhstan",
                             ExtraInfo = "2,724,900 Km²",
                             Place = 9,
@@ -148,7 +148,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b2560de2-78e1-46a3-a18a-105fb33435d0"),
+                            Id = new Guid("d317dec9-d942-46b4-bb5a-882e0d7ae07b"),
                             AnswerText = "Algeria",
                             ExtraInfo = "2,381,740 Km²",
                             Place = 10,
@@ -157,7 +157,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c003f47a-1a0a-4bd4-92a7-3ef33074264c"),
+                            Id = new Guid("8b9a353b-9285-4069-82c4-7dca8141d28c"),
                             AnswerText = "China",
                             ExtraInfo = "1,439,323,776",
                             Place = 1,
@@ -166,7 +166,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dab7fbe3-a752-4478-9175-2ec09ccb2151"),
+                            Id = new Guid("6a4019df-c8d3-44c8-bf54-406cbb2d0cc7"),
                             AnswerText = "India",
                             ExtraInfo = "1,380,004,385",
                             Place = 2,
@@ -175,7 +175,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("652389de-67b9-4b83-a427-9d5fe17ceecb"),
+                            Id = new Guid("6fa7254a-84b6-48aa-8e7c-d9e9ed2990d3"),
                             AnswerText = "USA",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -184,7 +184,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("664dd740-36f3-449d-8aef-470071e6b3e6"),
+                            Id = new Guid("a48398cc-56a4-4bf8-9c62-4c051101f9ea"),
                             AnswerText = "The United States",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -193,7 +193,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b4f018b5-d92d-42c5-ac50-4876d3b64e5a"),
+                            Id = new Guid("97cd1ba3-0a61-4631-9c4a-e9ccd9230f52"),
                             AnswerText = "United States",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -202,7 +202,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("737019aa-b63f-4c1e-bd8c-4782e0acfbec"),
+                            Id = new Guid("6b8895a9-0912-4da2-a7ed-bc4e31368f28"),
                             AnswerText = "Indonesia",
                             ExtraInfo = "273,523,615",
                             Place = 4,
@@ -211,7 +211,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9df60a57-78b0-4a6f-a304-37aa97b6b2e9"),
+                            Id = new Guid("7e672eab-3593-46a1-91fb-7c3cb553fa14"),
                             AnswerText = "Pakistan",
                             ExtraInfo = "220,892,340",
                             Place = 5,
@@ -220,7 +220,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1f3d49f5-9985-4828-af4c-87f5e2db1e17"),
+                            Id = new Guid("7c9eb721-fa27-4a3f-981b-023aa32752ca"),
                             AnswerText = "Brazil",
                             ExtraInfo = "212,559,417",
                             Place = 6,
@@ -229,7 +229,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("89b4d663-a09f-4c7f-b828-9e5262c1ca05"),
+                            Id = new Guid("df2acba0-0f0c-4789-8406-2df2f879db40"),
                             AnswerText = "Nigeria",
                             ExtraInfo = "206,139,589",
                             Place = 7,
@@ -238,7 +238,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e46d8a27-7f70-40b6-826b-5131ab99fae9"),
+                            Id = new Guid("2dd61cdd-5207-46f4-ba6c-e0b85d23680d"),
                             AnswerText = "Bangladesh",
                             ExtraInfo = "164,689,383",
                             Place = 8,
@@ -247,7 +247,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9ec2c48b-69a0-4156-9e02-7e9eb3e0c941"),
+                            Id = new Guid("05cfbd8f-c06f-4123-a4f5-e8996749dba2"),
                             AnswerText = "Russia",
                             ExtraInfo = "145,934,462",
                             Place = 9,
@@ -256,7 +256,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6b0b6bc3-6784-4437-9f60-d6b9ae6aff4d"),
+                            Id = new Guid("5de7c5be-ed71-4c41-be81-de46a6a6988c"),
                             AnswerText = "Mexico",
                             ExtraInfo = "128,932,753",
                             Place = 10,
@@ -1834,7 +1834,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("145bc81f-9c2f-4ce2-8ca3-2a7a955ea59f"),
                             AnswerText = "El Salvador",
                             ExtraInfo = "52.02",
-                            Place = 0,
+                            Place = 1,
                             Points = 1,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1843,7 +1843,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("33bcd497-740f-4445-b6c0-96a60af7e3e7"),
                             AnswerText = "Jamaica",
                             ExtraInfo = "43.85",
-                            Place = 0,
+                            Place = 2,
                             Points = 2,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1852,7 +1852,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("eb4a6e45-a008-4e17-84ee-4e1442a35e7f"),
                             AnswerText = "Lesotho",
                             ExtraInfo = "41.25",
-                            Place = 0,
+                            Place = 3,
                             Points = 3,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1861,7 +1861,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("4710cb1b-fcd6-46c6-b685-2e7768c56126"),
                             AnswerText = "Honduras",
                             ExtraInfo = "38.93",
-                            Place = 0,
+                            Place = 4,
                             Points = 4,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1870,7 +1870,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("e16ae3aa-2d49-4d4c-b640-e1d0533df08b"),
                             AnswerText = "Belize",
                             ExtraInfo = "37.90",
-                            Place = 0,
+                            Place = 5,
                             Points = 5,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1879,7 +1879,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("3ac6f709-7a77-45b8-9bce-e33db2d44b8e"),
                             AnswerText = "Venezuela",
                             ExtraInfo = "36.69",
-                            Place = 0,
+                            Place = 6,
                             Points = 6,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1888,7 +1888,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("47b7100e-ef7a-4a42-83d1-be03c6faa6e0"),
                             AnswerText = "Saint Vincent and the Grenadines",
                             ExtraInfo = "36.69",
-                            Place = 0,
+                            Place = 7,
                             Points = 7,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1897,7 +1897,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("2dd69c2a-5b8c-49b6-9ac1-45989955ceee"),
                             AnswerText = "Saint Vincent",
                             ExtraInfo = "36.69",
-                            Place = 0,
+                            Place = 7,
                             Points = 7,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1906,7 +1906,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("0e9f54e9-f324-46de-9e29-1f3b6c456b11"),
                             AnswerText = "The Grenadines ",
                             ExtraInfo = "36.69",
-                            Place = 0,
+                            Place = 7,
                             Points = 7,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1915,7 +1915,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("420b96fc-8a54-4b2d-8e5d-1df6e3000a95"),
                             AnswerText = "South Africa",
                             ExtraInfo = "36.40",
-                            Place = 0,
+                            Place = 8,
                             Points = 8,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1924,7 +1924,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("f4443982-2f9a-4aa9-a4d3-0820e487bd01"),
                             AnswerText = "Saint Kitts and Nevis",
                             ExtraInfo = "34.23",
-                            Place = 0,
+                            Place = 9,
                             Points = 9,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1933,7 +1933,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("4cef83e8-35ab-45a0-9e20-07b931f6d567"),
                             AnswerText = "Nevis",
                             ExtraInfo = "34.23",
-                            Place = 0,
+                            Place = 9,
                             Points = 9,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
@@ -1942,7 +1942,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Id = new Guid("e2765858-1b6e-45d4-9893-da8e0d9febff"),
                             AnswerText = "Bahamas",
                             ExtraInfo = "30.90",
-                            Place = 0,
+                            Place = 10,
                             Points = 10,
                             QuestionId = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb")
                         },
