@@ -40,7 +40,7 @@ namespace QuizWebsite.Core.Services
         public async Task<QuestionResponseDto> GetByIdAsync(Guid id)
         {
             var result = await questionRepository.GetByIdAsync(id);
-            OrderByPoints(result);
+            OrderByPlace(result);
             var dto = mapper.Map<QuestionResponseDto>(result);
             return dto;
         }
@@ -48,7 +48,7 @@ namespace QuizWebsite.Core.Services
         public async Task<IEnumerable<QuestionResponseDto>> ListAllAsync()
         {
             var result = await questionRepository.ListAllAsync();
-            OrderByPoints(result);
+            OrderByPlace(result);
             var dto = mapper.Map<IEnumerable<QuestionResponseDto>>(result);
             return dto;
         }
@@ -56,7 +56,7 @@ namespace QuizWebsite.Core.Services
         public async Task<IEnumerable<QuestionResponseDto>> ListAllAsyncRandomOrder()
         {
             var result = await questionRepository.ListAllAsync();
-            OrderByPoints(result);
+            OrderByPlace(result);
             result = Shuffle(result.ToList());
             var dto = mapper.Map<IEnumerable<QuestionResponseDto>>(result);
             
@@ -71,17 +71,17 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
-        private void OrderByPoints(IEnumerable<Question> list)
+        private void OrderByPlace(IEnumerable<Question> list)
         {
             for (int i = 0; i < list.Count(); i++)
             {
-                list.ToList()[i].Answers = list.ToList()[i].Answers.OrderBy(e => e.Points).ToList();
+                list.ToList()[i].Answers = list.ToList()[i].Answers.OrderBy(e => e.Place).ToList();
             }
         }
 
-        private void OrderByPoints(Question question)
+        private void OrderByPlace(Question question)
         {
-            question.Answers = question.Answers.OrderBy(e => e.Points).ToList();
+            question.Answers = question.Answers.OrderBy(e => e.Place).ToList();
         }
 
         public List<Question> Shuffle(List<Question> list)
