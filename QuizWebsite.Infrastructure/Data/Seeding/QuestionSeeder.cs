@@ -30,6 +30,8 @@ new Question { Id = Guid.Parse(" e75284fe-a777-4d85-aad5-e68b817b2d50"), Questio
 new Question { Id = Guid.Parse(" f1b44064-927d-45bf-9fe4-14c2d98d774c"), QuestionText = "What are the countries with the oldest median age (2020)" },
 new Question { Id = Guid.Parse(" 43cb9f67-8568-4a8d-81c6-110a622787bb"), QuestionText = "Countries with most homocides per 100,000 people" },
 new Question { Id = Guid.Parse(" f5b97548-cb81-44b5-8830-aba39f71c079"), QuestionText = "What are the countries with the highest murder count per year" },
+new Question { Id = Guid.Parse(" 9cafb85f-730b-4a26-a661-b2d2dda74534"), QuestionText = "What countries have the highest fertility rate (2019)" },
+new Question { Id = Guid.Parse(" 9429778e-df46-4c10-a0d4-80fecbfdf3f9"), QuestionText = "What countries have the lowest fertility rate (2019)" }
 
 
                 );

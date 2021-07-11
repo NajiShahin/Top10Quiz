@@ -194,6 +194,8 @@ new Answer { Id = Guid.Parse("3e3c0bff-8de3-4b33-ba4d-68cf348915cb"), AnswerText
 new Answer { Id = Guid.Parse("09c1915e-c903-40cb-b894-35f0d509fbf2"), AnswerText = "Czechia", ExtraInfo = "1993", QuestionId = Guid.Parse("00437064-4748-470c-b77e-046703a2a19a"), Points = 8 },
 new Answer { Id = Guid.Parse("3a90a620-a621-46a7-a777-f8da3a052865"), AnswerText = "Slovakia", ExtraInfo = "1993", QuestionId = Guid.Parse("00437064-4748-470c-b77e-046703a2a19a"), Points = 8 },
 new Answer { Id = Guid.Parse("af44ab02-8b8e-4b5c-b9f1-0400ce4a125e"), AnswerText = "Bosnia and Herzegovina", ExtraInfo = "1992", QuestionId = Guid.Parse("00437064-4748-470c-b77e-046703a2a19a"), Points = 9 },
+new Answer { Id = Guid.Parse("af44ab02-8b8e-4b5c-b9f1-0400ce42125e"), AnswerText = "Bosnia", ExtraInfo = "1992", QuestionId = Guid.Parse("00437064-4748-470c-b77e-046703a2a19a"), Points = 9 },
+new Answer { Id = Guid.Parse("af44ab02-8b8e-4b5c-b9f1-0400ce0a125e"), AnswerText = "Herzegovina", ExtraInfo = "1992", QuestionId = Guid.Parse("00437064-4748-470c-b77e-046703a2a19a"), Points = 9 },
 new Answer { Id = Guid.Parse("c0486c52-1086-49e6-8496-7e303fad81e2"), AnswerText = "Russia", ExtraInfo = "1991", QuestionId = Guid.Parse("00437064-4748-470c-b77e-046703a2a19a"), Points = 10 },
 
 
@@ -256,6 +258,35 @@ new Answer { Id = Guid.Parse("d9a3bc9b-32ab-4f72-adeb-5fbe578ae1a5"), AnswerText
 new Answer { Id = Guid.Parse("aef151ff-fc17-4834-a2ae-af765fcbc515"), AnswerText = "DR Congo", ExtraInfo = "10,322", QuestionId = Guid.Parse("f5b97548-cb81-44b5-8830-aba39f71c079"), Points = 10 },
 new Answer { Id = Guid.Parse("2b41df46-b45d-49fe-86ea-6658a69b3867"), AnswerText = "Republic Congo", ExtraInfo = "10,322", QuestionId = Guid.Parse("f5b97548-cb81-44b5-8830-aba39f71c079"), Points = 10 },
 new Answer { Id = Guid.Parse("c020b5cf-41cb-4134-b449-6fd5cd732ffa"), AnswerText = "Democratic Republic Congo", ExtraInfo = "10,322", QuestionId = Guid.Parse("f5b97548-cb81-44b5-8830-aba39f71c079"), Points = 10 },
+
+new Answer { Id = Guid.Parse("c76945ee-791e-4b8b-bbe3-e55d05aef5c7"), AnswerText = "Niger", ExtraInfo = "6.824", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 1 },
+new Answer { Id = Guid.Parse("afee021d-920f-43f9-ad86-fb931060dbd6"), AnswerText = "Somalia", ExtraInfo = "5.978", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 2 },
+new Answer { Id = Guid.Parse("58118199-7728-4f8a-9776-71854c499dd3"), AnswerText = "DRC", ExtraInfo = "5.819", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 3 },
+new Answer { Id = Guid.Parse("abd76d68-1532-43d4-9933-487c34a38700"), AnswerText = "Congo", ExtraInfo = "5.819", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 3 },
+new Answer { Id = Guid.Parse("d97bd357-a407-4a0c-938a-ed3360ba0aa0"), AnswerText = "Democratic Republic of the Congo", ExtraInfo = "5.819", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 3 },
+new Answer { Id = Guid.Parse("f2e344ea-1c90-40c9-97c0-d7024657e2bb"), AnswerText = "DR Congo", ExtraInfo = "5.819", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 3 },
+new Answer { Id = Guid.Parse("a1facf98-60ec-4927-a596-b6f54e142b1d"), AnswerText = "Republic Congo", ExtraInfo = "5.819", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 3 },
+new Answer { Id = Guid.Parse("4c370619-cb11-4696-9b23-9cd156e0a487"), AnswerText = "Democratic Republic Congo", ExtraInfo = "5.819", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 3 },
+new Answer { Id = Guid.Parse("83bb1fce-842a-4ada-bdfe-bdba01aae6a5"), AnswerText = "Mali", ExtraInfo = "5.785", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 4 },
+new Answer { Id = Guid.Parse("ddaf8fbc-588c-424e-a685-0ea2f91deaf7"), AnswerText = "Chad", ExtraInfo = "5.649", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 5 },
+new Answer { Id = Guid.Parse("6e609dcf-518d-47a4-9b36-fc941e911320"), AnswerText = "Angola", ExtraInfo = "5.442", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 6 },
+new Answer { Id = Guid.Parse("8038b4c3-17b2-4492-a2aa-3554614f659c"), AnswerText = "Burundi", ExtraInfo = "5.321", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 7 },
+new Answer { Id = Guid.Parse("084fa2aa-9619-4f80-91aa-70593eb89c6e"), AnswerText = "Nigeria", ExtraInfo = "5.317", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 8 },
+new Answer { Id = Guid.Parse("4eb7fba9-2b80-4d06-8c14-46e5df10fe35"), AnswerText = "Gambia", ExtraInfo = "5.154", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 9 },
+new Answer { Id = Guid.Parse("2da37466-76bc-47c3-9a2e-c9d602c24b32"), AnswerText = "Burkina Faso", ExtraInfo = "5.109", QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534"), Points = 10 },
+
+new Answer { Id = Guid.Parse("ad8e8053-39f1-456d-9550-c4d93055ef44"), AnswerText = "South Korea", ExtraInfo = "0.864", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 1 },
+new Answer { Id = Guid.Parse("71a3cb4e-e3fd-4be7-9295-a6232f354113"), AnswerText = "Malta", ExtraInfo = "1.100", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 2 },
+new Answer { Id = Guid.Parse("c8d0c651-f154-4dc4-a06a-298795c204d0"), AnswerText = "Singapore", ExtraInfo = "1.140", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 3 },
+new Answer { Id = Guid.Parse("a8ade582-2255-43eb-8fe0-330e64305a4a"), AnswerText = "Ukraine", ExtraInfo = "1.228", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 4 },
+new Answer { Id = Guid.Parse("dd0ebb66-22d2-4225-9b06-2d4d55a29795"), AnswerText = "Spain", ExtraInfo = "1.240", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 5 },
+new Answer { Id = Guid.Parse("3462e894-d5d3-400b-985a-1d2114d86fcc"), AnswerText = "Bosnia and Herzegovina", ExtraInfo = "1.254", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 6 },
+new Answer { Id = Guid.Parse("58512636-559d-4ba0-bc9c-382bcf86e3b9"), AnswerText = "Bosnia ", ExtraInfo = "1.254", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 6 },
+new Answer { Id = Guid.Parse("f19a2038-a46a-4a05-8e28-3da166b151e2"), AnswerText = "Herzegovina", ExtraInfo = "1.254", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 6 },
+new Answer { Id = Guid.Parse("fc7fe7ef-2329-4eed-a2fe-22ae3b6fd7da"), AnswerText = "Moldova", ExtraInfo = "1.269", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 7 },
+new Answer { Id = Guid.Parse("63bb18cb-bf42-4065-9b73-13fbc52c09f4"), AnswerText = "Italy", ExtraInfo = "1.270", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 8 },
+new Answer { Id = Guid.Parse("acbdffd2-c729-4506-9bbd-ebaa20dc29d8"), AnswerText = "Cyprus", ExtraInfo = "1.321", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 9 },
+new Answer { Id = Guid.Parse("64d28950-935b-4499-bb1f-23c54372598d"), AnswerText = "Luxembourg", ExtraInfo = "1.340", QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), Points = 10 }
                 );
         }
     }

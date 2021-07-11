@@ -30,6 +30,8 @@ new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-1000000
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("f1b44064-927d-45bf-9fe4-14c2d98d774c") },
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("43cb9f67-8568-4a8d-81c6-110a622787bb") },
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("f5b97548-cb81-44b5-8830-aba39f71c079") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9") }
                 );
         }
     }
