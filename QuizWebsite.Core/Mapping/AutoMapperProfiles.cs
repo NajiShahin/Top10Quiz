@@ -3,6 +3,7 @@ using QuizWebsite.Core.Dtos;
 using QuizWebsite.Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace QuizWebsite.Core.Mapping
@@ -12,7 +13,14 @@ namespace QuizWebsite.Core.Mapping
         public AutoMapperProfiles()
         {
             CreateMap<QuestionRequestDto, Question>();
-            CreateMap<Question, QuestionResponseDto>();
+            CreateMap<Question, QuestionResponseDto>()
+                .ForMember(dest => dest.Category,
+                    opt => opt.MapFrom(src => src.CategoryQuestions
+                    .Select(c => new CategoryResponseDto
+                    {
+                        Id = c.QuestionId,
+                        Name = c.Category.Name
+                    })));
 
             CreateMap<AnswerRequestDto, Answer>();
             CreateMap<Answer, AnswerResponseDto>();

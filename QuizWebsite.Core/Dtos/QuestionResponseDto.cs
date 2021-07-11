@@ -8,7 +8,7 @@ namespace QuizWebsite.Core.Dtos
     public class QuestionResponseDto : BaseDto
     {
         public string QuestionText { get; set; }
-        public CategoryResponseDto Category { get; set; }
+        public ICollection<CategoryResponseDto> Category { get; set; }
         public ICollection<AnswerResponseDto> Answers { get; set; }
     }
 }

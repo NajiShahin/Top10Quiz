@@ -25,6 +25,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             return _dbContext.Questions.AsNoTracking()
                 .Include(q => q.Answers)
                 .Include(q => q.CategoryQuestions)
+                    .ThenInclude(cq => cq.Category)
                 .AsNoTracking();
         }
     }
