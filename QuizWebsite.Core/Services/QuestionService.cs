@@ -23,12 +23,12 @@ namespace QuizWebsite.Core.Services
             this.mapper = mapper;
         }
 
-        public async Task<QuestionResponseDto> AddAsync(QuestionRequestDto questionRequest)
+        public async Task<QuestionDetailResponseDto> AddAsync(QuestionRequestDto questionRequest)
         {
             var questionEntity = mapper.Map<Question>(questionRequest);
 
             var result = await questionRepository.AddAsync(questionEntity);
-            var dto = mapper.Map<QuestionResponseDto>(result);
+            var dto = mapper.Map<QuestionDetailResponseDto>(result);
             return dto;
         }
 
@@ -37,11 +37,11 @@ namespace QuizWebsite.Core.Services
             await questionRepository.DeleteAsync(id);
         }
 
-        public async Task<QuestionResponseDto> GetByIdAsync(Guid id)
+        public async Task<QuestionDetailResponseDto> GetByIdAsync(Guid id)
         {
             var result = await questionRepository.GetByIdAsync(id);
             OrderByPlace(result);
-            var dto = mapper.Map<QuestionResponseDto>(result);
+            var dto = mapper.Map<QuestionDetailResponseDto>(result);
             return dto;
         }
 
@@ -63,11 +63,11 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
-        public async Task<QuestionResponseDto> UpdateAsync(QuestionRequestDto questionRequest)
+        public async Task<QuestionDetailResponseDto> UpdateAsync(QuestionRequestDto questionRequest)
         {
             var questionEntity = mapper.Map<Question>(questionRequest);
             var result = await questionRepository.UpdateAsync(questionEntity);
-            var dto = mapper.Map<QuestionResponseDto>(result);
+            var dto = mapper.Map<QuestionDetailResponseDto>(result);
             return dto;
         }
 
