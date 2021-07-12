@@ -20,11 +20,11 @@
         <table class="w-100 horizontal-center">
             <tr v-for="index in 5" class="text-center">
                 <td class="unanswered text-center">
-                    <b v-if="answers.length == 10 && answered[index-1]">{{answers[index-1].answerText}}</b>
+                    <b v-if="answered[index-1]">{{answers[index-1].answerText}}</b>
                     <b v-else>{{index}}</b>
                 </td>
                 <td class="text-center unanswered">
-                    <b v-if="answers.length == 10 && answered[index+4]">{{answers[index+4].answerText}}</b>
+                    <b v-if="answered[index+4]">{{answers[index+4].answerText}}</b>
                     <b v-else>{{index+5}}</b>
                 </td>
             </tr>
@@ -86,19 +86,10 @@
                     })
 
             },
-            ShowGuessedAnswers: function () {
-                this.answers = [];
-                for (var i = 0; i < 10; i++) {
-                    if (this.answered[i]) {
-                        this.answers.push(this.question[this.currentQuestion].answers.filter(function (el) {
-                            return el.place == i + 1
-                        })[0]);
-                    } else {
-                        this.answers.push({
-                            answerText: i + 1
-                        });
-                    }
-                }
+            ShowGuessedAnswers: function (answerResponse) {
+                console.log(this.answers)
+                console.log(this.answered)
+                this.answers[answerResponse.place - 1] = answerResponse
             },
             Submit: function () {
                 let answerRequest = {
@@ -107,13 +98,12 @@
                 axios
                     .post(url + "api/Question/" + this.question[this.currentQuestion].id + "/answer", answerRequest)
                     .then(response => {
-                        console.log(response.data)
                         if (response.data.points != 0 && this.answered[response.data.place - 1] == false) {
                             this.score += response.data.place
                             this.answered[response.data.place - 1] = true
                             var audio = new Audio('../audio/correct.mp3');
                             audio.play();
-                            this.ShowGuessedAnswers();
+                            this.ShowGuessedAnswers(response.data);
                         } else {
                             var audio = new Audio('../audio/wrong.mp3');
                             audio.play();
