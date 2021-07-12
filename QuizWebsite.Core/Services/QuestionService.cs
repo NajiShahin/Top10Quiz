@@ -76,7 +76,7 @@ namespace QuizWebsite.Core.Services
             var question = await questionRepository.GetByIdAsync(QuestionId);
             foreach (var answer in question.Answers)
             {
-                var result = question.Answers.FirstOrDefault(a => a.AnswerText == answerRequest.AnswerText);
+                var result = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText,a.AnswerText));
                 if (result != null)
                 {
                     var dto = mapper.Map<AnswerResponseDto>(result);
@@ -84,6 +84,13 @@ namespace QuizWebsite.Core.Services
                 }
             }
             return new AnswerResponseDto();
+        }
+
+        private bool IsSimilar(string userAnswer, string answer) //userAnswer is what user answered, answer is the real answer
+        {
+            if (userAnswer.Replace(" ","").ToUpper() == answer.Replace(" ","").ToUpper())
+                return true;
+            return false;
         }
 
         private void OrderByPlace(IEnumerable<Question> list)
