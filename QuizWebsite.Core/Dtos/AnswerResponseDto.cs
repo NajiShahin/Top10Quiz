@@ -11,6 +11,5 @@ namespace QuizWebsite.Core.Dtos
         public int Place { get; set; }
         public string AnswerText { get; set; }
         public string ExtraInfo { get; set; } //If the question is biggest population countries this will be the population of the country Ex. AnswerText = China, ExtraInfo = 1,444,948,110
-        public QuestionDetailResponseDto Question { get; set; }
     }
 }

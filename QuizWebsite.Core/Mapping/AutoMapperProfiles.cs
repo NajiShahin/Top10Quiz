@@ -13,20 +13,32 @@ namespace QuizWebsite.Core.Mapping
         public AutoMapperProfiles()
         {
             CreateMap<QuestionRequestDto, Question>();
+            CreateMap<Question, QuestionResponseDto>()
+                .ForMember(dest => dest.Category,
+                    opt => opt.MapFrom(src => src.CategoryQuestions
+                    .Select(c => new CategoryResponseDto
+                    {
+                        Id = c.CategoryId,
+                        Name = c.Category.Name
+                    })));
             CreateMap<Question, QuestionDetailResponseDto>()
                 .ForMember(dest => dest.Category,
                     opt => opt.MapFrom(src => src.CategoryQuestions
                     .Select(c => new CategoryResponseDto
                     {
-                        Id = c.QuestionId,
+                        Id = c.CategoryId,
                         Name = c.Category.Name
                     })));
 
             CreateMap<AnswerDetailRequestDto, Answer>();
+            CreateMap<AnswerRequestDto, Answer>();
             CreateMap<Answer, AnswerResponseDto>();
 
             CreateMap<CategoryRequestDto, Category>();
-            CreateMap<Category, CategoryResponseDto>();
+            CreateMap<Category, CategoryResponseDto>()
+                .ForMember(dest => dest.Id,
+                opt => opt.MapFrom(src => src.CategoryQuestions
+                .Select(c => c.CategoryId)));
 
         }
     }
