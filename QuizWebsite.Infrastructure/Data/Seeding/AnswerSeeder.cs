@@ -168,7 +168,7 @@ new Answer { Id = Guid.Parse("050f3b61-47a5-4a75-ae9a-9c37e7ca55f5"), AnswerText
 new Answer { Id = Guid.Parse("b4e285aa-877b-455d-973b-d9233bd27f65"), AnswerText = "Kuwait", ExtraInfo = "37.9%", QuestionId = Guid.Parse("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"), Points = 9, Place = 9},
 new Answer { Id = Guid.Parse("f4d99ae3-6dee-42ca-8a1f-cf2981fdeada"), AnswerText = "United states", ExtraInfo = "36.2%", QuestionId = Guid.Parse("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"), Points = 10, Place = 10},
 new Answer { Id = Guid.Parse("c30cadfe-954b-4f68-a0e3-f1c5bbf6149e"), AnswerText = "The united states", ExtraInfo = "36.2%", QuestionId = Guid.Parse("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"), Points = 10, Place = 10 },
-new Answer { Id = Guid.Parse("d62516b9-603f-4f97-849c-cb01cbb1737f"), AnswerText = "Usa", ExtraInfo = "36.2%", QuestionId = Guid.Parse("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"), Points = 10, Place = 10 },
+new Answer { Id = Guid.Parse("d62516b9-603f-4f97-849c-cb01cbb1737f"), AnswerText = "USA", ExtraInfo = "36.2%", QuestionId = Guid.Parse("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"), Points = 10, Place = 10 },
 
 new Answer { Id = Guid.Parse("d76355ef-92a8-4d70-813d-bd6e78a42ca5"), AnswerText = "Afghanistan", ExtraInfo = "", QuestionId = Guid.Parse("1f56b20c-54b1-40a3-9b60-c510f27912ae"), Points = 1, Place = 1 },
 new Answer { Id = Guid.Parse("9a8b9078-e33f-40b9-b53e-17e50fc61d54"), AnswerText = "Albania", ExtraInfo = "", QuestionId = Guid.Parse("1f56b20c-54b1-40a3-9b60-c510f27912ae"), Points = 2, Place = 2},
