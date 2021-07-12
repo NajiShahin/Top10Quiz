@@ -108,14 +108,14 @@
                     .post(url + "api/Question/" + this.question[this.currentQuestion].id + "/answer", answerRequest)
                     .then(response => {
                         console.log(response.data)
-                        if (response.data.points == 0) {
-                            var audio = new Audio('../audio/wrong.mp3');
-                            audio.play();
-                        } else {
+                        if (response.data.points != 0 && this.answered[response.data.place - 1] == false) {
                             this.score += response.data.place
                             this.answered[response.data.place - 1] = true
-                            this.ShowGuessedAnswers();
                             var audio = new Audio('../audio/correct.mp3');
+                            audio.play();
+                            this.ShowGuessedAnswers();
+                        } else {
+                            var audio = new Audio('../audio/wrong.mp3');
                             audio.play();
                         }
                     })
