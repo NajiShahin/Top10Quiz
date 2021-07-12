@@ -7,6 +7,6 @@ namespace QuizWebsite.Core.Dtos
 {
     public class CategoryRequestDto : BaseDto
     {
-        public string Name { get; set; }
+        public string AnswerText { get; set; }
     }
 }

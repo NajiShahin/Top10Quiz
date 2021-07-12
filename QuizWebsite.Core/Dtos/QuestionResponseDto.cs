@@ -9,6 +9,5 @@ namespace QuizWebsite.Core.Dtos
     {
         public string QuestionText { get; set; }
         public ICollection<CategoryResponseDto> Category { get; set; }
-        public ICollection<AnswerResponseDto> Answers { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace QuizWebsite.Core.Mapping
                         Name = c.Category.Name
                     })));
 
-            CreateMap<AnswerRequestDto, Answer>();
+            CreateMap<AnswerDetailRequestDto, Answer>();
             CreateMap<Answer, AnswerResponseDto>();
 
             CreateMap<CategoryRequestDto, Category>();
