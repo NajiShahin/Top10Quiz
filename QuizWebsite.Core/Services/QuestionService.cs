@@ -76,9 +76,9 @@ namespace QuizWebsite.Core.Services
             var question = await questionRepository.GetByIdAsync(QuestionId);
             foreach (var answer in question.Answers)
             {
-                if (answerRequest.AnswerText == answer.AnswerText)
+                var result = question.Answers.FirstOrDefault(a => a.AnswerText == answerRequest.AnswerText);
+                if (result != null)
                 {
-                    var result = answer.AnswerText;
                     var dto = mapper.Map<AnswerResponseDto>(result);
                     return dto;
                 }

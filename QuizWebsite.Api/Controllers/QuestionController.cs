@@ -44,6 +44,13 @@ namespace QuizWebsite.Api.Controllers
             return Ok(question);
         }
 
+        [HttpPost("{id}/answer")]
+        public async Task<IActionResult> Answer(Guid id, AnswerRequestDto answerRequest)
+        {
+            var questionResponseDto = await questionService.Answer(id,answerRequest);
+            return Ok(questionResponseDto);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post(QuestionRequestDto questionRequest)
         {
