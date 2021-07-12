@@ -71,6 +71,21 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
+        public async Task<AnswerResponseDto> Answer(Guid QuestionId, AnswerRequestDto answerRequest)
+        {
+            var question = await questionRepository.GetByIdAsync(QuestionId);
+            foreach (var answer in question.Answers)
+            {
+                if (answerRequest.AnswerText == answer.AnswerText)
+                {
+                    var result = answer.AnswerText;
+                    var dto = mapper.Map<AnswerResponseDto>(result);
+                    return dto;
+                }
+            }
+            return new AnswerResponseDto();
+        }
+
         private void OrderByPlace(IEnumerable<Question> list)
         {
             for (int i = 0; i < list.Count(); i++)
@@ -84,7 +99,7 @@ namespace QuizWebsite.Core.Services
             question.Answers = question.Answers.OrderBy(e => e.Place).ToList();
         }
 
-        public List<Question> Shuffle(List<Question> list)
+        private List<Question> Shuffle(List<Question> list)
         {
             Random rng = new Random();
 

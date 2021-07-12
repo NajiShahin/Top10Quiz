@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QuizWebsite.Core.Dtos
 {
-    public class AnswerRequestDto : BaseDto
+    public class AnswerRequestDto
     {
         public string AnswerText { get; set; }
     }
