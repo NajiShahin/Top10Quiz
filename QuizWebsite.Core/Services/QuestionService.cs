@@ -88,18 +88,12 @@ namespace QuizWebsite.Core.Services
 
         private bool IsSimilar(string userAnswer, string answer) //userAnswer is what user answered, answer is the real answer
         {
-            answer = answer.ToUpper().Replace(" THE ", "").Replace(" OF ", "")
-                .Replace(" AND ", "").Replace(".", "").Replace("-", "")
-                .Replace("!", "").Replace("THE ", "").Replace("OF ", "")
-                .Replace("AND ", "").Replace(" THE", "").Replace(" OF", "")
-                .Replace(" AND", "");
-            answer = answer.Replace(" ", "");
-            userAnswer = userAnswer.ToUpper().Replace(" THE ", "").Replace(" OF ", "")
-                .Replace(" AND ", "").Replace(".", "").Replace("-", "")
-                .Replace("!", "").Replace("THE ", "").Replace("OF ", "")
-                .Replace("AND ", "").Replace(" THE", "").Replace(" OF", "")
-                .Replace(" AND", "");
-            userAnswer = userAnswer.Replace(" ", "");
+            answer = answer.ToUpper().Replace("THE", "").Replace("OF", "")
+                .Replace("AND", "").Replace(".", "").Replace("-", "")
+                .Replace("!", "").Replace(" ", "");
+            userAnswer = userAnswer.ToUpper().Replace("THE", "").Replace("OF", "")
+                .Replace("AND", "").Replace(".", "").Replace("-", "")
+                .Replace("!", "").Replace(" ", "");
             if (answer == userAnswer)
             {
                 return true;
