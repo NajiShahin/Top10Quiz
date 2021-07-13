@@ -10,7 +10,7 @@ using QuizWebsite.Infrastructure.Data;
 namespace QuizWebsite.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210713172453_InitialMigration")]
+    [Migration("20210713191623_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f6368b9e-60fe-4378-bc64-0481d0c29b11"),
+                            Id = new Guid("bffe8a72-8073-4ada-92ed-1e4c32b255fd"),
                             AnswerText = "Russia",
                             ExtraInfo = "17,098,242 Km²",
                             Place = 1,
@@ -60,7 +60,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("55ce15cc-a469-4d18-833b-fa7e4c14f22a"),
+                            Id = new Guid("bc99ff80-9474-4d2c-8271-bf7c74fec633"),
                             AnswerText = "Canada",
                             ExtraInfo = "9,984,670 Km²",
                             Place = 2,
@@ -69,7 +69,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a62c9e88-a5aa-4f8a-a904-50a349866f4b"),
+                            Id = new Guid("1229746c-3170-4cfb-81c1-1e20283d739a"),
                             AnswerText = "USA",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -78,7 +78,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c2b5631f-a7d5-44ab-87e4-8f130f69544a"),
+                            Id = new Guid("95545a70-2339-4498-bb5b-76a7ee86c249"),
                             AnswerText = "The United States",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -87,7 +87,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("eba4a065-ec8d-43b9-9320-8b26bca656ef"),
+                            Id = new Guid("feb848ca-4c97-43d7-a272-11f9106a96c9"),
                             AnswerText = "United States",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -96,7 +96,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c586dc45-928c-4d47-a0d4-10bea07df032"),
+                            Id = new Guid("747d71a8-9c20-47b4-bce5-8fb69764f687"),
                             AnswerText = "China",
                             ExtraInfo = "9,596,960 Km²",
                             Place = 4,
@@ -105,7 +105,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0938e6c2-5db2-49ce-8b57-52e04b3e863f"),
+                            Id = new Guid("dacc8489-7392-4096-92dd-15bdf7262687"),
                             AnswerText = "Brazil",
                             ExtraInfo = "8,515,770 Km²",
                             Place = 5,
@@ -114,7 +114,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f02a5321-2b58-44f8-9c96-1ebc772f9367"),
+                            Id = new Guid("e2f66f44-0fed-40f8-96b1-6ea9bb6381c8"),
                             AnswerText = "Australia",
                             ExtraInfo = "7,741,220 Km²",
                             Place = 6,
@@ -123,7 +123,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b0521f76-476b-4778-8bce-94a873623645"),
+                            Id = new Guid("37977a17-77a6-4564-80cd-b41653fcfd42"),
                             AnswerText = "India",
                             ExtraInfo = "3,287,263 Km²",
                             Place = 7,
@@ -132,7 +132,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d4da20ae-ad35-4470-a323-ef48d7fb3010"),
+                            Id = new Guid("4997302a-4469-48df-b381-f6928852888b"),
                             AnswerText = "Argentina",
                             ExtraInfo = "2,780,400 Km²",
                             Place = 8,
@@ -141,7 +141,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("39003bc2-040f-4652-967f-a6a2e6fce251"),
+                            Id = new Guid("bd3b4d5a-5f98-4b48-ae7e-57ad7a21d54c"),
                             AnswerText = "Kazakhstan",
                             ExtraInfo = "2,724,900 Km²",
                             Place = 9,
@@ -150,7 +150,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("72c527d4-35cd-4103-836f-c9327a4c806e"),
+                            Id = new Guid("be5b90c2-404e-4ed2-81c1-0c8de5e733fc"),
                             AnswerText = "Algeria",
                             ExtraInfo = "2,381,740 Km²",
                             Place = 10,
@@ -159,7 +159,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("73f28ac2-0379-436a-9379-1ad5c51fdd72"),
+                            Id = new Guid("d32c4a73-6cbe-44c2-8e06-e89fe08f2e1c"),
                             AnswerText = "China",
                             ExtraInfo = "1,439,323,776",
                             Place = 1,
@@ -168,7 +168,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("66793834-3229-469f-a302-167aa71ae43d"),
+                            Id = new Guid("8c0d283b-2d46-4c30-8d7b-e94282082c56"),
                             AnswerText = "India",
                             ExtraInfo = "1,380,004,385",
                             Place = 2,
@@ -177,7 +177,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3a8f8129-ae67-40c0-b795-c76662ced2c4"),
+                            Id = new Guid("940e5dd2-0cd4-4281-b74f-acdb4a732c35"),
                             AnswerText = "USA",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -186,7 +186,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e2545917-20f8-4e60-aed3-7ee04791aad6"),
+                            Id = new Guid("661228e7-3c62-41ca-861a-a014ae55b4ff"),
                             AnswerText = "The United States",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -195,7 +195,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0f5315ac-42b3-4894-9123-a134d5b6b36f"),
+                            Id = new Guid("afa30840-1f82-4b97-94a9-2b7464bdccd6"),
                             AnswerText = "United States",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -204,7 +204,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("17dc8127-ab20-453a-b79c-b034a169c23d"),
+                            Id = new Guid("f7d55c33-5111-442d-baeb-0d522c72faf7"),
                             AnswerText = "Indonesia",
                             ExtraInfo = "273,523,615",
                             Place = 4,
@@ -213,7 +213,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("22b3f4c8-c74f-4883-972f-11a33cdddab5"),
+                            Id = new Guid("a9af6cbe-fd9a-407c-8bd5-c50e3db6efb1"),
                             AnswerText = "Pakistan",
                             ExtraInfo = "220,892,340",
                             Place = 5,
@@ -222,7 +222,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bd5b592d-d607-465f-a631-5e1db582c59d"),
+                            Id = new Guid("7db6352f-5aec-405c-bd9d-707ddc556571"),
                             AnswerText = "Brazil",
                             ExtraInfo = "212,559,417",
                             Place = 6,
@@ -231,7 +231,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("25be00ab-4426-4a83-96d1-55228abf445a"),
+                            Id = new Guid("249f2a24-79e0-4784-9299-2da08a1633d8"),
                             AnswerText = "Nigeria",
                             ExtraInfo = "206,139,589",
                             Place = 7,
@@ -240,7 +240,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("05105b6c-83b0-453a-bc96-7ce0d91ea2b4"),
+                            Id = new Guid("b8cd6ccc-16e1-4544-8f69-62eced557eda"),
                             AnswerText = "Bangladesh",
                             ExtraInfo = "164,689,383",
                             Place = 8,
@@ -249,7 +249,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e016533b-df9e-406b-904c-26caa2eceaa8"),
+                            Id = new Guid("6eebefcd-1845-4983-a598-055b18aa76af"),
                             AnswerText = "Russia",
                             ExtraInfo = "145,934,462",
                             Place = 9,
@@ -258,7 +258,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("139cbf44-3d1b-44e4-8bad-e338af0fe4f2"),
+                            Id = new Guid("bba1457f-4536-42dd-bd45-a61d918e61bb"),
                             AnswerText = "Mexico",
                             ExtraInfo = "128,932,753",
                             Place = 10,
@@ -2496,6 +2496,9 @@ namespace QuizWebsite.Infrastructure.Migrations
                     b.Property<string>("QuestionText")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("QuestionType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Questions");
@@ -2505,121 +2508,141 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000001"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the biggest countries of the world"
+                            QuestionText = "What are the biggest countries of the world",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000002"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the biggest population"
+                            QuestionText = "What countries have the biggest population",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the smallest countries of the world"
+                            QuestionText = "What are the smallest countries of the world",
+                            QuestionType = "Top10"
                         },
                         new
                         {
                             Id = new Guid("3aa5a782-c701-4a75-b4f0-98bab8d144e2"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the happiest countries (according to the World Happiness Report in 2020)"
+                            QuestionText = "What are the happiest countries (according to the World Happiness Report in 2020)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("98220fe9-135d-423b-ab8f-14d57eafcb38"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the biggest population of muslims"
+                            QuestionText = "What countries have the biggest population of muslims",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("962c9cae-4ba2-4506-98c2-1ccdd9535b40"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the biggest population of catholics"
+                            QuestionText = "What countries have the biggest population of catholics",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("8630be8d-b3e3-4b1e-babc-207819fe2f46"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the highest GDP (nominal)"
+                            QuestionText = "What countries have the highest GDP (nominal)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("26775c7d-97ea-415d-b73c-7629759656cf"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the highest GDP per capita"
+                            QuestionText = "What countries have the highest GDP per capita",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("5c08cfa3-a2e0-43bd-a574-184cb3bde2d2"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the highest prison population"
+                            QuestionText = "What countries have the highest prison population",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("5a563a77-0a11-459a-8162-d886acf1f898"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the least happiest countries (according to the World Happiness Report in 2020)"
+                            QuestionText = "What are the least happiest countries (according to the World Happiness Report in 2020)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("59dddd6c-7a6e-4e43-9869-088ef430421f"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "Which countries spend the most on their military"
+                            QuestionText = "Which countries spend the most on their military",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the most obese countries of the world (2016)"
+                            QuestionText = "What are the most obese countries of the world (2016)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("1f56b20c-54b1-40a3-9b60-c510f27912ae"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the first countries if you order them alphabetically (A-Z)"
+                            QuestionText = "What are the first countries if you order them alphabetically (A-Z)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("00437064-4748-470c-b77e-046703a2a19a"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the newest countries in the world"
+                            QuestionText = "What are the newest countries in the world",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("e75284fe-a777-4d85-aad5-e68b817b2d50"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the countries with the youngest median age (2020)"
+                            QuestionText = "What are the countries with the youngest median age (2020)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("f1b44064-927d-45bf-9fe4-14c2d98d774c"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the countries with the oldest median age (2020)"
+                            QuestionText = "What are the countries with the oldest median age (2020)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "Countries with most homocides per 100,000 people"
+                            QuestionText = "Countries with most homocides per 100,000 people",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("f5b97548-cb81-44b5-8830-aba39f71c079"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What are the countries with the highest murder count per year"
+                            QuestionText = "What are the countries with the highest murder count per year",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("9cafb85f-730b-4a26-a661-b2d2dda74534"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the highest fertility rate (2019)"
+                            QuestionText = "What countries have the highest fertility rate (2019)",
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("9429778e-df46-4c10-a0d4-80fecbfdf3f9"),
                             CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            QuestionText = "What countries have the lowest fertility rate (2019)"
+                            QuestionText = "What countries have the lowest fertility rate (2019)",
+                            QuestionType = "Top 10"
                         });
                 });
 
