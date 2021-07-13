@@ -90,11 +90,15 @@ namespace QuizWebsite.Core.Services
         {
             answer = answer.ToUpper().Replace(" THE ", "").Replace(" OF ", "")
                 .Replace(" AND ", "").Replace(".", "").Replace("-", "")
-                .Replace("!", "").Replace("?", "");
+                .Replace("!", "").Replace("THE ", "").Replace("OF ", "")
+                .Replace("AND ", "").Replace(" THE", "").Replace(" OF", "")
+                .Replace(" AND", "");
             answer = answer.Replace(" ", "");
-            userAnswer = userAnswer.Replace(" THE ", "").Replace(" OF ", "")
+            userAnswer = userAnswer.ToUpper().Replace(" THE ", "").Replace(" OF ", "")
                 .Replace(" AND ", "").Replace(".", "").Replace("-", "")
-                .Replace("!", "").Replace("?", "").ToUpper();
+                .Replace("!", "").Replace("THE ", "").Replace("OF ", "")
+                .Replace("AND ", "").Replace(" THE", "").Replace(" OF", "")
+                .Replace(" AND", "");
             userAnswer = userAnswer.Replace(" ", "");
             if (answer == userAnswer)
             {
