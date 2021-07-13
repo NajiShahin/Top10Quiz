@@ -7,35 +7,42 @@
         </tr>
 
     </table>
-
-    <div class="m-3 flex-h-center" v-if="!gameOver">
-        <div v-if="question[0].id == ''" class="loader text-center"></div>
-        <h3 class="text-center" v-else>{{question[currentQuestion].questionText}}</h3>
-    </div>
-    <div class="center-block input-group mb-3 flex-h-center" v-if="!gameOver">
-        <div v-if="!guessed" class="center-block input-group mb-3 flex-h-center">
-            <input type="text" name="name" value="" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
-            <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
+    <div v-if="gameOver">
+        <div class="m-3 flex-h-center">
+            <div v-if="question[0].id == ''" class="loader text-center"></div>
+            <h3 class="text-center" v-else>{{question[currentQuestion].questionText}}</h3>
         </div>
-        <div v-else class="wrapper">
-            <div class="leftHalf"></div>
-            <div class="spinner"></div>
-            <div class="rightHalf"></div>
+        <div class="center-block input-group mb-3 flex-h-center" v-if="!gameOver">
+            <div v-if="!guessed" class="center-block input-group mb-3 flex-h-center">
+                <input type="text" name="name" value="" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
+                <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
+            </div>
+            <div v-else class="wrapper">
+                <div class="leftHalf"></div>
+                <div class="spinner"></div>
+                <div class="rightHalf"></div>
+            </div>
+        </div>
+        <div class="horizontal-center">
+            <table class="w-100 horizontal-center">
+                <tr v-for="index in 5" class="text-center">
+                    <td class="unanswered text-center">
+                        <b v-if="answered[index-1]">{{answers[index-1].answerText}}</b>
+                        <b v-else>{{index}}</b>
+                    </td>
+                    <td class="text-center unanswered">
+                        <b v-if="answered[index+4]">{{answers[index+4].answerText}}</b>
+                        <b v-else>{{index+5}}</b>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-    <div class="horizontal-center">
-        <table class="w-100 horizontal-center">
-            <tr v-for="index in 5" class="text-center">
-                <td class="unanswered text-center">
-                    <b v-if="answered[index-1]">{{answers[index-1].answerText}}</b>
-                    <b v-else>{{index}}</b>
-                </td>
-                <td class="text-center unanswered">
-                    <b v-if="answered[index+4]">{{answers[index+4].answerText}}</b>
-                    <b v-else>{{index+5}}</b>
-                </td>
-            </tr>
-        </table>
+    <div class="m-5">
+        <h1 class="flex-h-center">Game Over</h1><br />
+        <div class="flex-h-center">
+            <button class="btn btn-dark" v-on:click="">Try Again</button>
+        </div>
     </div>
 </div>
 
