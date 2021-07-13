@@ -14,7 +14,7 @@
         </div>
         <div class="center-block input-group mb-3 flex-h-center" v-if="!gameOver">
             <div v-if="!guessed" class="center-block input-group mb-3 flex-h-center">
-                <input type="text" name="name" value="" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
+                <input type="text" name="name" value="" autocomplete="off" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
                 <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
             </div>
             <div v-else class="wrapper">
