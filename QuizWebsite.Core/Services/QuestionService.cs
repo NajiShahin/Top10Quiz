@@ -98,6 +98,21 @@ namespace QuizWebsite.Core.Services
             {
                 return true;
             }
+            if (answer.Length == userAnswer.Length)
+            {
+                int count = 0;
+                for (int i = 0; i < answer.Length; i++)
+                {
+                    if (answer[i] != userAnswer[i])
+                    {
+                        count++;
+                    }
+                }
+                if (count <= 1)
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
