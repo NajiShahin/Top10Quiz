@@ -1,1 +1,111 @@
-﻿
+﻿<div id="app" class="horizontal-center m-2">
+    <table class="w-100">
+        <tr>
+            <td class="text-left p-33"><h5>Score: {{score}}</h5></td>
+            <td class="text-center p-33"><h5>Wrong: <span v-for="mistake in wrongAnswers">x</span></h5></td>
+            <td class="text-right p-33"><h5>Question: {{currentQuestion + 1}}</h5></td>
+        </tr>
+
+    </table>
+
+    <div class="m-3 flex-h-center">
+        <div v-if="question[0].id == ''" class="loader text-center"></div>
+        <h3 class="text-center" v-else>{{question[currentQuestion].questionText}}</h3>
+    </div>
+    <div class="center-block input-group mb-3 flex-h-center">
+        <input type="text" name="name" value="" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
+        <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
+    </div>
+    <div class="horizontal-center">
+        <table class="w-100 horizontal-center">
+            <tr v-for="index in 5" class="text-center">
+                <td class="unanswered text-center">
+                    <b v-if="answered[index-1]">{{answers[index-1].answerText}}</b>
+                    <b v-else>{{index}}</b>
+                </td>
+                <td class="text-center unanswered">
+                    <b v-if="answered[index+4]">{{answers[index+4].answerText}}</b>
+                    <b v-else>{{index+5}}</b>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            score: 0,
+            currentQuestion: 0,
+            question: [{
+                questionText: "",
+                category: {
+                    name: "",
+                    id: ""
+                },
+                answers: {
+                    answerText: ""
+                },
+                id: ""
+            }],
+
+            answered: [false, false, false, false, false,
+                false, false, false, false, false],
+            answers: [],
+            answer: "",
+            wrongAnswers: 0,
+            guessed: false
+        },
+        created: function () {
+            axios
+                .get(RandomQuestionListUrl)
+                .then(response => this.question = response.data)
+        },
+        methods: {
+            ShowGuessedAnswers: function (answerResponse) {
+                this.answers[answerResponse.place - 1] = answerResponse
+            },
+            Submit: function () {
+                let answerRequest = {
+                    answerText: this.answer
+                }
+                axios
+                    .post(url + "api/Question/" + this.question[this.currentQuestion].id + "/answer", answerRequest)
+                    .then(response => {
+                        if (response.data.points != 0 && this.answered[response.data.place - 1] == false) {
+                            this.score += response.data.place
+                            this.answered[response.data.place - 1] = true
+                            var audio = new Audio('../audio/correct.mp3');
+                            audio.play();
+                            this.ShowGuessedAnswers(response.data);
+                            setTimeout(() => this.NextQuestion(), 2800);
+                        } else {
+                            this.wrongAnswers++;
+                            var audio = new Audio('../audio/wrong.mp3');
+                            audio.play();
+                            if (this.wrongAnswers != 3) {
+                                setTimeout(() => this.NextQuestion(), 2800);
+                            } else {
+
+                            }
+                        }
+                    })
+
+                this.answer = ""
+                this.guessed = true
+                this.guesses++
+            },
+            NextQuestion: function () {
+                this.answered = [false, false, false, false, false,
+                    false, false, false, false, false]
+                this.guessed = false
+                this.answer = ""
+                this.currentQuestion++;
+            }
+        },
+    });
+
+
+</script>
