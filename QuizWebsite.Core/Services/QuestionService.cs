@@ -139,6 +139,32 @@ namespace QuizWebsite.Core.Services
                     return true;
                 return false;
             }
+            if (answer.Length == userAnswer.Length + 1)
+            {
+                int count = 0;
+                for (int i = 0; i < userAnswer.Length; i++)
+                {
+                    if (userAnswer.Length != i)
+                    {
+                        if (answer[i] != userAnswer[i])
+                        {
+                            count++;
+                            if (answer[i + 1] != userAnswer[i])
+                            {
+                                count++;
+                            }
+                        }
+                    }
+                }
+                if (count <=1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
             return false;
         }
 
