@@ -59,7 +59,7 @@ namespace QuizWebsite.Core.Services
             OrderByPlace(result);
             result = Shuffle(result.ToList());
             var dto = mapper.Map<IEnumerable<QuestionResponseDto>>(result);
-            
+
             return dto;
         }
 
@@ -76,7 +76,7 @@ namespace QuizWebsite.Core.Services
             var question = await questionRepository.GetByIdAsync(QuestionId);
             foreach (var answer in question.Answers)
             {
-                var result = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText,a.AnswerText));
+                var result = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText, a.AnswerText));
                 if (result != null)
                 {
                     var dto = mapper.Map<AnswerResponseDto>(result);
@@ -111,6 +111,33 @@ namespace QuizWebsite.Core.Services
                 }
                 if (count <= 1)
                     return true;
+                return false;
+            }
+            if (answer.Length == userAnswer.Length - 1)
+            {
+                int count = 0;
+                for (int i = 0; i < userAnswer.Length + 1; i++)
+                {
+                    if (answer.Length != i)
+                    {
+                        if (answer[i] != userAnswer[i] && count == 0)
+                        {
+                            userAnswer = userAnswer.Remove(i, 1);
+                            count++;
+                            if (answer == userAnswer)
+                                return true;
+                        }
+                    }
+                    else
+                    {
+                        userAnswer = userAnswer.Remove(userAnswer.Length - 1, 1);
+                        if (answer == userAnswer)
+                            return true;
+                    }
+                }
+                if (answer == userAnswer)
+                    return true;
+                return false;
             }
             return false;
         }
