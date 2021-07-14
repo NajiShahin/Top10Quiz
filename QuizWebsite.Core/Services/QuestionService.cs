@@ -99,23 +99,18 @@ namespace QuizWebsite.Core.Services
             userAnswer = userAnswer.Replace(" THE", "").Replace(" OF", "")
                 .Replace(" AND", "").Replace(" ", "");
             if (answer == userAnswer)
-            {
                 return true;
-            }
+
             if (answer.Length == userAnswer.Length)
             {
                 int count = 0;
                 for (int i = 0; i < answer.Length; i++)
                 {
                     if (answer[i] != userAnswer[i])
-                    {
                         count++;
-                    }
                 }
                 if (count <= 1)
-                {
                     return true;
-                }
             }
             return false;
         }
