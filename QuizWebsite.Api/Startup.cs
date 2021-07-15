@@ -37,10 +37,12 @@ namespace QuizWebsite.Api
             services.AddCors();
 
             services.AddScoped<IQuestionRepository, QuestionRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IQuestionService, QuestionService>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
