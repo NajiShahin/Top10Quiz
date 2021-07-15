@@ -1,8 +1,8 @@
 ﻿<div id="app" class="horizontal-center m-2">
     <h3>Selected Categories</h3>
     <div v-for="category in categories">
-        <input type="checkbox" id="category.name" v-bind:value="category.id" v-model="cookie">
-        <label for="category.name">{{ category.name }}</label>
+        <input type="checkbox" v-bind:id="category.name" v-bind:value="category.id" v-model="cookie">
+        <label v-bind:for="category.name">{{ category.name }}</label>
     </div>
     <button class="btn btn-primary" v-on:click="AddCookie">Submit</button>
 </div>
@@ -32,7 +32,7 @@
                 .then(response => {
                     this.categories = response.data
                     if (typeof (GetCookie("CategoryPreference")) != "undefined") {
-                        this.cookie = GetCookie("CategoryPreference").split(',')
+                        this.cookie = GetCookie("CategoryPreference").split('&')
                     } else {
                         for (var i = 0; i < response.data.length; i++) {
                             this.cookie.push(response.data[i].id)
@@ -42,8 +42,17 @@
         },
         methods: {
             AddCookie: function () {
+                let cookieText = "";
+                for (var i = 0; i < this.cookie.length; i++) {
+                    if (i != this.cookie.length - 1) {
+                        cookieText += this.cookie[i] + "&"
+                    } else {
+                        cookieText += this.cookie[i]
+                    }
+                }
+                console.log(cookieText)
                 document.cookie =
-                    "CategoryPreference=" + "00000000-0000-0000-0000-100000000001" + ";" + ";path=/";
+                    "CategoryPreference=" + cookieText + ";" + ";path=/";
             }
         },
     });
