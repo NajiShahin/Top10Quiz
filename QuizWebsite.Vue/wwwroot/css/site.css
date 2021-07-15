@@ -215,3 +215,9 @@ body {
         transform: rotate(360deg);
     }
 }
+
+.top-right-absolute {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+}
