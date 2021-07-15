@@ -13,6 +13,11 @@ namespace QuizWebsite.Vue.Controllers
             return View();
         }
 
+        public IActionResult Categories()
+        {
+            return View();
+        }
+
         public IActionResult Classic()
         {
             return View();
