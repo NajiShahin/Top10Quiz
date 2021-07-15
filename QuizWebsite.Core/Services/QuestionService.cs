@@ -147,7 +147,9 @@ namespace QuizWebsite.Core.Services
                     {
                         if (answer[i] != userAnswer[i])
                         {
-                            count++;
+                            if (count == 0)
+                                count++;
+                            
                             if (answer[i + 1] != userAnswer[i])
                             {
                                 count++;
