@@ -100,7 +100,7 @@ namespace QuizWebsite.Core.Services
             if (answer == userAnswer)
                 return true;
 
-            if (answer.Length == userAnswer.Length)
+            if (answer.Length == userAnswer.Length && answer.Length >= 5)
             {
                 int count = 0;
                 for (int i = 0; i < answer.Length; i++)
@@ -112,7 +112,7 @@ namespace QuizWebsite.Core.Services
                     return true;
                 return false;
             }
-            if (answer.Length == userAnswer.Length - 1)
+            if (answer.Length == userAnswer.Length - 1 && answer.Length >= 5)
             {
                 int count = 0;
                 for (int i = 0; i < userAnswer.Length + 1; i++)
@@ -138,7 +138,7 @@ namespace QuizWebsite.Core.Services
                     return true;
                 return false;
             }
-            if (answer.Length == userAnswer.Length + 1)
+            if (answer.Length == userAnswer.Length + 1 && answer.Length >= 5)
             {
                 int count = 0;
                 for (int i = 0; i < userAnswer.Length; i++)
