@@ -35,10 +35,7 @@ namespace QuizWebsite.Core.Mapping
             CreateMap<Answer, AnswerResponseDto>();
 
             CreateMap<CategoryRequestDto, Category>();
-            CreateMap<Category, CategoryResponseDto>()
-                .ForMember(dest => dest.Id,
-                opt => opt.MapFrom(src => src.CategoryQuestions
-                .Select(c => c.CategoryId)));
+            CreateMap<Category, CategoryResponseDto>();
 
         }
     }
