@@ -1,7 +1,52 @@
-﻿
-@{
-    ViewData["Title"] = "Categories";
-}
+﻿<div id="app" class="horizontal-center m-2">
+    <h3>Selected Categories</h3>
+    <div v-for="category in categories">
+        <input type="checkbox" id="category.name" v-bind:value="category.id" v-model="cookie">
+        <label for="category.name">{{ category.name }}</label>
+    </div>
+    <button class="btn btn-primary" v-on:click="AddCookie">Submit</button>
+</div>
 
-<h1>Categories</h1>
 
+<script>
+    function GetCookie(name) {
+
+        var c = document.cookie.split(';');
+        cookies = {};
+        for (i = c.length - 1; i >= 0; i--) {
+            C = c[i].split('=');
+            cookies[C[0]] = C[1];
+        }
+        return cookies[name]
+    }
+
+    var app = new Vue({
+        el: "#app",
+        data: {
+            categories: "",
+            cookie: []
+        },
+        created: function () {
+            axios
+                .get(url + "api/category")
+                .then(response => {
+                    this.categories = response.data
+                    if (typeof (GetCookie("CategoryPreference")) != "undefined") {
+                        this.cookie = GetCookie("CategoryPreference").split(',')
+                    } else {
+                        for (var i = 0; i < response.data.length; i++) {
+                            this.cookie.push(response.data[i].id)
+                        }
+                    }
+                })
+        },
+        methods: {
+            AddCookie: function () {
+                document.cookie =
+                    "CategoryPreference=" + "00000000-0000-0000-0000-100000000001" + ";" + ";path=/";
+            }
+        },
+    });
+
+
+</script>
