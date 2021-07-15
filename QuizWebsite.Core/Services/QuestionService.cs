@@ -74,15 +74,14 @@ namespace QuizWebsite.Core.Services
         public async Task<AnswerResponseDto> Answer(Guid QuestionId, AnswerRequestDto answerRequest)
         {
             var question = await questionRepository.GetByIdAsync(QuestionId);
-            foreach (var answer in question.Answers)
+
+            var result = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText, a.AnswerText));
+            if (result != null)
             {
-                var result = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText, a.AnswerText));
-                if (result != null)
-                {
-                    var dto = mapper.Map<AnswerResponseDto>(result);
-                    return dto;
-                }
+                var dto = mapper.Map<AnswerResponseDto>(result);
+                return dto;
             }
+
             return new AnswerResponseDto();
         }
 
@@ -156,7 +155,7 @@ namespace QuizWebsite.Core.Services
                         }
                     }
                 }
-                if (count <=1)
+                if (count <= 1)
                 {
                     return true;
                 }
