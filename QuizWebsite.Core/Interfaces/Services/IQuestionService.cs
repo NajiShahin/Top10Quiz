@@ -15,5 +15,7 @@ namespace QuizWebsite.Core.Interfaces.Services
         Task<QuestionDetailResponseDto> UpdateAsync(QuestionRequestDto questionRequest);
         Task DeleteAsync(Guid id);
         Task<AnswerResponseDto> Answer(Guid QuestionId,AnswerRequestDto answerRequest);
+        Task<IEnumerable<QuestionResponseDto>> SearchByCategories(string categoryIds); //Seperated by '&'
+        Task<IEnumerable<QuestionResponseDto>> SearchByCategoriesRandomOrder(string categoryIds); //Seperated by '&'
     }
 }
