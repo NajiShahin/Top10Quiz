@@ -28,5 +28,20 @@ namespace QuizWebsite.Infrastructure.Repositories
                     .ThenInclude(cq => cq.Category)
                 .AsNoTracking();
         }
+
+        public async Task<IEnumerable<Question>> SearchByCategories(string categoryIds)
+        {
+            var questions = await GetAllAsync().ToListAsync();
+            List<Question> filteredQuestions = new List<Question>();
+            for (int i = 0; i < questions.Count(); i++)
+            {
+                var categories = questions[i].CategoryQuestions.Select(q => q.CategoryId.ToString()).ToList();
+                if (categoryIds.Split('&').Intersect(categories).Any())
+                {
+                    filteredQuestions.Add(questions[i]);
+                }
+            }
+            return filteredQuestions;
+        }
     }
 }

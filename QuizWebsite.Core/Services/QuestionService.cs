@@ -85,6 +85,20 @@ namespace QuizWebsite.Core.Services
             return new AnswerResponseDto();
         }
 
+        public async Task<IEnumerable<QuestionResponseDto>> SearchByCategories(string categoryIds)
+        {
+            var questions = await questionRepository.SearchByCategories(categoryIds);
+            return mapper.Map<IEnumerable<QuestionResponseDto>>(questions);
+        }
+
+        public async Task<IEnumerable<QuestionResponseDto>> SearchByCategoriesRandomOrder(string categoryIds)
+        {
+            var questions = await questionRepository.SearchByCategories(categoryIds);
+            OrderByPlace(questions);
+            questions = Shuffle(questions.ToList());
+            return mapper.Map<IEnumerable<QuestionResponseDto>>(questions);
+        }
+
         private bool IsSimilar(string userAnswer, string answer) //userAnswer is what user answered, answer is the real answer
         {
             answer = answer.ToUpper().Replace("THE ", "").Replace("OF ", "")
