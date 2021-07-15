@@ -16,6 +16,7 @@
             <div v-if="!guessed" class="center-block input-group mb-3 flex-h-center">
                 <input id="answer" type="text" name="name" value="" autocomplete="off" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
                 <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
+                <div>{{Focus()}}</div>
             </div>
             <div v-else class="wrapper">
                 <div class="leftHalf"></div>
@@ -124,7 +125,6 @@
                 this.guessed = false
                 this.answer = ""
                 this.currentQuestion++;
-                document.getElementById("answer").focus();
             },
             TryAgain: function () {
                 axios
@@ -139,6 +139,11 @@
                 this.answer = ""
                 this.wrongAnswers = 0
                 this.guessed = false
+            },
+            Focus: function () {
+                setTimeout(function () {
+                    document.getElementById("answer").focus();
+                }, 100);
             }
         },
     });
