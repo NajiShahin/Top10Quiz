@@ -20,17 +20,41 @@ namespace QuizWebsite.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] string categoryIds)
         {
-            var questions = await questionService.ListAllAsync();
-            return Ok(questions);
+            if (categoryIds != null)
+            {
+                var questions = await questionService.SearchByCategories(categoryIds);
+                if (questions.Any())
+                {
+                    return Ok(questions);
+                }
+                return NotFound($"There were no questions found with categorId {categoryIds}");
+            }
+            else
+            {
+                var questions = await questionService.ListAllAsync();
+                return Ok(questions);
+            }
         }
 
         [HttpGet("Randomize")]
-        public async Task<IActionResult> GetRandomOrder()
+        public async Task<IActionResult> GetRandomOrder([FromQuery] string categoryIds)
         {
-            var questions = await questionService.ListAllAsyncRandomOrder();
-            return Ok(questions);
+            if (categoryIds != null)
+            {
+                var questions = await questionService.SearchByCategoriesRandomOrder(categoryIds);
+                if (questions.Any())
+                {
+                    return Ok(questions);
+                }
+                return NotFound($"There were no questions found with categorId {categoryIds}");
+            }
+            else
+            {
+                var questions = await questionService.ListAllAsyncRandomOrder();
+                return Ok(questions);
+            }
         }
 
         [HttpGet("{id}")]
