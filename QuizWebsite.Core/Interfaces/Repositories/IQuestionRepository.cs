@@ -8,6 +8,6 @@ namespace QuizWebsite.Core.Interfaces.Repositories
 {
     public interface IQuestionRepository : IRepository<Question>
     {
-        Task<IEnumerable<Question>> SearchByCategories(string categoryIds); //Seperated by '&'
+        Task<IEnumerable<Question>> SearchByCategoryAndType(string categoryIds, string type); //Seperated by '&'
     }
 }
