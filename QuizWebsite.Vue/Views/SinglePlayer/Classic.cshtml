@@ -120,7 +120,7 @@
                             if (this.wrongAnswers <= 2) {
                                 var audio = new Audio('../audio/wrong.mp3');
                                 audio.play();
-                                this.wrongAnswers++;
+                                this.wrongAnswers++; 
                                 if (this.wrongAnswers <= 2) {
                                     setTimeout(() => this.NextQuestion(), 2000);
                                 } else {
