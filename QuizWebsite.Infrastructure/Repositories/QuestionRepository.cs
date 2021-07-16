@@ -29,19 +29,46 @@ namespace QuizWebsite.Infrastructure.Repositories
                 .AsNoTracking();
         }
 
-        public async Task<IEnumerable<Question>> SearchByCategories(string categoryIds)
+        public async Task<IEnumerable<Question>> SearchByCategoryAndType(string categoryIds, string type)
         {
             var questions = await GetAllAsync().ToListAsync();
-            List<Question> filteredQuestions = new List<Question>();
-            for (int i = 0; i < questions.Count(); i++)
+            if (categoryIds != null && type != null)
             {
-                var categories = questions[i].CategoryQuestions.Select(q => q.CategoryId.ToString()).ToList();
-                if (categoryIds.Split('&').Intersect(categories).Any())
+                List<Question> filteredQuestions = new List<Question>();
+                for (int i = 0; i < questions.Count(); i++)
                 {
-                    filteredQuestions.Add(questions[i]);
+                    var categories = questions[i].CategoryQuestions.Select(q => q.CategoryId.ToString()).ToList();
+                    if (categoryIds.Split('&').Intersect(categories).Any())
+                    {
+                        filteredQuestions.Add(questions[i]);
+                    }
+                }
+                return filteredQuestions.Where(q => q.QuestionType == type);
+            }
+            else
+            {
+                if (categoryIds != null && type == null)
+                {
+                    List<Question> filteredQuestions = new List<Question>();
+                    for (int i = 0; i < questions.Count(); i++)
+                    {
+                        var categories = questions[i].CategoryQuestions.Select(q => q.CategoryId.ToString()).ToList();
+                        if (categoryIds.Split('&').Intersect(categories).Any())
+                        {
+                            filteredQuestions.Add(questions[i]);
+                        }
+                    }
+                    return filteredQuestions;
+                }
+                else if(categoryIds == null && type != null)
+                {
+                    return questions.Where(q => q.QuestionType == type);
+                }
+                else
+                {
+                    return questions;
                 }
             }
-            return filteredQuestions;
         }
     }
 }
