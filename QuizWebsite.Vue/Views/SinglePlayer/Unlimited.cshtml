@@ -113,7 +113,7 @@
                     answerText: this.answer
                 }
                 axios
-                    .post(url + "api/Question/" + this.question[this.currentQuestion].id + "/answer", answerRequest)
+                    .post(url + "api/Questions/" + this.question[this.currentQuestion].id + "/answer", answerRequest)
                     .then(response => {
                         if (response.data.points != 0 && this.answered[response.data.place - 1] == false) {
                             this.score += response.data.place
