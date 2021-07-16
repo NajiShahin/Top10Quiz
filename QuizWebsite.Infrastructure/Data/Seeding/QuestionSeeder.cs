@@ -31,8 +31,16 @@ new Question { Id = Guid.Parse(" f1b44064-927d-45bf-9fe4-14c2d98d774c"), Questio
 new Question { Id = Guid.Parse(" 43cb9f67-8568-4a8d-81c6-110a622787bb"), QuestionText = "Countries with most homicides per 100,000 people", QuestionType = "Top 10" },
 new Question { Id = Guid.Parse(" f5b97548-cb81-44b5-8830-aba39f71c079"), QuestionText = "What are the countries with the highest murder count per year", QuestionType = "Top 10" },
 new Question { Id = Guid.Parse(" 9cafb85f-730b-4a26-a661-b2d2dda74534"), QuestionText = "What countries have the highest fertility rate (2019)", QuestionType = "Top 10" },
-new Question { Id = Guid.Parse(" 9429778e-df46-4c10-a0d4-80fecbfdf3f9"), QuestionText = "What countries have the lowest fertility rate (2019)", QuestionType = "Top 10" } //20
+new Question { Id = Guid.Parse(" 9429778e-df46-4c10-a0d4-80fecbfdf3f9"), QuestionText = "What countries have the lowest fertility rate (2019)", QuestionType = "Top 10" }, //20
 
+new Question { Id = Guid.Parse(" 62732694-8646-4ded-a4ac-c51dfce4dfc6"), QuestionText = "What countries have won the most gold medals at the olympics", QuestionType = "Top 10" },
+new Question { Id = Guid.Parse(" db0edb42-f12b-432f-82ec-5d16a51f13f0"), QuestionText = "What countries have the most amount of total immigrants", QuestionType = "Top 10" },
+new Question { Id = Guid.Parse(" 03744a50-cdd5-43c1-898d-b69df8168820"), QuestionText = "What countries have the most percentage of immigrants", QuestionType = "Top 10" },
+new Question { Id = Guid.Parse(" 961761d2-f15d-4853-b8f9-91b9745be1b8"), QuestionText = "What are the countries that drink the most beer per capita", QuestionType = "Top 10" },
+new Question { Id = Guid.Parse(" 4cfea5e6-dec6-40ea-8d7e-6f8034a45b82"), QuestionText = "What are the countries with the most unesco world heritage sites", QuestionType = "Top 10" }, //25
+new Question { Id = Guid.Parse(" 94e5f344-ef61-44c6-b209-9b805ca42880"), QuestionText = "What are the most visited countries in the world (2019)", QuestionType = "Top 10" },
+new Question { Id = Guid.Parse(" 3e7b6791-8e14-4284-8201-87d7ddc0850b"), QuestionText = "What countries have the most billionaires (2021)", QuestionType = "Top 10" },
+new Question { Id = Guid.Parse(" f6d70c09-f3a9-4c9e-8baf-808916af4291"), QuestionText = "What countries have the most millionaires (2021)", QuestionType = "Top 10" },
 
                 );
         }

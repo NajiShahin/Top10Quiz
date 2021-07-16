@@ -31,7 +31,16 @@ new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-1000000
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("43cb9f67-8568-4a8d-81c6-110a622787bb") },
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("f5b97548-cb81-44b5-8830-aba39f71c079") },
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("9cafb85f-730b-4a26-a661-b2d2dda74534") },
-new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9") }
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("9429778e-df46-4c10-a0d4-80fecbfdf3f9") },
+
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("62732694-8646-4ded-a4ac-c51dfce4dfc6") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("db0edb42-f12b-432f-82ec-5d16a51f13f0") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("03744a50-cdd5-43c1-898d-b69df8168820") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("961761d2-f15d-4853-b8f9-91b9745be1b8") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("94e5f344-ef61-44c6-b209-9b805ca42880") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("3e7b6791-8e14-4284-8201-87d7ddc0850b") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("f6d70c09-f3a9-4c9e-8baf-808916af4291") },
                 );
         }
     }
