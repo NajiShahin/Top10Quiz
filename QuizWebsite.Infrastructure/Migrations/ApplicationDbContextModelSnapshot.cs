@@ -49,7 +49,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("861f8088-212a-4d41-b28a-87119bd1f7d0"),
+                            Id = new Guid("086d0b16-23bf-4e8d-a38d-064a2d77365d"),
                             AnswerText = "Russia",
                             ExtraInfo = "17,098,242 Km²",
                             Place = 1,
@@ -58,7 +58,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d0cf431f-f431-468d-a492-73bbc255263a"),
+                            Id = new Guid("0bab2c7c-c347-4d9f-82dc-cc4385011138"),
                             AnswerText = "Canada",
                             ExtraInfo = "9,984,670 Km²",
                             Place = 2,
@@ -67,7 +67,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6c092972-36ba-4c47-84ff-df708d24c61f"),
+                            Id = new Guid("93361b1a-2f6d-4e56-995e-58260b4ac295"),
                             AnswerText = "USA",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -76,8 +76,8 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3abf73bb-1404-4a65-a8da-5b4db3af4415"),
-                            AnswerText = "The United States",
+                            Id = new Guid("d71304d2-9ea1-4c7d-b343-a3a225cd9a35"),
+                            AnswerText = "US",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
                             Points = 3,
@@ -85,7 +85,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("722253fb-694a-4016-b823-6f9d8350146b"),
+                            Id = new Guid("1997ef72-1f21-4bdb-9a94-76e208c8b5a3"),
                             AnswerText = "United States",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -94,7 +94,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8ab3bb38-c8e0-4512-adf1-2207af010b05"),
+                            Id = new Guid("c0429fd0-a11d-4e70-ad00-d81563d8407c"),
                             AnswerText = "China",
                             ExtraInfo = "9,596,960 Km²",
                             Place = 4,
@@ -103,7 +103,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e892c793-c66f-4860-a341-a1cae6e54c02"),
+                            Id = new Guid("e2520dd9-80c9-40c8-818c-e3e0df406f20"),
                             AnswerText = "Brazil",
                             ExtraInfo = "8,515,770 Km²",
                             Place = 5,
@@ -112,7 +112,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f53644c1-2858-4701-855f-e2a2ff5090f3"),
+                            Id = new Guid("0368a1ff-3dc5-4701-8fef-62cee04039b9"),
                             AnswerText = "Australia",
                             ExtraInfo = "7,741,220 Km²",
                             Place = 6,
@@ -121,7 +121,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5bab574d-b042-406d-9feb-189cb062fad0"),
+                            Id = new Guid("59079ffd-5583-4e9e-985d-7acb468af634"),
                             AnswerText = "India",
                             ExtraInfo = "3,287,263 Km²",
                             Place = 7,
@@ -130,7 +130,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("25c2359f-5c79-4abd-9f23-b41107648a59"),
+                            Id = new Guid("9e4e3722-1f30-4998-92fc-bc75e50624c9"),
                             AnswerText = "Argentina",
                             ExtraInfo = "2,780,400 Km²",
                             Place = 8,
@@ -139,7 +139,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("212372b8-e3b2-4705-b639-0a33ea855214"),
+                            Id = new Guid("562940b4-1829-456d-b33d-8982585639d3"),
                             AnswerText = "Kazakhstan",
                             ExtraInfo = "2,724,900 Km²",
                             Place = 9,
@@ -148,7 +148,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b39e3ff2-ba1e-4296-96b0-611a749b0ecb"),
+                            Id = new Guid("82f763f6-1dcf-4eab-98ed-2115b5973aae"),
                             AnswerText = "Algeria",
                             ExtraInfo = "2,381,740 Km²",
                             Place = 10,
@@ -157,7 +157,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e59cf3b0-cb77-4bb0-ac36-2281a5605a69"),
+                            Id = new Guid("d6b6a866-ba36-4fa1-9814-b020178b6ad0"),
                             AnswerText = "China",
                             ExtraInfo = "1,439,323,776",
                             Place = 1,
@@ -166,7 +166,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("595932f0-d3c5-4c82-864b-a05112071c11"),
+                            Id = new Guid("94bc34d2-599c-45eb-926c-65a06ffad4f8"),
                             AnswerText = "India",
                             ExtraInfo = "1,380,004,385",
                             Place = 2,
@@ -175,7 +175,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("863ad65a-3a9e-49c9-bd68-21e8faea7b72"),
+                            Id = new Guid("d2837ec5-d7b2-4028-8347-96a9e098021b"),
                             AnswerText = "USA",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -184,8 +184,8 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("48aa6c25-2d3b-4e69-b126-b6e6e2f94273"),
-                            AnswerText = "The United States",
+                            Id = new Guid("29769e3e-8b0f-4f17-8270-86d7c1dfbcc7"),
+                            AnswerText = "US",
                             ExtraInfo = "331,002,651",
                             Place = 3,
                             Points = 3,
@@ -193,7 +193,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6b38ff26-cc5d-4c37-a1b9-69d5a4094ea6"),
+                            Id = new Guid("834d9228-4f7b-4e5c-9799-2077bec4f785"),
                             AnswerText = "United States",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -202,7 +202,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f95979f3-f207-4da6-bf3a-6b702fc5e5d5"),
+                            Id = new Guid("f194fe67-4e50-4cee-a951-23c843bbfbef"),
                             AnswerText = "Indonesia",
                             ExtraInfo = "273,523,615",
                             Place = 4,
@@ -211,7 +211,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b13fa1ca-23d6-4551-8fc4-fa3a145f3ad1"),
+                            Id = new Guid("0b9be615-6cf1-4858-b7f5-0f1252ebee21"),
                             AnswerText = "Pakistan",
                             ExtraInfo = "220,892,340",
                             Place = 5,
@@ -220,7 +220,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("795ad314-1a7e-44f2-84bd-364ae6e8f4e7"),
+                            Id = new Guid("9cd75326-b796-4c9d-aa66-7435ad73ccda"),
                             AnswerText = "Brazil",
                             ExtraInfo = "212,559,417",
                             Place = 6,
@@ -229,7 +229,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8f13e08c-33f1-464f-9062-e7f74f605e34"),
+                            Id = new Guid("28a7515c-286e-43d1-9dfc-121ad09837ea"),
                             AnswerText = "Nigeria",
                             ExtraInfo = "206,139,589",
                             Place = 7,
@@ -238,7 +238,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b86e5c7a-054e-45d6-8550-b1885f8704ab"),
+                            Id = new Guid("4c389cff-ecdb-466c-bced-3c880825644b"),
                             AnswerText = "Bangladesh",
                             ExtraInfo = "164,689,383",
                             Place = 8,
@@ -247,7 +247,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0e680525-2f0a-4139-8bce-16adcc9e1224"),
+                            Id = new Guid("00364313-de00-45c9-9880-874d9ec89257"),
                             AnswerText = "Russia",
                             ExtraInfo = "145,934,462",
                             Place = 9,
@@ -256,7 +256,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8fa417d5-ce54-4d97-a940-c85c10354174"),
+                            Id = new Guid("7a54f441-e1a5-494a-bef9-d4de8836cbcb"),
                             AnswerText = "Mexico",
                             ExtraInfo = "128,932,753",
                             Place = 10,
@@ -626,7 +626,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("05c85253-6a3c-4949-b917-33690c555c76"),
-                            AnswerText = "The United states",
+                            AnswerText = "US",
                             ExtraInfo = "69,300,000",
                             Place = 4,
                             Points = 4,
@@ -707,7 +707,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("44b3e676-296d-4ebb-b037-8c6964c96c6b"),
-                            AnswerText = "The united states",
+                            AnswerText = "US",
                             ExtraInfo = "$22,675,271",
                             Place = 1,
                             Points = 1,
@@ -887,7 +887,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("edd78977-5121-41d5-8aff-120c8a07c633"),
-                            AnswerText = "The united states",
+                            AnswerText = "US",
                             ExtraInfo = "",
                             Place = 7,
                             Points = 7,
@@ -941,7 +941,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("1e82c829-a73c-428f-91d4-92c898beca64"),
-                            AnswerText = "The united states",
+                            AnswerText = "US",
                             ExtraInfo = "2,121,600",
                             Place = 1,
                             Points = 1,
@@ -1148,7 +1148,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("8300df46-baf2-4ef9-8972-ddc25886eaf2"),
-                            AnswerText = "The united states",
+                            AnswerText = "US",
                             ExtraInfo = "$778,000,000",
                             Place = 1,
                             Points = 1,
@@ -1346,7 +1346,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c30cadfe-954b-4f68-a0e3-f1c5bbf6149e"),
-                            AnswerText = "The united states",
+                            AnswerText = "US",
                             ExtraInfo = "36.2%",
                             Place = 10,
                             Points = 10,
@@ -2012,7 +2012,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("1df063d7-bba0-4b52-9363-f014dbc84540"),
-                            AnswerText = "The United States",
+                            AnswerText = "US",
                             ExtraInfo = "16,214",
                             Place = 6,
                             Points = 6,
@@ -2341,6 +2341,1554 @@ namespace QuizWebsite.Infrastructure.Migrations
                             Place = 10,
                             Points = 10,
                             QuestionId = new Guid("9429778e-df46-4c10-a0d4-80fecbfdf3f9")
+                        },
+                        new
+                        {
+                            Id = new Guid("50e20bbf-eafd-4d33-858e-d746086af773"),
+                            AnswerText = "United States",
+                            ExtraInfo = "1022",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("4f8f5230-05d4-483c-8a37-752acde618fe"),
+                            AnswerText = "USA",
+                            ExtraInfo = "1022",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("297452cf-bbaa-43dd-96e1-aa6b208ae2e9"),
+                            AnswerText = "US",
+                            ExtraInfo = "1022",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("f0e2c3cd-39d6-41b6-8d21-5cbd3acbd70d"),
+                            AnswerText = "Soviet union",
+                            ExtraInfo = "544",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("17b9bf74-2c72-4da6-a1e0-6f5d70c240a9"),
+                            AnswerText = "Russia",
+                            ExtraInfo = "544",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("9eb8978f-84f3-4cc9-8aa8-2a2d178a1202"),
+                            AnswerText = "USSR",
+                            ExtraInfo = "544",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("ae0a2109-cc1b-4e78-a0c9-6c770d542328"),
+                            AnswerText = "Germany",
+                            ExtraInfo = "428",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("14a1abbc-fd81-488d-baf3-b8ff8e3ee630"),
+                            AnswerText = "United Kingdom",
+                            ExtraInfo = "263",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("3d0fab4a-eaac-4504-b113-fdfff12af3ac"),
+                            AnswerText = "UK",
+                            ExtraInfo = "263",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("fb4548c3-230e-43b7-bf23-77077956b950"),
+                            AnswerText = "Great Britain",
+                            ExtraInfo = "263",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("8dde02f4-53c5-41b4-8b87-1bca802048d9"),
+                            AnswerText = "Chin",
+                            ExtraInfo = "224",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("bc2e7f08-4104-4f32-9360-257c2178d9c7"),
+                            AnswerText = "France",
+                            ExtraInfo = "212",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("41c16a69-d2a1-462e-ac66-3382e8d661cc"),
+                            AnswerText = "Italy",
+                            ExtraInfo = "206",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("90e701ac-671c-4b81-bcf6-8fc03b217d30"),
+                            AnswerText = "Hungary",
+                            ExtraInfo = "175",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("a97ae551-1874-4894-aa09-2ab7a357dda3"),
+                            AnswerText = "Australia",
+                            ExtraInfo = "147",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("43691707-5073-4c15-9ad3-1d414cf3873e"),
+                            AnswerText = "Sweden",
+                            ExtraInfo = "145",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            Id = new Guid("8a1efd85-1d7d-432e-8da8-db27617fec1e"),
+                            AnswerText = "United states",
+                            ExtraInfo = "50,700,000",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("43c3f59f-9ebb-4f48-b922-505fa4fcc181"),
+                            AnswerText = "US",
+                            ExtraInfo = "50,700,000",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("ee3dd4d6-f219-4913-83d9-11853bb234af"),
+                            AnswerText = "USA",
+                            ExtraInfo = "50,700,000",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("0566832a-400a-4c29-94cb-c9a30a5e2d1a"),
+                            AnswerText = "Germany",
+                            ExtraInfo = "13,100,000",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("1d47e0ec-475b-4daf-9300-fd4fef38e7b9"),
+                            AnswerText = "Saudi Arabia",
+                            ExtraInfo = "13,100,000",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("b8779747-4115-4fd1-9644-5b310c064b0a"),
+                            AnswerText = "Russia",
+                            ExtraInfo = "11,600,000",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("ca8665cc-a686-4e7e-b2dc-c712d5a17f18"),
+                            AnswerText = "United Kingdom",
+                            ExtraInfo = "9,600,000",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("3aa6adcb-e031-46a7-bbe8-c166ce68eff6"),
+                            AnswerText = "UK",
+                            ExtraInfo = "9,600,000",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("c26ca33f-b864-4283-9bd3-b4f8b3fb31e7"),
+                            AnswerText = "United Arab Emirates",
+                            ExtraInfo = "8,600,000",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("666f02d3-86c0-45f0-80c3-0cccf9073dfd"),
+                            AnswerText = "UAE",
+                            ExtraInfo = "8,600,000",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("a404388d-3f38-461e-9842-7851a7a04e67"),
+                            AnswerText = "France",
+                            ExtraInfo = "8,300,000",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("0c3f402d-3469-44db-b15a-423bdea88ca8"),
+                            AnswerText = "Canada",
+                            ExtraInfo = "8,000,000",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("c007d748-7d4c-4c9f-bff6-dbf213a3013e"),
+                            AnswerText = "Australia",
+                            ExtraInfo = "7,500,000",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("8bef0d32-e2aa-42cb-b070-cda9716cdeb4"),
+                            AnswerText = "Italy",
+                            ExtraInfo = "6,273,722",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            Id = new Guid("f57577aa-1c95-4d0b-b247-96c8e0e9a86a"),
+                            AnswerText = "Holy See",
+                            ExtraInfo = "100%",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("a5c1fc15-4529-4aa9-af48-503f3956f93a"),
+                            AnswerText = "Vatican City",
+                            ExtraInfo = "100%",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("2566c4cb-8a98-451e-98a1-1275bbced23e"),
+                            AnswerText = "Vatican",
+                            ExtraInfo = "100%",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("e250091c-b072-4a16-9c7f-a439f644aa0e"),
+                            AnswerText = "UAE",
+                            ExtraInfo = "87.9%",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("00390daa-ea1e-4c99-9c73-b9fb739d6d25"),
+                            AnswerText = "United Arab Emirates",
+                            ExtraInfo = "87.9%",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("3b30200c-3f47-40f8-b1d5-26b280de026e"),
+                            AnswerText = "Qatar",
+                            ExtraInfo = "78.7%",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("2d303ec7-006a-4525-b4c2-bdcefc3a1596"),
+                            AnswerText = "Kuwait",
+                            ExtraInfo = "72.1%",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("3dcae26e-99f5-415a-b6b6-cf3466951aa3"),
+                            AnswerText = "Monaco",
+                            ExtraInfo = "68.0%",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("a32f6b37-cadb-4de7-8618-0f1cdd3a4226"),
+                            AnswerText = "Liechtenstein",
+                            ExtraInfo = "67.0%",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("2642e150-509b-4b87-9b10-3593826a9478"),
+                            AnswerText = "Andorra",
+                            ExtraInfo = "58.5%",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("ee21f4ec-fb3a-42d2-a9ee-6d8d32fc27f0"),
+                            AnswerText = "Luxembourg",
+                            ExtraInfo = "47.4%",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("6ddb56ea-ddd1-446c-961b-5f13e5c254f7"),
+                            AnswerText = "Oman",
+                            ExtraInfo = "47.4%",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("38ccaacc-2507-4aa8-a1d0-08eaa4fda739"),
+                            AnswerText = "Bahrain",
+                            ExtraInfo = "46.0%",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            Id = new Guid("48ddba84-9d64-45d0-b86f-465caf7663b4"),
+                            AnswerText = "Czechia",
+                            ExtraInfo = "143.3 liters",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("dd061e14-86fa-43aa-b4ff-429b74265f9b"),
+                            AnswerText = "Czech Republic",
+                            ExtraInfo = "143.3 liters",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("0bdffb05-52d4-4a33-822e-585b825d1480"),
+                            AnswerText = "Namibia",
+                            ExtraInfo = "108 liters",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("6e6c1b23-aeaa-4974-80bf-9b7419f0ff7c"),
+                            AnswerText = "Austria",
+                            ExtraInfo = "106 liters",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("5d59c134-23a8-4cef-92c4-751c710ab551"),
+                            AnswerText = "Germany",
+                            ExtraInfo = "104.2 liters",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("8b89a7a1-9be8-42aa-997e-a30453c0f0b3"),
+                            AnswerText = "Poland",
+                            ExtraInfo = "100.8 liters",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("4064e0ce-a742-48f1-907d-945e577d3965"),
+                            AnswerText = "Ireland",
+                            ExtraInfo = "98.2 liters",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("e89dd155-6f71-4d37-8166-9602e7c08f59"),
+                            AnswerText = "Romania",
+                            ExtraInfo = "94.1 liters",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("da767135-e056-4665-b2dc-ac701f6ac298"),
+                            AnswerText = "Seychelles",
+                            ExtraInfo = "90 liters",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("45b1aef9-12cc-4804-bd66-d6310e274396"),
+                            AnswerText = "Estonia",
+                            ExtraInfo = "89.5 liters",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("501eb8f2-7bd5-4b9f-a485-5b644f98e047"),
+                            AnswerText = "Lithuania",
+                            ExtraInfo = "88.7 liters",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            Id = new Guid("1a594626-babe-454a-acb9-a225e800a3a2"),
+                            AnswerText = "Italy",
+                            ExtraInfo = "55",
+                            Place = 1,
+                            Points = 2,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("714de6a9-54ab-4a19-8c98-adee5a11302d"),
+                            AnswerText = "China",
+                            ExtraInfo = "55",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("1e72f6ad-fe9c-4322-9e60-f6ba3c63e904"),
+                            AnswerText = "Spain",
+                            ExtraInfo = "48",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("0fae628f-5be1-4cf9-a698-001360666384"),
+                            AnswerText = "Germany",
+                            ExtraInfo = "46",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("dce6f39b-490d-45f6-a09f-15ee1107f814"),
+                            AnswerText = "France",
+                            ExtraInfo = "45",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("7efdb539-f727-4002-87bd-292a8a459bc4"),
+                            AnswerText = "India",
+                            ExtraInfo = "38",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("8d446e4a-4624-4949-882b-eb47a52f0c5d"),
+                            AnswerText = "Mexico",
+                            ExtraInfo = "35",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("6d74cd11-c09e-42d3-8d52-72affdef112d"),
+                            AnswerText = "United Kingdom",
+                            ExtraInfo = "32",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("f1c11fd6-3fef-4d6e-b899-b0f79835b884"),
+                            AnswerText = "UK",
+                            ExtraInfo = "32",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("ed5402d4-1220-4c4d-8da5-783d42d695e6"),
+                            AnswerText = "Russia",
+                            ExtraInfo = "29",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("1d02ec78-2ce1-4a15-ba76-96f37e7cfb33"),
+                            AnswerText = "United States",
+                            ExtraInfo = "24",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("ff9d56e6-eda3-405e-aef2-af948812f6ce"),
+                            AnswerText = "USA",
+                            ExtraInfo = "24",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("b8ae7a31-87e5-42a9-adb8-23c73436231a"),
+                            AnswerText = "US",
+                            ExtraInfo = "24",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("151897e0-448b-42b9-9c25-6f8b0f33637d"),
+                            AnswerText = "Iran",
+                            ExtraInfo = "24",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("9a8eac45-ad2a-41cd-bef4-5e5129bdd9e5"),
+                            AnswerText = "United States and Iran",
+                            ExtraInfo = "24",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            Id = new Guid("d032b782-eb18-4468-b5dc-7ad05df54236"),
+                            AnswerText = "France",
+                            ExtraInfo = "",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("7cc6b771-3305-4af9-a3ac-6846167109b3"),
+                            AnswerText = "Spain",
+                            ExtraInfo = "83,500,000",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("44631498-ba2c-4a63-9e04-387db00ecc4e"),
+                            AnswerText = "United States",
+                            ExtraInfo = "79,300,000",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("99138389-6a3d-4a45-813c-34979d63cba3"),
+                            AnswerText = "US",
+                            ExtraInfo = "79,300,000",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("091bbd99-2750-4f49-8e1a-9a9319d47a5d"),
+                            AnswerText = "USA",
+                            ExtraInfo = "79,300,000",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("f9aa76e0-3238-4d54-8e57-68abef23da93"),
+                            AnswerText = "China",
+                            ExtraInfo = "64,700,000",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("98f3a511-a9dc-408b-9572-d0b8e6c46388"),
+                            AnswerText = "Italy",
+                            ExtraInfo = "64,500,000",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("da0b325a-1a74-4545-be90-d953dc0f447a"),
+                            AnswerText = "Turkey",
+                            ExtraInfo = "51,200,000",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("67631141-d815-4db2-bb91-9b414df322da"),
+                            AnswerText = "Mexico",
+                            ExtraInfo = "45,000,000",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("31a161da-2bbd-47b0-b2f2-376bfa2d24ba"),
+                            AnswerText = "Thailand",
+                            ExtraInfo = "39,800,000",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("433be202-6e63-4c57-b182-c6fbec5c2505"),
+                            AnswerText = "Germany",
+                            ExtraInfo = "39,600,000",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("355b6b79-ea86-4895-b0ff-4592ec808ed8"),
+                            AnswerText = "United Kingdom",
+                            ExtraInfo = "39,400,000",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("c209959e-79bc-4142-b183-1748aa2a4136"),
+                            AnswerText = "UK",
+                            ExtraInfo = "39,400,000",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            Id = new Guid("efbb6746-f0b8-43d7-95e3-baa4a69ab088"),
+                            AnswerText = "United States",
+                            ExtraInfo = "724",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("cb1b9835-dc8f-4d3a-a165-42996d17710e"),
+                            AnswerText = "USA",
+                            ExtraInfo = "724",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("4b94c070-6ea1-48ae-8ba0-e2b902958f56"),
+                            AnswerText = "US",
+                            ExtraInfo = "724",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("d8537d35-bfd2-457b-953a-c88dc76878dd"),
+                            AnswerText = "China",
+                            ExtraInfo = "698",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("670c80f9-4f3b-4c0a-a335-af0d722d845d"),
+                            AnswerText = "India",
+                            ExtraInfo = "177",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("ab5a0746-0932-466e-9bb0-291fce32f7cd"),
+                            AnswerText = "Germany",
+                            ExtraInfo = "136",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("956e60ca-b237-4849-be6d-a11b00c7446e"),
+                            AnswerText = "Russia",
+                            ExtraInfo = "117",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("b78259c9-4651-4016-bff8-ffdf0bc201a1"),
+                            AnswerText = "Brazil",
+                            ExtraInfo = "65",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("933ad30e-6af9-49bc-a198-54ee31bb8052"),
+                            AnswerText = "Canada",
+                            ExtraInfo = "64",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("059d6da6-cf11-4a06-aa8b-f2d27d279d4f"),
+                            AnswerText = "United Kingdom",
+                            ExtraInfo = "56",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("366cd954-1412-48d8-931a-d7e074c96f45"),
+                            AnswerText = "UK",
+                            ExtraInfo = "56",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("8124299b-9f62-446c-b05c-a011f170a06a"),
+                            AnswerText = "Italy",
+                            ExtraInfo = "51",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("b1b0d583-6093-41e6-884c-ca4357a96f7e"),
+                            AnswerText = "Japan",
+                            ExtraInfo = "49",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            Id = new Guid("1b95b5e9-9b62-4560-b714-e1d2d2ca6084"),
+                            AnswerText = "United States",
+                            ExtraInfo = "21,951,202",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("768f58ab-e13a-425a-9fdb-b6ed9116000b"),
+                            AnswerText = "US",
+                            ExtraInfo = "21,951,202",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("3878a0e9-c255-4fb5-9716-4964e7620135"),
+                            AnswerText = "USA",
+                            ExtraInfo = "21,951,202",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("e9b159bf-98ec-421f-87d1-8fdae51dda88"),
+                            AnswerText = "China",
+                            ExtraInfo = "5,279,467",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("1b35ee6f-c03c-4590-b31e-db1c1e85f766"),
+                            AnswerText = "Japan",
+                            ExtraInfo = "3,662,407",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("8f2f8e7e-aab8-435b-90ba-98f408c55ad2"),
+                            AnswerText = "Germany",
+                            ExtraInfo = "2,952,710",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("2508c9b8-c65e-487a-b283-4f4891509351"),
+                            AnswerText = "United Kingdom",
+                            ExtraInfo = "2,490,952",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("2a3fba24-de09-47b1-9cbf-12853b0bd8e9"),
+                            AnswerText = "UK",
+                            ExtraInfo = "2,490,952",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("1f64cbae-691c-404a-a67f-86ded93189d2"),
+                            AnswerText = "France",
+                            ExtraInfo = "2,468,939",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("24012389-5e16-4a20-a7ce-a15b32725d86"),
+                            AnswerText = "Australia",
+                            ExtraInfo = "1,804,644",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("d62cbb72-909f-44eb-9836-88908e92e1c0"),
+                            AnswerText = "Canada",
+                            ExtraInfo = "1,681,969",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("bc78b9f9-3dd8-4617-8ef7-a6f9da03e1ec"),
+                            AnswerText = "Italy",
+                            ExtraInfo = "1,479,830",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("055b21ea-6a37-46aa-bb75-9ab886d705ba"),
+                            AnswerText = "Spain",
+                            ExtraInfo = "1,146,911",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            Id = new Guid("35feb675-ceb0-4327-882a-fbc37781e067"),
+                            AnswerText = "George Washington",
+                            ExtraInfo = "",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("d3f9f1b1-c3cc-478e-9e9b-ae186b4c36ca"),
+                            AnswerText = "George",
+                            ExtraInfo = "",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("9aef2da7-bbeb-492e-b89b-fefa18e908dd"),
+                            AnswerText = "Washington",
+                            ExtraInfo = "",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("d08627b0-28e9-4dce-b06f-a36c9a892f9e"),
+                            AnswerText = "John Adams",
+                            ExtraInfo = "",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("ac4d603b-d4b6-4b26-a7df-22f037b3efd2"),
+                            AnswerText = "John",
+                            ExtraInfo = "",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("3569f6b3-6f96-4000-a40e-b11b4749846f"),
+                            AnswerText = "Adams",
+                            ExtraInfo = "",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("c618e33f-1a41-4b6b-b153-9cc980cc382e"),
+                            AnswerText = "Thomas Jefferson",
+                            ExtraInfo = "",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("7aab781b-ff86-4233-b6c4-db163670441f"),
+                            AnswerText = "Thomas",
+                            ExtraInfo = "",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("5485697c-8b81-41ad-ab6c-4894aae75cbe"),
+                            AnswerText = "Jefferson",
+                            ExtraInfo = "",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("85f55970-2982-4716-97c6-0f1610c2a3f9"),
+                            AnswerText = "James Madison",
+                            ExtraInfo = "",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("9a64606a-1c92-422e-bd28-336e916eddde"),
+                            AnswerText = "James",
+                            ExtraInfo = "",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("5c184be2-02d0-4bab-831f-0a85662f73d6"),
+                            AnswerText = "Madison",
+                            ExtraInfo = "",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("f42e19de-a49c-42b5-9549-bcadd897d04b"),
+                            AnswerText = "James Monroe",
+                            ExtraInfo = "",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("1cdaf6f5-15c6-4188-ac19-00c95c059010"),
+                            AnswerText = "James",
+                            ExtraInfo = "",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("5d4549af-5fb3-4e3b-9dcc-39c2b35e3c91"),
+                            AnswerText = "Monroe",
+                            ExtraInfo = "",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("d2efff2b-5e72-4745-94b6-3a32e21d70f5"),
+                            AnswerText = "John Quincy Adams",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("9d91836b-dab4-4ff8-af4c-40f5bfa04192"),
+                            AnswerText = "John",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("4c5ab592-e14b-41fb-9a2a-3d418158ae50"),
+                            AnswerText = "Quincy",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("1b84d497-83c9-41ff-a373-a98cf9d8242c"),
+                            AnswerText = "Adams",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("75a0677a-1dee-4df1-a7e2-d71ace8c3abf"),
+                            AnswerText = "John Q Adams",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("b312bcd5-5d2c-4207-8c9e-b49555635878"),
+                            AnswerText = "Andrew Jackson",
+                            ExtraInfo = "",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("2106719a-01a2-4c00-8642-b8b87937be93"),
+                            AnswerText = "Andrew",
+                            ExtraInfo = "",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("e763a728-7bc7-458d-acd6-4861245f3486"),
+                            AnswerText = "Jackson",
+                            ExtraInfo = "",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("6350c3ad-cb15-4c6e-9b97-73c35fbb9fd2"),
+                            AnswerText = "Martin Van Buren",
+                            ExtraInfo = "",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("f038107c-3674-4639-969a-b327eff3d5b5"),
+                            AnswerText = "Martin",
+                            ExtraInfo = "",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("a7de26c5-0a48-48fe-bc0c-9650262d10e4"),
+                            AnswerText = "Van Buren",
+                            ExtraInfo = "",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("9416206f-4983-4bba-93ee-a26ff1eb279a"),
+                            AnswerText = "Wiliam Henry Harrison",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("3ba56ff5-ec21-4046-a102-c484246d0566"),
+                            AnswerText = "William",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("bb68795b-1bb6-4500-ba92-ad1681283868"),
+                            AnswerText = "Henry",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("f175d48c-59c6-444a-91c1-4d68516e1940"),
+                            AnswerText = "Harrison",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("e68a3aaf-4938-48bc-97e0-46ff918ac19f"),
+                            AnswerText = "William H Harrison",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("d6702263-bebf-42fe-8174-4b66ca8882b4"),
+                            AnswerText = "John Tyler",
+                            ExtraInfo = "",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("aa3e23e7-b2cd-496a-b8cc-7f806f41d867"),
+                            AnswerText = "John",
+                            ExtraInfo = "",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("c8685809-5699-4b16-bb22-131b14683e30"),
+                            AnswerText = "Tyler",
+                            ExtraInfo = "",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            Id = new Guid("5cf08d9a-4b29-42c6-8c74-1df9ba7662ac"),
+                            AnswerText = "Joe Biden",
+                            ExtraInfo = "",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("f936df08-7f54-48d1-a39d-ef62db31c75a"),
+                            AnswerText = "Joe",
+                            ExtraInfo = "",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("bd473459-3b04-476b-b455-1b28b7499db1"),
+                            AnswerText = "Biden",
+                            ExtraInfo = "",
+                            Place = 1,
+                            Points = 1,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("204be055-f55c-4754-9cda-71bf878f144d"),
+                            AnswerText = "Donald Trump",
+                            ExtraInfo = "",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("a8aba7f3-42f7-4afd-ab08-217582642255"),
+                            AnswerText = "Donald",
+                            ExtraInfo = "",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("a14ee43f-2f30-4d6e-bd76-d5ac33f91233"),
+                            AnswerText = "Trump",
+                            ExtraInfo = "",
+                            Place = 2,
+                            Points = 2,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("b107fb6c-6598-487c-a21b-56ee882fc0a3"),
+                            AnswerText = "Barack Obama",
+                            ExtraInfo = "",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("f8a24985-db9e-49ed-90bb-5bb8dbbb6979"),
+                            AnswerText = "Barack",
+                            ExtraInfo = "",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("94097ca7-b21b-4da9-a395-28ce1f441ac1"),
+                            AnswerText = "Obama",
+                            ExtraInfo = "",
+                            Place = 3,
+                            Points = 3,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("88e7e916-46b8-4498-ab30-e24f7f145c7f"),
+                            AnswerText = "George W. Bush",
+                            ExtraInfo = "",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("b75c2d11-f75b-4031-b860-080bb8389477"),
+                            AnswerText = "George",
+                            ExtraInfo = "",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("328e3769-93f4-4cb6-981e-080a600a7026"),
+                            AnswerText = "Bush",
+                            ExtraInfo = "",
+                            Place = 4,
+                            Points = 4,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("f49aae66-85da-4ea1-8de7-0cc13d4e35f1"),
+                            AnswerText = "Bill Clinton",
+                            ExtraInfo = "",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("5ff14b67-22d6-4b55-a491-180f880665e1"),
+                            AnswerText = "Bill",
+                            ExtraInfo = "",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("488a6184-83c4-4e91-b4c2-7a934ae0aaf7"),
+                            AnswerText = "Clinton",
+                            ExtraInfo = "",
+                            Place = 5,
+                            Points = 5,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("fecfb305-b9a3-4536-9280-9c0584cab3fa"),
+                            AnswerText = "George H. W. Bush",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("c8e44155-2854-4101-a94b-52daf26b2e8b"),
+                            AnswerText = "George",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("5461e52a-d0f3-4a71-9821-33247d747f48"),
+                            AnswerText = "Bush",
+                            ExtraInfo = "",
+                            Place = 6,
+                            Points = 6,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("000a8aa7-3b00-431b-ab1c-8e0631ad570e"),
+                            AnswerText = "Ronald Reagan",
+                            ExtraInfo = "",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("deda491a-c1a7-4bc4-9aae-473b9600a56c"),
+                            AnswerText = "Ronald",
+                            ExtraInfo = "",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("90678433-5a10-47f0-a685-79d1b40d8838"),
+                            AnswerText = "Reagan",
+                            ExtraInfo = "",
+                            Place = 7,
+                            Points = 7,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("bf51e484-5b65-4d94-b839-fbb6f773cd92"),
+                            AnswerText = "Jimmy Carter",
+                            ExtraInfo = "",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("51b6338c-9f78-428c-8e10-75e3e785e7c2"),
+                            AnswerText = "Jimmy",
+                            ExtraInfo = "",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("85af9cf8-8bce-4325-8d19-1f2eaab19dec"),
+                            AnswerText = "Carter",
+                            ExtraInfo = "",
+                            Place = 8,
+                            Points = 8,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("694c5919-bd11-4da1-a263-a2120f143ead"),
+                            AnswerText = "Gerald",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("5f43a6b2-e004-43e3-85d6-ed2b58c9d55c"),
+                            AnswerText = "Ford",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("a952a3b8-4c40-4b2f-b29c-d43350aef08e"),
+                            AnswerText = "Gerald Ford",
+                            ExtraInfo = "",
+                            Place = 9,
+                            Points = 9,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("bc66300c-cd3e-467f-b60a-cdcc6ad0ac89"),
+                            AnswerText = "Richard Nixon",
+                            ExtraInfo = "",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("dab53230-336b-4826-bdd9-4b47d9b1073d"),
+                            AnswerText = "Richard",
+                            ExtraInfo = "",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            Id = new Guid("afbc127a-0d18-4ef5-916e-b023d62936c5"),
+                            AnswerText = "Nixon",
+                            ExtraInfo = "",
+                            Place = 10,
+                            Points = 10,
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
                         });
                 });
 
@@ -2362,6 +3910,16 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-100000000001"),
                             Name = "Countries"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-f000-900000000007"),
+                            Name = "History"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-1001-1001-1001-500000100005"),
+                            Name = "People"
                         });
                 });
 
@@ -2479,6 +4037,66 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
                             QuestionId = new Guid("9429778e-df46-4c10-a0d4-80fecbfdf3f9")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("03744a50-cdd5-43c1-898d-b69df8168820")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-0000-100000000001"),
+                            QuestionId = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-f000-900000000007"),
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-1001-1001-1001-500000100005"),
+                            QuestionId = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-0000-0000-f000-900000000007"),
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("00000000-1001-1001-1001-500000100005"),
+                            QuestionId = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13")
                         });
                 });
 
@@ -2488,8 +4106,17 @@ namespace QuizWebsite.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ChangeFrequency")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTimeChanged")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Dislikes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Likes")
+                        .HasColumnType("int");
 
                     b.Property<string>("QuestionText")
                         .HasColumnType("nvarchar(max)");
@@ -2505,141 +4132,301 @@ namespace QuizWebsite.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000001"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 6,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 102, DateTimeKind.Local).AddTicks(6383),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the biggest countries of the world",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000002"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 4,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1030),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the biggest population",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 6,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1087),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the smallest countries of the world",
-                            QuestionType = "Top10"
+                            QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("3aa5a782-c701-4a75-b4f0-98bab8d144e2"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1096),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the happiest countries (according to the World Happiness Report in 2020)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("98220fe9-135d-423b-ab8f-14d57eafcb38"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1100),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the biggest population of muslims",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("962c9cae-4ba2-4506-98c2-1ccdd9535b40"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1105),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the biggest population of catholics",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("8630be8d-b3e3-4b1e-babc-207819fe2f46"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1111),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the highest GDP (nominal)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("26775c7d-97ea-415d-b73c-7629759656cf"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1115),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the highest GDP per capita",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("5c08cfa3-a2e0-43bd-a574-184cb3bde2d2"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1120),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the highest prison population",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("5a563a77-0a11-459a-8162-d886acf1f898"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1124),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the least happiest countries (according to the World Happiness Report in 2020)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("59dddd6c-7a6e-4e43-9869-088ef430421f"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1129),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "Which countries spend the most on their military",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1135),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the most obese countries of the world (2016)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("1f56b20c-54b1-40a3-9b60-c510f27912ae"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 6,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1139),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the first countries if you order them alphabetically (A-Z)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("00437064-4748-470c-b77e-046703a2a19a"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 6,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1143),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the newest countries in the world",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("e75284fe-a777-4d85-aad5-e68b817b2d50"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1148),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the countries with the youngest median age (2020)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("f1b44064-927d-45bf-9fe4-14c2d98d774c"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1153),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the countries with the oldest median age (2020)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1158),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "Countries with most homicides per 100,000 people",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("f5b97548-cb81-44b5-8830-aba39f71c079"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1162),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What are the countries with the highest murder count per year",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("9cafb85f-730b-4a26-a661-b2d2dda74534"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1167),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the highest fertility rate (2019)",
                             QuestionType = "Top 10"
                         },
                         new
                         {
                             Id = new Guid("9429778e-df46-4c10-a0d4-80fecbfdf3f9"),
-                            CategoryId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1171),
+                            Dislikes = 0,
+                            Likes = 0,
                             QuestionText = "What countries have the lowest fertility rate (2019)",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1176),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What countries have won the most gold medals at the olympics",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1180),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What countries have the most amount of total immigrants",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("03744a50-cdd5-43c1-898d-b69df8168820"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1185),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What countries have the most percentage of immigrants",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1189),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What are the countries that drink the most beer per capita",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82"),
+                            ChangeFrequency = 4,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1194),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What are the countries with the most unesco world heritage sites",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880"),
+                            ChangeFrequency = 3,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1198),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What are the most visited countries in the world (2019)",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b"),
+                            ChangeFrequency = 2,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1202),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What countries have the most billionaires (2021)",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291"),
+                            ChangeFrequency = 2,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1207),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "What countries have the most millionaires (2021)",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b"),
+                            ChangeFrequency = 6,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1211),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "Who were the first ten presidents of the United States",
+                            QuestionType = "Top 10"
+                        },
+                        new
+                        {
+                            Id = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13"),
+                            ChangeFrequency = 5,
+                            DateTimeChanged = new DateTime(2021, 7, 17, 0, 19, 51, 105, DateTimeKind.Local).AddTicks(1215),
+                            Dislikes = 0,
+                            Likes = 0,
+                            QuestionText = "Who were the last ten presidents of the United States",
                             QuestionType = "Top 10"
                         });
                 });
