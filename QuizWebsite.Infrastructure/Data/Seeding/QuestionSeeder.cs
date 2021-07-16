@@ -14,7 +14,7 @@ namespace QuizWebsite.Infrastructure.Data.Seeding
 new Question { Id = Guid.Parse("00000000-0000-0000-0000-000000000001"), QuestionText = "What are the biggest countries of the world", QuestionType = "Top 10"},
 new Question { Id = Guid.Parse("00000000-0000-0000-0000-000000000002"), QuestionText = "What countries have the biggest population", QuestionType = "Top 10" },
 
-new Question { Id = Guid.Parse(" be90a71f-c2ee-4178-96c3-8adb2293b613"), QuestionText = "What are the smallest countries of the world", QuestionType = "Top10" },
+new Question { Id = Guid.Parse(" be90a71f-c2ee-4178-96c3-8adb2293b613"), QuestionText = "What are the smallest countries of the world", QuestionType = "Top 10" },
 new Question { Id = Guid.Parse(" 3aa5a782-c701-4a75-b4f0-98bab8d144e2"), QuestionText = "What are the happiest countries (according to the World Happiness Report in 2020)", QuestionType = "Top 10" },
 new Question { Id = Guid.Parse(" 98220fe9-135d-423b-ab8f-14d57eafcb38"), QuestionText = "What countries have the biggest population of muslims", QuestionType = "Top 10" },
 new Question { Id = Guid.Parse(" 962c9cae-4ba2-4506-98c2-1ccdd9535b40"), QuestionText = "What countries have the biggest population of catholics", QuestionType = "Top 10" },
