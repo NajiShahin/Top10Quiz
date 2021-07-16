@@ -28,7 +28,7 @@
         },
         created: function () {
             axios
-                .get(url + "api/category")
+                .get(url + "api/categories")
                 .then(response => {
                     this.categories = response.data
                     if (typeof (GetCookie("CategoryPreference")) != "undefined") {
