@@ -20,30 +20,51 @@ namespace QuizWebsite.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] string categoryIds)
+        public async Task<IActionResult> Get([FromQuery] string categoryIds, [FromQuery] string type)
         {
-            if (categoryIds != null)
+            if (categoryIds != null && type != null)
             {
-                var questions = await questionService.SearchByCategories(categoryIds);
+                var questions = await questionService.SearchByCategoriesAndTypeRandom(categoryIds, type);
                 if (questions.Any())
                 {
                     return Ok(questions);
                 }
-                return NotFound($"There were no questions found with categorId {categoryIds}");
+                return NotFound($"There were no questions found with categorId {categoryIds} with question type {type}");
             }
             else
             {
-                var questions = await questionService.ListAllAsync();
-                return Ok(questions);
+                if (type == null)
+                {
+                    var questions = await questionService.SearchByCategoriesAndTypeRandom(categoryIds, type);
+                    if (questions.Any())
+                    {
+                        return Ok(questions);
+                    }
+                    return NotFound($"There were no questions found with categorId {categoryIds}");
+                }
+                if (categoryIds == null)
+                {
+                    var questions = await questionService.SearchByCategoriesAndTypeRandom(categoryIds, type);
+                    if (questions.Any())
+                    {
+                        return Ok(questions);
+                    }
+                    return NotFound($"There were no questions found with question type {type}");
+                }
+                else
+                {
+                    var questions = await questionService.ListAllAsync();
+                    return Ok(questions);
+                }
             }
         }
 
         [HttpGet("Randomize")]
-        public async Task<IActionResult> GetRandomOrder([FromQuery] string categoryIds)
+        public async Task<IActionResult> GetRandomOrder([FromQuery] string categoryIds, [FromQuery] string type)
         {
             if (categoryIds != null)
             {
-                var questions = await questionService.SearchByCategoriesRandomOrder(categoryIds);
+                var questions = await questionService.SearchByCategoriesAndTypeRandom(categoryIds, type);
                 if (questions.Any())
                 {
                     return Ok(questions);
