@@ -40,6 +40,17 @@
 
 
 <script>
+    function GetCookie(name) {
+
+        var c = document.cookie.split(';');
+        cookies = {};
+        for (i = c.length - 1; i >= 0; i--) {
+            C = c[i].split('=');
+            cookies[C[0]] = C[1];
+        }
+        return cookies[name]
+    }
+
     var app = new Vue({
         el: "#app",
         data: {
@@ -56,7 +67,7 @@
                 },
                 id: ""
             }],
-
+            cookie: [],
             answered: [false, false, false, false, false,
                 false, false, false, false, false],
             answers: [],
@@ -65,16 +76,22 @@
             guessed: false
         },
         created: function () {
+            if (typeof (GetCookie("CategoryPreference")) != "undefined") {
+                this.cookie = GetCookie("CategoryPreference")
+            } else {
+                this.cookie = null
+            }
             axios
-                .get(RandomQuestionListUrl)
+                .get(url + "api/Questions/randomize?categoryIds=" + this.cookie + "&type=Top 10")
                 .then(response => {
                     this.question = response.data
                     document.getElementById("answer").focus();
-                })        },
+                })
+        },
         methods: {
             ShowAllQuestions: function () {
                 axios
-                    .get(url + "api/Question/" + this.question[this.currentQuestion].id)
+                    .get(url + "api/Questions/" + this.question[this.currentQuestion].id)
                     .then(response => {
                         this.question[this.currentQuestion] = response.data
                         this.answers = [];
