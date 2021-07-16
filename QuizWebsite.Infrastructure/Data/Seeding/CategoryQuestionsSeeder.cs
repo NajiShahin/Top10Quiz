@@ -41,6 +41,12 @@ new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-1000000
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("94e5f344-ef61-44c6-b209-9b805ca42880") },
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("3e7b6791-8e14-4284-8201-87d7ddc0850b") },
 new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-0000-100000000001"), QuestionId = Guid.Parse("f6d70c09-f3a9-4c9e-8baf-808916af4291") },
+
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-f000-900000000007"), QuestionId = Guid.Parse("7301c840-a51f-4e7e-9ead-a5d8e50d510b") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-1001-1001-1001-500000100005"), QuestionId = Guid.Parse("7301c840-a51f-4e7e-9ead-a5d8e50d510b") },
+
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-0000-0000-f000-900000000007"), QuestionId = Guid.Parse("da899e4f-63f2-4560-b693-1c1f13a17d13") },
+new CategoryQuestions { CategoryId = Guid.Parse("00000000-1001-1001-1001-500000100005"), QuestionId = Guid.Parse("da899e4f-63f2-4560-b693-1c1f13a17d13") }
                 );
         }
     }
