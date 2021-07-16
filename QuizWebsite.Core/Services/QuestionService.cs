@@ -85,15 +85,10 @@ namespace QuizWebsite.Core.Services
             return new AnswerResponseDto();
         }
 
-        public async Task<IEnumerable<QuestionResponseDto>> SearchByCategories(string categoryIds)
+        public async Task<IEnumerable<QuestionResponseDto>> SearchByCategoriesAndTypeRandom(string categoryIds, string type)
         {
-            var questions = await questionRepository.SearchByCategories(categoryIds);
-            return mapper.Map<IEnumerable<QuestionResponseDto>>(questions);
-        }
+            var questions = await questionRepository.SearchByCategoryAndType(categoryIds, type);
 
-        public async Task<IEnumerable<QuestionResponseDto>> SearchByCategoriesRandomOrder(string categoryIds)
-        {
-            var questions = await questionRepository.SearchByCategories(categoryIds);
             OrderByPlace(questions);
             questions = Shuffle(questions.ToList());
             return mapper.Map<IEnumerable<QuestionResponseDto>>(questions);
