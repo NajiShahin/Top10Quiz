@@ -9,10 +9,10 @@ namespace QuizWebsite.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : Controller
+    public class CategoriesController : Controller
     {
         private readonly ICategoryService categoryService;
-        public CategoryController(ICategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService)
         {
             this.categoryService = categoryService;
         }
@@ -23,7 +23,5 @@ namespace QuizWebsite.Api.Controllers
             var category = await categoryService.ListAllAsync();
             return Ok(category);
         }
-
-        
     }
 }

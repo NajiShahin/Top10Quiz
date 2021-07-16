@@ -10,10 +10,10 @@ namespace QuizWebsite.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuestionController : ControllerBase
+    public class QuestionsController : Controller
     {
         private readonly IQuestionService questionService;
-        public QuestionController(IQuestionService questionService)
+        public QuestionsController(IQuestionService questionService)
         {
             this.questionService = questionService;
         }
@@ -71,7 +71,7 @@ namespace QuizWebsite.Api.Controllers
         [HttpPost("{id}/answer")]
         public async Task<IActionResult> Answer(Guid id, AnswerRequestDto answerRequest)
         {
-            var questionResponseDto = await questionService.Answer(id,answerRequest);
+            var questionResponseDto = await questionService.Answer(id, answerRequest);
             return Ok(questionResponseDto);
         }
 
