@@ -2,13 +2,12 @@
 {
     public enum ChangeFrequency
     {
-        Weekly = 0,
-        Monthly = 1,
-        ThreeMonthly = 2,
-        SixMonthly = 3,
-        Yearly = 4,
-        TwoYearly = 5,
-        FourYearly = 6,
-        Never = 7
+        Monthly = 0,
+        ThreeMonthly = 1,
+        SixMonthly = 2,
+        Yearly = 3,
+        TwoYearly = 4,
+        FourYearly = 5,
+        Never = 6
     }
 }
