@@ -75,7 +75,8 @@ namespace QuizWebsite.Core.Services
         {
             var question = await questionRepository.GetByIdAsync(QuestionId);
 
-            var result = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText, a.AnswerText));
+            var answer = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText, a.AnswerText));
+            var result = question.Answers.Where(a => a.Place == answer?.Place).OrderByDescending(a => a.AnswerText.Length).FirstOrDefault();
             if (result != null)
             {
                 var dto = mapper.Map<AnswerResponseDto>(result);
