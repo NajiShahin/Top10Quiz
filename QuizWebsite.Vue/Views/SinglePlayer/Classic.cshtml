@@ -88,15 +88,21 @@
         created: function () {
             if (typeof (GetCookie("CategoryPreference")) != "undefined") {
                 this.cookie = GetCookie("CategoryPreference")
+                axios
+                    .get(url + "api/Questions/randomize?categoryIds=" + this.cookie + "&type=Top 10")
+                    .then(response => {
+                        this.question = response.data
+                        document.getElementById("answer").focus();
+                    })
             } else {
-                this.cookie = null
+                axios
+                    .get(url + "api/Questions/randomize?type=Top 10")
+                    .then(response => {
+                        this.question = response.data
+                        document.getElementById("answer").focus();
+                    })
             }
-            axios
-                .get(url + "api/Questions/randomize?categoryIds=" + this.cookie + "&type=Top 10")
-                .then(response => {
-                    this.question = response.data
-                    document.getElementById("answer").focus();
-                })
+
         },
         methods: {
             ShowGuessedAnswers: function (answerResponse) {
