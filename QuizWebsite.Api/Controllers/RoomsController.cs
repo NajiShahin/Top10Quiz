@@ -19,7 +19,7 @@ namespace QuizWebsite.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll(Guid id)
+        public async Task<IActionResult> GetAll()
         {
             var question = await roomService.ListAllAsync();
             return Ok(question);
