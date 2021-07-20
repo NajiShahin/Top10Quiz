@@ -37,6 +37,9 @@ namespace QuizWebsite.Core.Mapping
             CreateMap<CategoryRequestDto, Category>();
             CreateMap<Category, CategoryResponseDto>();
 
+            CreateMap<RoomRequestDto, Room>();
+            CreateMap<Room, RoomResponseDto>();
+
         }
     }
 }
