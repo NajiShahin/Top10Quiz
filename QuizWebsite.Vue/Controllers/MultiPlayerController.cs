@@ -12,5 +12,10 @@ namespace QuizWebsite.Vue.Controllers
         {
             return View();
         }
+
+        public IActionResult ClassicGame()
+        {
+            return View();
+        }
     }
 }
