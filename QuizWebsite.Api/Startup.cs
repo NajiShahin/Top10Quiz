@@ -38,11 +38,13 @@ namespace QuizWebsite.Api
 
             services.AddScoped<IQuestionRepository, QuestionRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IQuestionService, QuestionService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IRoomService, RoomService>();
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
