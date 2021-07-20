@@ -49,7 +49,7 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
-        public async Task<RoomResponseDto> UpdateAsync(RoomRequestDto roomRequest)
+        public async Task<RoomResponseDto> UpdateAsync(RoomResponseDto roomRequest)
         {
             var roomEntity = mapper.Map<Room>(roomRequest);
             var result = await roomRepository.UpdateAsync(roomEntity);

@@ -44,7 +44,7 @@ namespace QuizWebsite.Api.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(RoomRequestDto roomRequest)
+        public async Task<IActionResult> Put(RoomResponseDto roomRequest)
         {
             var questionResponseDto = await roomService.UpdateAsync(roomRequest);
             return Ok(questionResponseDto);

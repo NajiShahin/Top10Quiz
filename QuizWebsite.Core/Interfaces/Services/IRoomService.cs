@@ -11,7 +11,7 @@ namespace QuizWebsite.Core.Interfaces.Services
         Task<IEnumerable<RoomResponseDto>> ListAllAsync();
         Task<RoomResponseDto> GetByIdAsync(Guid id);
         Task<RoomResponseDto> AddAsync(RoomRequestDto roomRequest);
-        Task<RoomResponseDto> UpdateAsync(RoomRequestDto roomRequest);
+        Task<RoomResponseDto> UpdateAsync(RoomResponseDto roomRequest);
         Task DeleteAsync(Guid id);
     }
 }
