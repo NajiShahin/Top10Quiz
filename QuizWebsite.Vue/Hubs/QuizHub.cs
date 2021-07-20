@@ -9,12 +9,10 @@ namespace QuizWebsite.Vue.Hubs
 {
     public class QuizHub : Hub
     {
-        public async Task MoveShape(int x, int y)
+        public async Task Send(string message)
         {
-            await Clients.Others.SendAsync("shapergereMovejd", x, y);
-            HttpClient httpClient = new HttpClient();
-            var a = await httpClient.GetAsync("");
-            var result = a.Content;
+            // Call the broadcastMessage method to update clients.
+            await Clients.All.SendAsync("broadcastMessage", message);
         }
     }
 }

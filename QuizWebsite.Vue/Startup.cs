@@ -50,7 +50,7 @@ namespace QuizWebsite.Vue
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<QuizHub>("/quizHub");
+                endpoints.MapHub<QuizHub>("/quiz");
 
                 endpoints.MapControllerRoute(
                     name: "default",
