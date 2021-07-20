@@ -9,6 +9,7 @@ namespace QuizWebsite.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public DbSet<Room> Rooms { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
