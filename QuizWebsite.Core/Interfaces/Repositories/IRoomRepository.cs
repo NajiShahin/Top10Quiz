@@ -10,5 +10,6 @@ namespace QuizWebsite.Core.Interfaces.Repositories
     {
         Task<Room> JoinPublicRoom();
         Task<Room> LeavePublicRoom(Guid Id);
+        Task<Room> SearchByName(string name);
     }
 }

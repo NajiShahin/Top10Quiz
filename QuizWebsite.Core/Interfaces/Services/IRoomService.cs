@@ -15,5 +15,6 @@ namespace QuizWebsite.Core.Interfaces.Services
         Task<RoomResponseDto> AddAsync(RoomRequestDto roomRequest);
         Task<RoomResponseDto> UpdateAsync(RoomResponseDto roomRequest);
         Task DeleteAsync(Guid id);
+        Task<RoomResponseDto> SearchByName(string name);
     }
 }
