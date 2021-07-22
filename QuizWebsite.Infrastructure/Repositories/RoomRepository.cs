@@ -72,5 +72,10 @@ namespace QuizWebsite.Infrastructure.Repositories
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public async Task<Room> SearchByName(string name)
+        {
+            return await GetAllAsync().FirstOrDefaultAsync(r => r.Name == name);
+        }
     }
 }

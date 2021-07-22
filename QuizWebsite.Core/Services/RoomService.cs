@@ -63,6 +63,13 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
+        public async Task<RoomResponseDto> SearchByName(string name)
+        {
+            var result = await roomRepository.SearchByName(name);
+            var dto = mapper.Map<RoomResponseDto>(result);
+            return dto;
+        }
+
         public async Task<RoomResponseDto> UpdateAsync(RoomResponseDto roomRequest)
         {
             var roomEntity = mapper.Map<Room>(roomRequest);
