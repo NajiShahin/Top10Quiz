@@ -19,8 +19,13 @@ namespace QuizWebsite.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] string name)
         {
+            if (name != null)
+            {
+                var questionByName = await roomService.SearchByName(name);
+                return Ok(questionByName);
+            }
             var question = await roomService.ListAllAsync();
             return Ok(question);
         }
