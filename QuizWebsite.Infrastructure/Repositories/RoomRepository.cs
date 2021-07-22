@@ -30,6 +30,16 @@ namespace QuizWebsite.Infrastructure.Repositories
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Players < maxPeople && r.Public);
             room.Players++;
+            if (room == null)
+            {
+                room = new Room()
+                {
+                    Players = 1,
+                    Public = true,
+                    Name = RandomString(12)
+                };
+                _dbContext.Add(room);
+            }
             await _dbContext.SaveChangesAsync();
             return room;
         }
@@ -37,9 +47,20 @@ namespace QuizWebsite.Infrastructure.Repositories
         public async Task<Room> LeavePublicRoom(Guid Id)
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Id == Id);
-            room.Players++;
+            room.Players--;
+            if (room.Players == 0)
+            {
+                _dbContext.Rooms.Remove(room);
+            }
             await _dbContext.SaveChangesAsync();
             return room;
+        }
+        private static string RandomString(int length)
+        {
+            Random random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }
