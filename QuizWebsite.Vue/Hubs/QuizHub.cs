@@ -12,11 +12,20 @@ namespace QuizWebsite.Vue.Hubs
 {
     public class QuizHub : Hub
     {
-        public async Task AddToGroup(string groupName)
+        public async Task AddToGroup()
         {
-            await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
-            var group = Clients.Group(groupName);
-            await Clients.Group(groupName).SendAsync("Send", $"{Context.ConnectionId} has joined the group {groupName}.");
+            HttpClient httpClient = new HttpClient();
+            var result = await httpClient.GetAsync("https://localhost:5001/api/Rooms/Join");
+            var data = await result.Content.ReadAsStringAsync();
+            var group = JsonConvert.DeserializeObject<RoomResponseDto>(data);
+            await Groups.AddToGroupAsync(Context.ConnectionId, group.Name);
+            var a = Clients.Group(group.Name);
+        }
+
+        public override Task OnDisconnectedAsync(Exception a)
+        {
+            
+            return Task.FromResult(true);
         }
 
         public async Task Send(string message)
