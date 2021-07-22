@@ -48,10 +48,10 @@ namespace QuizWebsite.Api.Controllers
             return Ok(question);
         }
 
-        [HttpGet("Leave/{id}")]
-        public async Task<IActionResult> Leave(Guid id)
+        [HttpGet("Leave/{name}")]
+        public async Task<IActionResult> Leave(string name)
         {
-            var question = await roomService.LeavePublicRoom(id);
+            var question = await roomService.LeavePublicRoom(name);
             return Ok(question);
         }
 

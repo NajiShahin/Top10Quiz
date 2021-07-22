@@ -49,9 +49,9 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
-        public async Task<RoomResponseDto> LeavePublicRoom(Guid Id)
+        public async Task<RoomResponseDto> LeavePublicRoom(string name)
         {
-            var result = await roomRepository.LeavePublicRoom(Id);
+            var result = await roomRepository.LeavePublicRoom(name);
             var dto = mapper.Map<RoomResponseDto>(result);
             return dto;
         }

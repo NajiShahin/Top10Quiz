@@ -47,9 +47,9 @@ namespace QuizWebsite.Infrastructure.Repositories
             return room;
         }
 
-        public async Task<Room> LeavePublicRoom(Guid Id)
+        public async Task<Room> LeavePublicRoom(string name)
         {
-            var room = GetAllAsync().FirstOrDefault(r => r.Id == Id);
+            var room = GetAllAsync().FirstOrDefault(r => r.Name == name);
             if (room != null)
             {
                 room.Players--;
