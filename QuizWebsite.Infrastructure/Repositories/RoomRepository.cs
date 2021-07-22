@@ -37,29 +37,33 @@ namespace QuizWebsite.Infrastructure.Repositories
                     Public = true,
                     Name = RandomString(12)
                 };
-                _dbContext.Add(room);
+                await AddAsync(room);
             }
             else
             {
                 room.Players++;
+                await UpdateAsync(room);
             }
-            await _dbContext.SaveChangesAsync();
             return room;
         }
 
         public async Task<Room> LeavePublicRoom(Guid Id)
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Id == Id);
-            if (room.Players == 0)
-            {
-                _dbContext.Rooms.Remove(room);
-            }
-            else
+            if (room != null)
             {
                 room.Players--;
+                if (room?.Players == 0)
+                {
+                    await DeleteAsync(room);
+                }
+                else
+                {
+                    await UpdateAsync(room);
+                }
+                return room;
             }
-            await _dbContext.SaveChangesAsync();
-            return room;
+            return new Room();
         }
         private static string RandomString(int length)
         {
