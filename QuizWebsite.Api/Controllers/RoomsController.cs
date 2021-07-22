@@ -36,6 +36,20 @@ namespace QuizWebsite.Api.Controllers
             return Ok(question);
         }
 
+        [HttpGet("Join")]
+        public async Task<IActionResult> Join()
+        {
+            var question = await roomService.JoinPublicRoom();
+            return Ok(question);
+        }
+
+        [HttpGet("Leave/{id}")]
+        public async Task<IActionResult> Leave(Guid id)
+        {
+            var question = await roomService.LeavePublicRoom(id);
+            return Ok(question);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post(RoomRequestDto roomRequest)
         {
