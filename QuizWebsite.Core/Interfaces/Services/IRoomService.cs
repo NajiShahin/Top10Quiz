@@ -10,7 +10,7 @@ namespace QuizWebsite.Core.Interfaces.Services
     {
         Task<IEnumerable<RoomResponseDto>> ListAllAsync();
         Task<RoomResponseDto> JoinPublicRoom();
-        Task<RoomResponseDto> LeavePublicRoom();
+        Task<RoomResponseDto> LeavePublicRoom(Guid Id);
         Task<RoomResponseDto> GetByIdAsync(Guid id);
         Task<RoomResponseDto> AddAsync(RoomRequestDto roomRequest);
         Task<RoomResponseDto> UpdateAsync(RoomResponseDto roomRequest);

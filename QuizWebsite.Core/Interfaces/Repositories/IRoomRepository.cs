@@ -9,6 +9,6 @@ namespace QuizWebsite.Core.Interfaces.Repositories
     public interface IRoomRepository : IRepository<Room>
     {
         Task<Room> JoinPublicRoom();
-        Task<Room> LeavePublicRoom();
+        Task<Room> LeavePublicRoom(Guid Id);
     }
 }
