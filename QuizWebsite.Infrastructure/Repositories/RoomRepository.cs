@@ -29,7 +29,6 @@ namespace QuizWebsite.Infrastructure.Repositories
         public async Task<Room> JoinPublicRoom()
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Players < maxPeople && r.Public);
-            room.Players++;
             if (room == null)
             {
                 room = new Room()
@@ -40,6 +39,10 @@ namespace QuizWebsite.Infrastructure.Repositories
                 };
                 _dbContext.Add(room);
             }
+            else
+            {
+                room.Players++;
+            }
             await _dbContext.SaveChangesAsync();
             return room;
         }
@@ -47,10 +50,13 @@ namespace QuizWebsite.Infrastructure.Repositories
         public async Task<Room> LeavePublicRoom(Guid Id)
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Id == Id);
-            room.Players--;
             if (room.Players == 0)
             {
                 _dbContext.Rooms.Remove(room);
+            }
+            else
+            {
+                room.Players--;
             }
             await _dbContext.SaveChangesAsync();
             return room;
