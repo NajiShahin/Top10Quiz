@@ -12,7 +12,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 {
     public class RoomRepository : EfRepository<Room>, IRoomRepository
     {
-
+        int maxPeople = 6;
         public RoomRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
         }
@@ -24,6 +24,22 @@ namespace QuizWebsite.Infrastructure.Repositories
         public override IQueryable<Room> GetAllAsync()
         {
             return _dbContext.Rooms.AsNoTracking();
+        }
+
+        public async Task<Room> JoinPublicRoom()
+        {
+            var room = GetAllAsync().FirstOrDefault(r => r.Players < maxPeople && r.Public);
+            room.Players++;
+            await _dbContext.SaveChangesAsync();
+            return room;
+        }
+
+        public async Task<Room> LeavePublicRoom(Guid Id)
+        {
+            var room = GetAllAsync().FirstOrDefault(r => r.Id == Id);
+            room.Players++;
+            await _dbContext.SaveChangesAsync();
+            return room;
         }
     }
 }
