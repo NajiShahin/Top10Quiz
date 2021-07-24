@@ -9,6 +9,6 @@ namespace QuizWebsite.Core.Entities
     {
         public string Name { get; set; }
         public bool Public { get; set; }
-        public int Players { get; set; }
+        public ICollection<Player> Players { get; set; }
     }
 }
