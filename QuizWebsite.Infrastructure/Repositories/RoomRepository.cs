@@ -28,7 +28,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 
         public async Task<Room> JoinPublicRoom()
         {
-            var room = GetAllAsync().FirstOrDefault(r => r.Players < maxPeople && r.Public);
+            var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public);
             if (room == null)
             {
                 room = new Room()
