@@ -38,12 +38,14 @@ namespace QuizWebsite.Api
 
             services.AddScoped<IQuestionRepository, QuestionRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
             services.AddScoped<IRoomRepository, RoomRepository>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IQuestionService, QuestionService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IPlayerService, PlayerService>();
             services.AddScoped<IRoomService, RoomService>();
 
 
