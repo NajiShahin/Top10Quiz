@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using QuizWebsite.Core.Dtos;
+using QuizWebsite.Core.Entities;
 using QuizWebsite.Core.Interfaces.Repositories;
 using QuizWebsite.Core.Interfaces.Services;
 using System;
@@ -20,29 +21,40 @@ namespace QuizWebsite.Core.Services
             this.playerRepository = playerRepository;
         }
 
-        public Task<PlayerResponseDto> AddAsync(PlayerRequestDto roomRequest)
+        public async Task<PlayerResponseDto> AddAsync(PlayerRequestDto playerRequest)
         {
-            throw new NotImplementedException();
+            var player = mapper.Map<Player>(playerRequest);
+
+            var result = await playerRepository.AddAsync(player);
+            var dto = mapper.Map<PlayerResponseDto>(result);
+            return dto;
         }
 
-        public Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            await playerRepository.DeleteAsync(id);
         }
 
-        public Task<PlayerResponseDto> GetByIdAsync(Guid id)
+        public async Task<PlayerResponseDto> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await playerRepository.GetByIdAsync(id);
+            var dto = mapper.Map<PlayerResponseDto>(result);
+            return dto;
         }
 
-        public Task<IEnumerable<PlayerResponseDto>> ListAllAsync()
+        public async Task<IEnumerable<PlayerResponseDto>> ListAllAsync()
         {
-            throw new NotImplementedException();
+            var result = await playerRepository.ListAllAsync();
+            var dto = mapper.Map<IEnumerable<PlayerResponseDto>>(result);
+            return dto;
         }
 
-        public Task<PlayerResponseDto> UpdateAsync(PlayerRequestDto roomRequest)
+        public async Task<PlayerResponseDto> UpdateAsync(PlayerRequestDto playerRequest)
         {
-            throw new NotImplementedException();
+            var player = mapper.Map<Player>(playerRequest);
+            var result = await playerRepository.UpdateAsync(player);
+            var dto = mapper.Map<PlayerResponseDto>(result);
+            return dto;
         }
     }
 }

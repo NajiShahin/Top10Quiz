@@ -10,8 +10,8 @@ namespace QuizWebsite.Core.Interfaces.Services
     {
         Task<IEnumerable<PlayerResponseDto>> ListAllAsync();
         Task<PlayerResponseDto> GetByIdAsync(Guid id);
-        Task<PlayerResponseDto> AddAsync(PlayerRequestDto roomRequest);
-        Task<PlayerResponseDto> UpdateAsync(PlayerRequestDto roomRequest);
+        Task<PlayerResponseDto> AddAsync(PlayerRequestDto playerRequest);
+        Task<PlayerResponseDto> UpdateAsync(PlayerRequestDto playerRequest);
         Task DeleteAsync(Guid id);
     }
 }
