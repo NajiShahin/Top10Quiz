@@ -1,10 +1,11 @@
-﻿using System;
+﻿using QuizWebsite.Core.Dtos.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace QuizWebsite.Core.Dtos
 {
-    public class PlayerResponseDto
+    public class PlayerResponseDto : BaseDto
     {
         public string Name { get; set; }
         public string ConnectionId { get; set; }
