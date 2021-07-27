@@ -41,7 +41,7 @@ namespace QuizWebsite.Api.Controllers
         public async Task<IActionResult> Post(PlayerRequestDto playerRequest)
         {
             var playerResponseDto = await playerService.AddAsync(playerRequest);
-            return CreatedAtAction(nameof(Get), new { id = playerResponseDto.ConnectionId }, playerResponseDto);
+            return CreatedAtAction(nameof(Get), new { id = playerResponseDto.Id }, playerResponseDto);
         }
 
         [HttpPut]
