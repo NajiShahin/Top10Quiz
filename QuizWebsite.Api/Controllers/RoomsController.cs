@@ -41,17 +41,17 @@ namespace QuizWebsite.Api.Controllers
             return Ok(question);
         }
 
-        [HttpGet("Join")]
-        public async Task<IActionResult> Join()
+        [HttpGet("Join/{connectionId}")]
+        public async Task<IActionResult> Join(string connectionId)
         {
             var question = await roomService.JoinPublicRoom();
             return Ok(question);
         }
 
-        [HttpGet("Leave/{name}")]
-        public async Task<IActionResult> Leave(string name)
+        [HttpGet("Leave/{connectionId}")]
+        public async Task<IActionResult> Leave(string connectionId)
         {
-            var question = await roomService.LeavePublicRoom(name);
+            var question = await roomService.LeavePublicRoom(connectionId);
             return Ok(question);
         }
 
