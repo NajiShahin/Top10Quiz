@@ -9,8 +9,8 @@ namespace QuizWebsite.Core.Interfaces.Services
     public interface IRoomService 
     {
         Task<IEnumerable<RoomResponseDto>> ListAllAsync();
-        Task<RoomResponseDto> JoinPublicRoom();
-        Task<RoomResponseDto> LeavePublicRoom(string name);
+        Task<RoomResponseDto> JoinPublicRoom(string connectionid);
+        Task<RoomResponseDto> LeavePublicRoom(string connectionId);
         Task<RoomResponseDto> GetByIdAsync(Guid id);
         Task<RoomResponseDto> AddAsync(RoomRequestDto roomRequest);
         Task<RoomResponseDto> UpdateAsync(RoomResponseDto roomRequest);
