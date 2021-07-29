@@ -8,8 +8,8 @@ namespace QuizWebsite.Core.Interfaces.Repositories
 {
     public interface IRoomRepository : IRepository<Room>
     {
-        Task<Room> JoinPublicRoom();
-        Task<Room> LeavePublicRoom(string name);
+        Task<Room> JoinPublicRoom(string connectionid);
+        Task<Room> LeavePublicRoom(string connectionid);
         Task<Room> SearchByName(string name);
     }
 }
