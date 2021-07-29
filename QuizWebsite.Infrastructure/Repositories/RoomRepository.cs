@@ -26,7 +26,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             return _dbContext.Rooms.AsNoTracking();
         }
 
-        public async Task<Room> JoinPublicRoom()
+        public async Task<Room> JoinPublicRoom(string connectionid)
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public);
             if (room == null)
@@ -47,13 +47,16 @@ namespace QuizWebsite.Infrastructure.Repositories
             return room;
         }
 
-        public async Task<Room> LeavePublicRoom(string name)
+        public async Task<Room> LeavePublicRoom(string connectionid)
         {
-            var room = GetAllAsync().FirstOrDefault(r => r.Name == name);
+            var room = GetAllAsync().FirstOrDefault(r => r.Players.Any(a => a.ConnectionId == connectionid));
             if (room != null)
             {
-                room.Players--;
-                if (room?.Players == 0)
+                var player = GetAllAsync()
+                    .FirstOrDefault(p => p.Players.Any(a => a.ConnectionId == connectionid))
+                    .Players.FirstOrDefault(p => p.ConnectionId == connectionid);
+                room.Players.Remove(player);
+                if (room?.Players.Count == 0)
                 {
                     await DeleteAsync(room);
                 }
@@ -63,7 +66,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 }
                 return room;
             }
-            return new Room();
+            return null;
         }
         private static string RandomString(int length)
         {
