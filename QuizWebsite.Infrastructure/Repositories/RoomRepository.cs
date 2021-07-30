@@ -29,19 +29,20 @@ namespace QuizWebsite.Infrastructure.Repositories
         public async Task<Room> JoinPublicRoom(string connectionid)
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public);
+            var player = _dbContext.Players.FirstOrDefault(p => p.ConnectionId == connectionid);
             if (room == null)
             {
                 room = new Room()
                 {
-                    Players = 1,
                     Public = true,
                     Name = RandomString(12)
                 };
+                room.Players.Add(player);
                 await AddAsync(room);
             }
             else
             {
-                room.Players++;
+                room.Players.Add(player);
                 await UpdateAsync(room);
             }
             return room;
