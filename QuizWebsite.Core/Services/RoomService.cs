@@ -42,16 +42,16 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
-        public async Task<RoomResponseDto> JoinPublicRoom()
+        public async Task<RoomResponseDto> JoinPublicRoom(string connectionId)
         {
-            var result = await roomRepository.JoinPublicRoom();
+            var result = await roomRepository.JoinPublicRoom(connectionId);
             var dto = mapper.Map<RoomResponseDto>(result);
             return dto;
         }
 
-        public async Task<RoomResponseDto> LeavePublicRoom(string name)
+        public async Task<RoomResponseDto> LeavePublicRoom(string connectionId)
         {
-            var result = await roomRepository.LeavePublicRoom(name);
+            var result = await roomRepository.LeavePublicRoom(connectionId);
             var dto = mapper.Map<RoomResponseDto>(result);
             return dto;
         }
