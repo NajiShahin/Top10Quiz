@@ -13,5 +13,6 @@ namespace QuizWebsite.Core.Interfaces.Services
         Task<PlayerResponseDto> AddAsync(PlayerRequestDto playerRequest);
         Task<PlayerResponseDto> UpdateAsync(PlayerRequestDto playerRequest);
         Task DeleteAsync(Guid id);
+        Task<PlayerResponseDto> SearchByConnectionId(string connectionId);
     }
 }
