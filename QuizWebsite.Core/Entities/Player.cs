@@ -10,7 +10,7 @@ namespace QuizWebsite.Core.Entities
         public string Name { get; set; }
         public string ConnectionId { get; set; }
         public int Score { get; set; }
-        public Guid RoomId { get; set; }
+        public Guid? RoomId { get; set; }
         public Room Room { get; set; }
     }
 }
