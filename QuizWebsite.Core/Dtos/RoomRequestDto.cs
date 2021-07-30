@@ -7,6 +7,5 @@ namespace QuizWebsite.Core.Dtos
     public class RoomRequestDto
     {
         public bool Public { get; set; }
-        public int Players { get; set; }
     }
 }
