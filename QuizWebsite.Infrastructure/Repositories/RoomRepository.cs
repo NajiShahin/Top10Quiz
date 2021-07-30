@@ -30,6 +30,8 @@ namespace QuizWebsite.Infrastructure.Repositories
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public);
             var player = _dbContext.Players.FirstOrDefault(p => p.ConnectionId == connectionid);
+            if (player == null)
+                return null
             if (room == null)
             {
                 room = new Room()
