@@ -49,6 +49,13 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
+        public async Task<PlayerResponseDto> SearchByConnectionId(string connectionId)
+        {
+            var result = await playerRepository.SearchByConnectionId(connectionId);
+            var dto = mapper.Map<PlayerResponseDto>(result);
+            return dto;
+        }
+
         public async Task<PlayerResponseDto> UpdateAsync(PlayerRequestDto playerRequest)
         {
             var player = mapper.Map<Player>(playerRequest);
