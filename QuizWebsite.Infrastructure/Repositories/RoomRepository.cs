@@ -23,7 +23,8 @@ namespace QuizWebsite.Infrastructure.Repositories
         }
         public override IQueryable<Room> GetAllAsync()
         {
-            return _dbContext.Rooms.AsNoTracking();
+            return _dbContext.Rooms.AsNoTracking()
+                .Include(r => r.Players);
         }
 
         public async Task<Room> JoinPublicRoom(string connectionid)
