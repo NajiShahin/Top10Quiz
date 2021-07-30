@@ -20,8 +20,13 @@ namespace QuizWebsite.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] string connectionId)
         {
+            if (connectionId != null)
+            {
+                var connectionIdPlayer = await playerService.SearchByConnectionId(connectionId);
+                return Ok(connectionIdPlayer);
+            }
             var player = await playerService.ListAllAsync();
             return Ok(player);
         }
