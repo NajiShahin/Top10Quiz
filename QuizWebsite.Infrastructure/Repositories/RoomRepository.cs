@@ -37,6 +37,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 room = new Room()
                 {
                     Public = true,
+                    Players = new List<Player>(),
                     Name = RandomString(12)
                 };
                 room.Players.Add(player);
@@ -44,6 +45,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             }
             else
             {
+                room.Players = new List<Player>();
                 room.Players.Add(player);
                 await UpdateAsync(room);
             }
