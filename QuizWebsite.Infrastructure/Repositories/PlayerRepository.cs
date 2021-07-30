@@ -27,5 +27,9 @@ namespace QuizWebsite.Infrastructure.Repositories
                     .AsNoTracking();
         }
 
+        public async Task<Player> SearchByConnectionId(string connectionId)
+        {
+            return await GetAllAsync().FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
+        }
     }
 }
