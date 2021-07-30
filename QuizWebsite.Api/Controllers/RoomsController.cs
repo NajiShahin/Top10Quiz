@@ -44,7 +44,7 @@ namespace QuizWebsite.Api.Controllers
         [HttpGet("Join/{connectionId}")]
         public async Task<IActionResult> Join(string connectionId)
         {
-            var question = await roomService.JoinPublicRoom();
+            var question = await roomService.JoinPublicRoom(connectionId);
             return Ok(question);
         }
 
