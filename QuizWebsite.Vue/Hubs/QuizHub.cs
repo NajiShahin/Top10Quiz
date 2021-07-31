@@ -36,6 +36,12 @@ namespace QuizWebsite.Vue.Hubs
             HttpClient httpClient = new HttpClient();
 
             var result = await httpClient.GetAsync("https://localhost:5001/api/Rooms/Leave/" + this.Context.ConnectionId);
+            var response = await result.Content.ReadAsStringAsync();
+            var room = JsonConvert.DeserializeObject<RoomResponseDto>(response);
+            if (room.Players.Count == 1)
+            {
+                await httpClient.DeleteAsync("https://localhost:5001/api/Rooms/" + room.Id);
+            }
         }
 
         public async Task Send(string message)

@@ -61,18 +61,8 @@ namespace QuizWebsite.Infrastructure.Repositories
                 var player = GetAllAsync()
                     .FirstOrDefault(p => p.Players.Any(a => a.ConnectionId == connectionid))
                     .Players.FirstOrDefault(p => p.ConnectionId == connectionid);
-                room.Players = room.Players.Where(p => p.ConnectionId != connectionid).ToList();
-                player.Room = null;
-                player.RoomId = null;
-                if (room?.Players.Count == 0)
-                {
-                    await DeleteAsync(room);
-                }
-                else
-                {
-                    _dbContext.Entry(player).State = EntityState.Modified;
+                    _dbContext.Remove(player);
                     await _dbContext.SaveChangesAsync();
-                }
                 return room;
             }
             return null;
