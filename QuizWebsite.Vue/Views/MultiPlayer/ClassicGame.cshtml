@@ -1,7 +1,7 @@
-﻿<div class="container">
-    <input type="text" id="message" />
-    <input type="button" id="sendmessage" value="Send" />
-    <ul id="discussion"></ul>
+﻿<div class="full-center">
+    <label for="message">Username</label><br />
+    <input type="text" id="message" /><br />
+    <input class="btn btn-primary mt-5 w-100" type="button" id="sendmessage" value="Play" />
 </div>
 
 
@@ -28,11 +28,7 @@
             document.getElementById('sendmessage').addEventListener('click',
                 function (event) {
                     // Call the Send method on the hub.
-                    connection.invoke('AddToGroup');
-                    // Clear text box and reset focus for next comment.
-                    messageInput.value = '';
-                    messageInput.focus();
-                    event.preventDefault();
+                    connection.invoke('AddToGroup', message.value);
                 });
         })
         .catch(error => {

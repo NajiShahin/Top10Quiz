@@ -7,44 +7,39 @@ using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using QuizWebsite.Core.Dtos;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace QuizWebsite.Vue.Hubs
 {
     public class QuizHub : Hub
     {
-        public async Task AddToGroup()
+        public async Task AddToGroup(string username)
         {
             HttpClient httpClient = new HttpClient();
-            var result = await httpClient.GetAsync("https://localhost:5001/api/Rooms/Join");
+            var player = new PlayerRequestDto()
+            {
+                ConnectionId = this.Context.ConnectionId,
+                Name = username,
+                Score = 0
+            };
+            var content = new StringContent(JsonConvert.SerializeObject(player), Encoding.UTF8, "application/json");
+            await httpClient.PostAsync("https://localhost:5001/api/player", content);
+            var result = await httpClient.GetAsync("https://localhost:5001/api/Rooms/Join/" + this.Context.ConnectionId);
             var data = await result.Content.ReadAsStringAsync();
-            var group = JsonConvert.DeserializeObject<RoomResponseDto>(data);
-            await Groups.AddToGroupAsync(Context.ConnectionId, group.Name);
-            var a = Clients.Group(group.Name);
+            var groupDto = JsonConvert.DeserializeObject<RoomResponseDto>(data);
+            await Groups.AddToGroupAsync(Context.ConnectionId, groupDto.Name);
+            var group = Clients.Group(groupDto.Name);
         }
 
-        public override Task OnDisconnectedAsync(Exception a)
+        public override async Task OnDisconnectedAsync(Exception ex)
         {
-            
-            return Task.FromResult(true);
+            HttpClient httpClient = new HttpClient();
+
+            var result = await httpClient.GetAsync("https://localhost:5001/api/Rooms/Leave/" + this.Context.ConnectionId);
         }
 
         public async Task Send(string message)
         {
-            /*
-            HttpClient httpClient = new HttpClient();
-            // Call the broadcastMessage method to update clients.
-            var result = await httpClient.GetAsync("https://localhost:5001/api/Questions");
-            var data = await result.Content.ReadAsStringAsync();
-            var a = JsonConvert.DeserializeObject<IEnumerable<QuestionResponseDto>>(data) ;
-            var c = Clients;
-            await Groups.AddToGroupAsync(Context.ConnectionId, "link");
-            foreach (var item in a)
-            {
-                await Clients.All.SendAsync("broadcastMessage", item.QuestionText);
-            }
-            await Clients.All.SendAsync("broadcastMessage", data);
-            */
-
             await Clients.All.SendAsync("broadcastMessage", message);
 
         }
