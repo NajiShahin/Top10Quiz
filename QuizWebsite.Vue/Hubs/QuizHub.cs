@@ -13,7 +13,7 @@ namespace QuizWebsite.Vue.Hubs
 {
     public class QuizHub : Hub
     {
-        public async Task AddToGroup(string username)
+        public async Task<string> AddToGroup(string username)
         {
             HttpClient httpClient = new HttpClient();
             var player = new PlayerRequestDto()
@@ -29,6 +29,8 @@ namespace QuizWebsite.Vue.Hubs
             var groupDto = JsonConvert.DeserializeObject<RoomResponseDto>(data);
             await Groups.AddToGroupAsync(Context.ConnectionId, groupDto.Name);
             var group = Clients.Group(groupDto.Name);
+            //await Clients.Group(groupDto.Name).SendAsync("userJoined");
+            return groupDto.Name;
         }
 
         public override async Task OnDisconnectedAsync(Exception ex)
@@ -38,7 +40,7 @@ namespace QuizWebsite.Vue.Hubs
             var result = await httpClient.GetAsync("https://localhost:5001/api/Rooms/Leave/" + this.Context.ConnectionId);
             var response = await result.Content.ReadAsStringAsync();
             var room = JsonConvert.DeserializeObject<RoomResponseDto>(response);
-            if (room.Players.Count == 1)
+            if (room?.Players.Count == 1)
             {
                 await httpClient.DeleteAsync("https://localhost:5001/api/Rooms/" + room.Id);
             }
