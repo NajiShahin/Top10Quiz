@@ -41,14 +41,19 @@ namespace QuizWebsite.Infrastructure.Repositories
                     Players = new List<Player>(),
                     Name = RandomString(12)
                 };
-                room.Players.Add(player);
-                await AddAsync(room);
+                player.Room = room;
+                player.ColorCode = GetAvailableColor(room);
+                await _dbContext.SaveChangesAsync();
             }
             else
             {
-                room.Players = new List<Player>();
-                room.Players.Add(player);
-                await UpdateAsync(room);
+                if (room.Players == null)
+                {
+                    room.Players = new List<Player>();
+                }
+                player.Room = room;
+                player.ColorCode = GetAvailableColor(room);
+                await _dbContext.SaveChangesAsync();
             }
             return room;
         }
@@ -67,6 +72,12 @@ namespace QuizWebsite.Infrastructure.Repositories
             }
             return null;
         }
+
+        public async Task<Room> SearchByName(string name)
+        {
+            return await GetAllAsync().FirstOrDefaultAsync(r => r.Name == name);
+        }
+
         private static string RandomString(int length)
         {
             Random random = new Random();
@@ -75,9 +86,19 @@ namespace QuizWebsite.Infrastructure.Repositories
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public async Task<Room> SearchByName(string name)
+        private string GetAvailableColor(Room room)
         {
-            return await GetAllAsync().FirstOrDefaultAsync(r => r.Name == name);
+            List<string> colors = new List<string>()
+            {
+                "#ff2b2b",
+                "#7cff2b","#2bffff","#aa2bff","#ff2b87","#ffd82b"
+            };
+            foreach (var player in room.Players)
+            {
+                colors.Remove(player.ColorCode);
+            }
+            Random rnd = new Random();
+            return colors[rnd.Next(colors.Count)];
         }
     }
 }
