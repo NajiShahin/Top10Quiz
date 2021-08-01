@@ -8,6 +8,7 @@ namespace QuizWebsite.Core.Dtos
     {
         public string Name { get; set; }
         public string ConnectionId { get; set; }
+        public string ColorCode { get; set; }
         public int Score { get; set; }
     }
 }
