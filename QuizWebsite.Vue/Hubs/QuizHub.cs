@@ -29,7 +29,7 @@ namespace QuizWebsite.Vue.Hubs
             var groupDto = JsonConvert.DeserializeObject<RoomResponseDto>(data);
             await Groups.AddToGroupAsync(Context.ConnectionId, groupDto.Name);
             var group = Clients.Group(groupDto.Name);
-            //await Clients.Group(groupDto.Name).SendAsync("userJoined");
+            await Clients.Group(groupDto.Name).SendAsync("userJoined", username);
             return groupDto.Name;
         }
 

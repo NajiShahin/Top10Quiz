@@ -1,37 +1,65 @@
-﻿<div class="full-center">
-    <label for="message">Username</label><br />
-    <input type="text" id="message" /><br />
-    <input class="btn btn-primary mt-5 w-100" type="button" id="sendmessage" value="Play" />
+﻿<div id="app">
+    <div id="StartScreen" class="full-center">
+        <label for="message">Username</label><br />
+        <input type="text" id="message" /><br />
+        <input class="btn btn-primary mt-5 w-100" type="button" v-on:click="AddToGroup" value="Play" />
+    </div>
+    <div id="playersScreen" v-for="player in players">
+        {{player.name}}
+    </div>
 </div>
-
-
 <script>
-
     var connection = new signalR.HubConnectionBuilder()
         .withUrl('/quiz')
         .build();
 
-    connection.on('broadcastMessage', function (message) {
-        // Html encode display name and message.
-        var encodedName = name;
-        var encodedMsg = message;
-        // Add the message to the page.
-        var liElement = document.createElement('li');
-        liElement.innerHTML = '<strong>' + encodedName + '</strong>:&nbsp;&nbsp;'
-            + encodedMsg;
-        document.getElementById('discussion').appendChild(liElement);
-    });
-    // Transport fallback functionality is now built into start.
-    connection.start()
-        .then(function () {
-            console.log('connection started');
-            document.getElementById('sendmessage').addEventListener('click',
-                function (event) {
-                    // Call the Send method on the hub.
-                    connection.invoke('AddToGroup', message.value);
+
+    var app = new Vue({
+        el: "#app",
+        data: {
+            players: [{
+                name: "a"
+                }]
+        },
+        created: function () {
+
+
+            // Transport fallback functionality is now built into start.
+            connection.start()
+                .then(function () {
+                    console.log('connection started');
+
+                })
+                .catch(error => {
+                    console.error(error.message);
                 });
-        })
-        .catch(error => {
-            console.error(error.message);
-        });
+
+
+        },
+        methods: {
+            AddToGroup: function () {
+                let groupName = ""
+                connection.invoke('AddToGroup', message.value)
+                    .then(p => {
+                        groupName = p;
+                        console.log(groupName)
+                        document.getElementById('StartScreen').style.display = 'none'
+                        axios
+                            .get(url + 'api/Rooms/?name=' + groupName)
+                            .then(response => {
+                                app.players = response.data.players
+                            })
+                        connection.on('userJoined', function (message) {
+                            axios
+                                .get(url + 'api/Rooms/?name=' + groupName)
+                                .then(response => {
+                                    app.players = response.data.players
+                                })
+                        });
+                    })
+
+
+            }
+        },
+    });
 </script>
