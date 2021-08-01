@@ -10,6 +10,7 @@ namespace QuizWebsite.Core.Dtos
         public string Name { get; set; }
         public string ConnectionId { get; set; }
         public int Score { get; set; }
+        public string ColorCode { get; set; }
         public RoomResponseDto Room { get; set; }
     }
 }
