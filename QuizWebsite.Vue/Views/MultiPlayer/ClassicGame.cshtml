@@ -4,7 +4,7 @@
         <input type="text" id="message" /><br />
         <input class="btn btn-primary mt-5 w-100" type="button" v-on:click="AddToGroup" value="Play" />
     </div>
-    <div id="playersScreen" v-for="player in players">
+    <div id="playersScreen" class="w-25" v-for="player in players" v-bind:style="{ background: player.colorCode}">
         {{player.name}}
     </div>
 </div>
