@@ -49,7 +49,14 @@
                             .then(response => {
                                 app.players = response.data.players
                             })
-                        connection.on('userJoined', function (message) {
+                        connection.on('userJoined', function () {
+                            axios
+                                .get(url + 'api/Rooms/?name=' + groupName)
+                                .then(response => {
+                                    app.players = response.data.players
+                                })
+                        });
+                        connection.on('userLeft', function () {
                             axios
                                 .get(url + 'api/Rooms/?name=' + groupName)
                                 .then(response => {
