@@ -221,3 +221,76 @@ body {
     top: 2em;
     left: 2em;
 }
+
+.player-field {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    width: 10em;
+    padding: 2em;
+    border: 1px solid #e3e3e3;
+    border-radius: 25px;
+    display: block;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.sidebar {
+    top: 0; /* Stay at the top */
+    left: 10%;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+}
+@media (max-width: 900px) {
+    .sidebar {
+        top: 0; /* Stay at the top */
+        left: 0;
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    }
+
+    .player-field {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 0.5rem;
+        width: 8em;
+        padding: 1.5em;
+        border: 1px solid #e3e3e3;
+        border-radius: 25px;
+        display: block;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+@media (max-width: 600px) {
+    .sidebar {
+        top: 0; /* Stay at the top */
+        left: 0;
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    }
+
+    .player-field {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 0.2rem;
+        width: 6em;
+        padding: 1em;
+        border: 1px solid #e3e3e3;
+        border-radius: 25px;
+        display: block;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
