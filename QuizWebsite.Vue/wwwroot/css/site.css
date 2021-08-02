@@ -294,3 +294,6 @@ body {
         overflow: hidden;
     }
 }
+.remove{
+    display:none;
+}
