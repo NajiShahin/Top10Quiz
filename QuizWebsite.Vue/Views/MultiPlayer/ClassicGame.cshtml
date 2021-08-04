@@ -1,12 +1,16 @@
 ﻿<div id="app">
     <div id="StartScreen" v-if="!started" class="full-center">
         <label for="message">Username</label><br />
-        <input autocomplete="off"  type="text" id="message" /><br />
+        <input autocomplete="off"  class="radius" type="text" id="message" /><br />
         <input class="btn btn-primary mt-5 w-100" type="button" v-on:click="AddToGroup" value="Play" />
     </div>
     <div class="sidebar" v-if="started">
-        <div id="playersScreen" class="player-field text-center" v-for="player in players" v-bind:style="{ background: player.colorCode}">
-            <b>{{player.name}}</b><br /><br />
+        <div v-if="" id="playersScreen" class="player-field text-center" v-for="player in players" v-bind:style="{ background: player.colorCode}">
+            <b >{{player.name}}</b><br />
+            <b>Score: {{player.score}}</b>
+        </div>
+        <div v-if="" id="playersScreen" class="player-field text-center" v-for="player in players" v-bind:style="{ background: player.colorCode}">
+            <b>{{player.name}}</b><br />
             <b>Score: {{player.score}}</b>
         </div>
     </div>
@@ -55,7 +59,6 @@
             connection.start()
                 .then(function () {
                     console.log('connection started');
-
                 })
                 .catch(error => {
                     console.error(error.message);
