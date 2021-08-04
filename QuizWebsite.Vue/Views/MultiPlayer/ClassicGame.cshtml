@@ -7,7 +7,7 @@
     <div class="sidebar" v-if="started">
         <div id="playersScreen" class="player-field text-center" v-for="player in players" v-bind:style="{ background: player.colorCode}">
             <span v-if="connectionId == player.connectionId">
-                <b class="text-white">{{player.name}}(You)</b><br />
+                <b class="text-white">(You){{player.name}}</b><br />
                 <b class="text-white">Score: {{player.score}}</b>
             </span>
             <span v-else>
