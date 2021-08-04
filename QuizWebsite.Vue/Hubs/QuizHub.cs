@@ -33,6 +33,11 @@ namespace QuizWebsite.Vue.Hubs
             return groupDto.Name;
         }
 
+        public string GetConnectionId()
+        {
+            return this.Context.ConnectionId;
+        }
+
         public override async Task OnDisconnectedAsync(Exception ex)
         {
             HttpClient httpClient = new HttpClient();
@@ -50,7 +55,6 @@ namespace QuizWebsite.Vue.Hubs
         public async Task Send(string message)
         {
             await Clients.All.SendAsync("broadcastMessage", message);
-
         }
     }
 }
