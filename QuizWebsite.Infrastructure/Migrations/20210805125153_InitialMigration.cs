@@ -103,6 +103,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                     Name = table.Column<string>(nullable: true),
                     ConnectionId = table.Column<string>(nullable: true),
                     Score = table.Column<int>(nullable: false),
+                    Ready = table.Column<bool>(nullable: false),
                     ColorCode = table.Column<string>(nullable: true),
                     RoomId = table.Column<Guid>(nullable: true)
                 },
@@ -115,6 +116,30 @@ namespace QuizWebsite.Infrastructure.Migrations
                         principalTable: "Rooms",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RoomQuestions",
+                columns: table => new
+                {
+                    RoomId = table.Column<Guid>(nullable: false),
+                    QuestionId = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RoomQuestions", x => new { x.RoomId, x.QuestionId });
+                    table.ForeignKey(
+                        name: "FK_RoomQuestions_Questions_QuestionId",
+                        column: x => x.QuestionId,
+                        principalTable: "Questions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RoomQuestions_Rooms_RoomId",
+                        column: x => x.RoomId,
+                        principalTable: "Rooms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -132,36 +157,36 @@ namespace QuizWebsite.Infrastructure.Migrations
                 columns: new[] { "Id", "ChangeFrequency", "DateTimeChanged", "Dislikes", "Likes", "QuestionText", "QuestionType" },
                 values: new object[,]
                 {
-                    { new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3136), 0, 0, "Countries with most homicides per 100,000 people", "Top 10" },
-                    { new Guid("f5b97548-cb81-44b5-8830-aba39f71c079"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3141), 0, 0, "What are the countries with the highest murder count per year", "Top 10" },
-                    { new Guid("9cafb85f-730b-4a26-a661-b2d2dda74534"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3145), 0, 0, "What countries have the highest fertility rate (2019)", "Top 10" },
-                    { new Guid("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3149), 0, 0, "What countries have the lowest fertility rate (2019)", "Top 10" },
-                    { new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3219), 0, 0, "What countries have won the most gold medals at the olympics", "Top 10" },
-                    { new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3224), 0, 0, "What countries have the most amount of total immigrants", "Top 10" },
-                    { new Guid("03744a50-cdd5-43c1-898d-b69df8168820"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3228), 0, 0, "What countries have the most percentage of immigrants", "Top 10" },
-                    { new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3233), 0, 0, "What are the countries that drink the most beer per capita", "Top 10" },
-                    { new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82"), 4, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3237), 0, 0, "What are the countries with the most unesco world heritage sites", "Top 10" },
-                    { new Guid("94e5f344-ef61-44c6-b209-9b805ca42880"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3241), 0, 0, "What are the most visited countries in the world (2019)", "Top 10" },
-                    { new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b"), 2, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3246), 0, 0, "What countries have the most billionaires (2021)", "Top 10" },
-                    { new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291"), 2, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3250), 0, 0, "What countries have the most millionaires (2021)", "Top 10" },
-                    { new Guid("f1b44064-927d-45bf-9fe4-14c2d98d774c"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3132), 0, 0, "What are the countries with the oldest median age (2020)", "Top 10" },
-                    { new Guid("e75284fe-a777-4d85-aad5-e68b817b2d50"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3128), 0, 0, "What are the countries with the youngest median age (2020)", "Top 10" },
-                    { new Guid("00437064-4748-470c-b77e-046703a2a19a"), 6, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3123), 0, 0, "What are the newest countries in the world", "Top 10" },
-                    { new Guid("1f56b20c-54b1-40a3-9b60-c510f27912ae"), 6, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3118), 0, 0, "What are the first countries if you order them alphabetically (A-Z)", "Top 10" },
-                    { new Guid("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3113), 0, 0, "What are the most obese countries of the world (2016)", "Top 10" },
-                    { new Guid("59dddd6c-7a6e-4e43-9869-088ef430421f"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3108), 0, 0, "Which countries spend the most on their military", "Top 10" },
-                    { new Guid("5a563a77-0a11-459a-8162-d886acf1f898"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3103), 0, 0, "What are the least happiest countries (according to the World Happiness Report in 2020)", "Top 10" },
-                    { new Guid("5c08cfa3-a2e0-43bd-a574-184cb3bde2d2"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3099), 0, 0, "What countries have the highest prison population", "Top 10" },
-                    { new Guid("26775c7d-97ea-415d-b73c-7629759656cf"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3095), 0, 0, "What countries have the highest GDP per capita", "Top 10" },
-                    { new Guid("8630be8d-b3e3-4b1e-babc-207819fe2f46"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3090), 0, 0, "What countries have the highest GDP (nominal)", "Top 10" },
-                    { new Guid("962c9cae-4ba2-4506-98c2-1ccdd9535b40"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3086), 0, 0, "What countries have the biggest population of catholics", "Top 10" },
-                    { new Guid("98220fe9-135d-423b-ab8f-14d57eafcb38"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3081), 0, 0, "What countries have the biggest population of muslims", "Top 10" },
-                    { new Guid("3aa5a782-c701-4a75-b4f0-98bab8d144e2"), 3, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3077), 0, 0, "What are the happiest countries (according to the World Happiness Report in 2020)", "Top 10" },
-                    { new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613"), 6, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3069), 0, 0, "What are the smallest countries of the world", "Top 10" },
-                    { new Guid("00000000-0000-0000-0000-000000000002"), 4, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3011), 0, 0, "What countries have the biggest population", "Top 10" },
-                    { new Guid("00000000-0000-0000-0000-000000000001"), 6, new DateTime(2021, 8, 2, 0, 52, 47, 264, DateTimeKind.Local).AddTicks(6205), 0, 0, "What are the biggest countries of the world", "Top 10" },
-                    { new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b"), 6, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3259), 0, 0, "Who were the first ten presidents of the United States", "Top 10" },
-                    { new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13"), 5, new DateTime(2021, 8, 2, 0, 52, 47, 267, DateTimeKind.Local).AddTicks(3263), 0, 0, "Who were the last ten presidents of the United States", "Top 10" }
+                    { new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3299), 0, 0, "Countries with most homicides per 100,000 people", "Top 10" },
+                    { new Guid("f5b97548-cb81-44b5-8830-aba39f71c079"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3308), 0, 0, "What are the countries with the highest murder count per year", "Top 10" },
+                    { new Guid("9cafb85f-730b-4a26-a661-b2d2dda74534"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3316), 0, 0, "What countries have the highest fertility rate (2019)", "Top 10" },
+                    { new Guid("9429778e-df46-4c10-a0d4-80fecbfdf3f9"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3324), 0, 0, "What countries have the lowest fertility rate (2019)", "Top 10" },
+                    { new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3332), 0, 0, "What countries have won the most gold medals at the olympics", "Top 10" },
+                    { new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3341), 0, 0, "What countries have the most amount of total immigrants", "Top 10" },
+                    { new Guid("03744a50-cdd5-43c1-898d-b69df8168820"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3351), 0, 0, "What countries have the most percentage of immigrants", "Top 10" },
+                    { new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3358), 0, 0, "What are the countries that drink the most beer per capita", "Top 10" },
+                    { new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82"), 4, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3366), 0, 0, "What are the countries with the most unesco world heritage sites", "Top 10" },
+                    { new Guid("94e5f344-ef61-44c6-b209-9b805ca42880"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3373), 0, 0, "What are the most visited countries in the world (2019)", "Top 10" },
+                    { new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b"), 2, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3381), 0, 0, "What countries have the most billionaires (2021)", "Top 10" },
+                    { new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291"), 2, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3389), 0, 0, "What countries have the most millionaires (2021)", "Top 10" },
+                    { new Guid("f1b44064-927d-45bf-9fe4-14c2d98d774c"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3291), 0, 0, "What are the countries with the oldest median age (2020)", "Top 10" },
+                    { new Guid("e75284fe-a777-4d85-aad5-e68b817b2d50"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3283), 0, 0, "What are the countries with the youngest median age (2020)", "Top 10" },
+                    { new Guid("00437064-4748-470c-b77e-046703a2a19a"), 6, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3274), 0, 0, "What are the newest countries in the world", "Top 10" },
+                    { new Guid("1f56b20c-54b1-40a3-9b60-c510f27912ae"), 6, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3266), 0, 0, "What are the first countries if you order them alphabetically (A-Z)", "Top 10" },
+                    { new Guid("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3258), 0, 0, "What are the most obese countries of the world (2016)", "Top 10" },
+                    { new Guid("59dddd6c-7a6e-4e43-9869-088ef430421f"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3250), 0, 0, "Which countries spend the most on their military", "Top 10" },
+                    { new Guid("5a563a77-0a11-459a-8162-d886acf1f898"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3242), 0, 0, "What are the least happiest countries (according to the World Happiness Report in 2020)", "Top 10" },
+                    { new Guid("5c08cfa3-a2e0-43bd-a574-184cb3bde2d2"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3232), 0, 0, "What countries have the highest prison population", "Top 10" },
+                    { new Guid("26775c7d-97ea-415d-b73c-7629759656cf"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3224), 0, 0, "What countries have the highest GDP per capita", "Top 10" },
+                    { new Guid("8630be8d-b3e3-4b1e-babc-207819fe2f46"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3216), 0, 0, "What countries have the highest GDP (nominal)", "Top 10" },
+                    { new Guid("962c9cae-4ba2-4506-98c2-1ccdd9535b40"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3208), 0, 0, "What countries have the biggest population of catholics", "Top 10" },
+                    { new Guid("98220fe9-135d-423b-ab8f-14d57eafcb38"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3194), 0, 0, "What countries have the biggest population of muslims", "Top 10" },
+                    { new Guid("3aa5a782-c701-4a75-b4f0-98bab8d144e2"), 3, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3185), 0, 0, "What are the happiest countries (according to the World Happiness Report in 2020)", "Top 10" },
+                    { new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613"), 6, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3173), 0, 0, "What are the smallest countries of the world", "Top 10" },
+                    { new Guid("00000000-0000-0000-0000-000000000002"), 4, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3070), 0, 0, "What countries have the biggest population", "Top 10" },
+                    { new Guid("00000000-0000-0000-0000-000000000001"), 6, new DateTime(2021, 8, 5, 14, 51, 52, 902, DateTimeKind.Local).AddTicks(3519), 0, 0, "What are the biggest countries of the world", "Top 10" },
+                    { new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b"), 6, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3397), 0, 0, "Who were the first ten presidents of the United States", "Top 10" },
+                    { new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13"), 5, new DateTime(2021, 8, 5, 14, 51, 52, 905, DateTimeKind.Local).AddTicks(3405), 0, 0, "Who were the last ten presidents of the United States", "Top 10" }
                 });
 
             migrationBuilder.InsertData(
@@ -169,7 +194,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                 columns: new[] { "Id", "AnswerText", "ExtraInfo", "Place", "Points", "QuestionId" },
                 values: new object[,]
                 {
-                    { new Guid("317a6c92-bb9c-4c32-8a05-8eb36eca7786"), "Russia", "17,098,242 Km²", 1, 1, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("a29a5666-b5c0-41fd-ae27-5c21171d9754"), "Russia", "17,098,242 Km²", 1, 1, new Guid("00000000-0000-0000-0000-000000000001") },
                     { new Guid("2566c4cb-8a98-451e-98a1-1275bbced23e"), "Vatican", "100%", 1, 1, new Guid("03744a50-cdd5-43c1-898d-b69df8168820") },
                     { new Guid("a5c1fc15-4529-4aa9-af48-503f3956f93a"), "Vatican City", "100%", 1, 1, new Guid("03744a50-cdd5-43c1-898d-b69df8168820") },
                     { new Guid("f57577aa-1c95-4d0b-b247-96c8e0e9a86a"), "Holy See", "100%", 1, 1, new Guid("03744a50-cdd5-43c1-898d-b69df8168820") },
@@ -448,30 +473,30 @@ namespace QuizWebsite.Infrastructure.Migrations
                     { new Guid("6198d886-ca83-4528-a69b-43d6507f0dd8"), "Egypt", "90,000,000", 6, 6, new Guid("98220fe9-135d-423b-ab8f-14d57eafcb38") },
                     { new Guid("661ce531-3921-47fd-ad59-b70ff7868d36"), "Nigeria", "103,000,000", 5, 5, new Guid("98220fe9-135d-423b-ab8f-14d57eafcb38") },
                     { new Guid("b2710771-e4ff-4970-9246-fd87c35945d0"), "Vatican", "0.49 Km²", 1, 1, new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613") },
-                    { new Guid("18d53fdf-107e-4bc2-8fee-7cacf2f5edc8"), "Mexico", "128,932,753", 10, 10, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("28245b36-4e91-492b-a7e0-c1667d01570f"), "Russia", "145,934,462", 9, 9, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("6ba802bc-02f9-4771-bb1f-591564f6a190"), "Bangladesh", "164,689,383", 8, 8, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("7328cc0c-fa7c-4d15-9411-b6ea3e03d9b8"), "Nigeria", "206,139,589", 7, 7, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("b948d682-9ea3-4855-b920-de88b9baa300"), "Brazil", "212,559,417", 6, 6, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("56756ad7-c695-4bb1-b4a2-15cabff75d01"), "Pakistan", "220,892,340", 5, 5, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("ad53ab9c-6a63-481d-8072-f20720026449"), "Indonesia", "273,523,615", 4, 4, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("b1771f49-784a-46ba-ba05-4e2717f62141"), "United States", "331,002,651", 3, 3, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("55abf559-6fe3-4ab1-b603-8e6e75c42ff2"), "US", "331,002,651", 3, 3, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("6b0bf399-dc90-4cc0-a8a8-d3c7cf604058"), "USA", "331,002,651", 3, 3, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("14b6fcf2-ceca-4f63-9f6a-0c11ec2f872c"), "Mexico", "128,932,753", 10, 10, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("e500b466-13f4-4bcf-b21d-b4544b190b40"), "Russia", "145,934,462", 9, 9, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("14d32c40-72b2-4fef-9626-674a4d285d9d"), "Bangladesh", "164,689,383", 8, 8, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("08e7f75d-0491-485b-a805-d10228dea4c8"), "Nigeria", "206,139,589", 7, 7, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("50b91853-8231-4d6f-a647-0c2b1ca967c4"), "Brazil", "212,559,417", 6, 6, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("91ce0a9d-4fc7-46e9-80a6-37045513e55b"), "Pakistan", "220,892,340", 5, 5, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("8048b865-7a6c-4c53-8b49-8016a55e8b7f"), "Indonesia", "273,523,615", 4, 4, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("d0167ce7-aa24-4aa2-96d5-57c00870334d"), "United States", "331,002,651", 3, 3, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("881a284f-7782-4e49-95d3-b1e32bdcc405"), "US", "331,002,651", 3, 3, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("e16d1780-3da9-4337-a902-a5ab38ae5c31"), "USA", "331,002,651", 3, 3, new Guid("00000000-0000-0000-0000-000000000002") },
                     { new Guid("26ad01ed-ff4e-488a-8075-f38e0a53dd1c"), "Vatican City", "0.49 Km²", 1, 1, new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613") },
-                    { new Guid("aca7049b-0b85-449d-8091-e61207fbdec8"), "India", "1,380,004,385", 2, 2, new Guid("00000000-0000-0000-0000-000000000002") },
-                    { new Guid("6fd84e8e-2a7e-4e1d-b2ee-8aa09cc702b4"), "Algeria", "2,381,740 Km²", 10, 10, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("ef63e0ef-f505-4e09-b1ae-a25f063db880"), "Kazakhstan", "2,724,900 Km²", 9, 9, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("beb67b1a-ed90-4ed4-9107-a3d3090360b7"), "Argentina", "2,780,400 Km²", 8, 8, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("2db71841-84be-40b6-9857-239a7e9e51a4"), "India", "3,287,263 Km²", 7, 7, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("0d5c028e-ce06-45c2-b9e1-6ede1efe23e2"), "Australia", "7,741,220 Km²", 6, 6, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("1930b586-49b1-4938-8f1a-f41b177df755"), "Brazil", "8,515,770 Km²", 5, 5, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("a5ade1f7-49f5-4158-8dc1-eb27bbad69e4"), "China", "9,596,960 Km²", 4, 4, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("7bc339a7-5a3f-4ffb-a934-c922491686e7"), "United States", "9,833,517 Km²", 3, 3, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("250285be-57f4-40f7-9d5d-f6d56e044d4a"), "US", "9,833,517 Km²", 3, 3, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("e0599eaf-234b-4b3d-b651-d103281d744c"), "USA", "9,833,517 Km²", 3, 3, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("64b84ac5-b9ab-4153-a566-f75942443559"), "Canada", "9,984,670 Km²", 2, 2, new Guid("00000000-0000-0000-0000-000000000001") },
-                    { new Guid("53a922be-6fef-4041-b94b-bb84aea728e3"), "China", "1,439,323,776", 1, 1, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("e40c1b93-26e6-4f17-a0e2-13ff63fe78cb"), "India", "1,380,004,385", 2, 2, new Guid("00000000-0000-0000-0000-000000000002") },
+                    { new Guid("a5913cde-75a3-4fb3-b785-677fa58347b1"), "Algeria", "2,381,740 Km²", 10, 10, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("0a57b26d-c01a-42a2-83ba-5e003ea56ed1"), "Kazakhstan", "2,724,900 Km²", 9, 9, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("637791ec-38cf-45ad-9987-bf036cf62873"), "Argentina", "2,780,400 Km²", 8, 8, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("7932b350-076b-4949-a708-a91aea078e22"), "India", "3,287,263 Km²", 7, 7, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("10ba0a9b-7a0c-412b-99df-e174f28f8dfc"), "Australia", "7,741,220 Km²", 6, 6, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("b0e9d89f-dfcc-438a-a798-90272ec16b1b"), "Brazil", "8,515,770 Km²", 5, 5, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("143137af-29b8-415b-b638-8ade6b733605"), "China", "9,596,960 Km²", 4, 4, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("92758ce5-b4db-48e9-b649-e682f9ecdae9"), "United States", "9,833,517 Km²", 3, 3, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("f657fac3-7f18-4ab9-89bc-db4ccf3b798d"), "US", "9,833,517 Km²", 3, 3, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("ba148d6e-5fcd-47a0-b382-e1eb4d109572"), "USA", "9,833,517 Km²", 3, 3, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("e397aadb-f7f5-4da6-86c5-09bffc05a147"), "Canada", "9,984,670 Km²", 2, 2, new Guid("00000000-0000-0000-0000-000000000001") },
+                    { new Guid("08a3b2ea-dcad-46ab-9ef7-bca3f6a3aeee"), "China", "1,439,323,776", 1, 1, new Guid("00000000-0000-0000-0000-000000000002") },
                     { new Guid("fac3d98e-656b-4c43-899d-3a0f62d2485b"), "Indonesia", "210,693", 10, 10, new Guid("5c08cfa3-a2e0-43bd-a574-184cb3bde2d2") },
                     { new Guid("61713893-8f93-45f8-b460-5c3acabdf6cb"), "Monaco", "2.02 Km²", 2, 2, new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613") },
                     { new Guid("ab751480-bf1c-4a85-8cd6-4f05de1de83a"), "Tuvalu", "26 Km²", 4, 4, new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613") },
@@ -658,6 +683,11 @@ namespace QuizWebsite.Infrastructure.Migrations
                 name: "IX_Players_RoomId",
                 table: "Players",
                 column: "RoomId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RoomQuestions_QuestionId",
+                table: "RoomQuestions",
+                column: "QuestionId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -670,6 +700,9 @@ namespace QuizWebsite.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Players");
+
+            migrationBuilder.DropTable(
+                name: "RoomQuestions");
 
             migrationBuilder.DropTable(
                 name: "Categories");
