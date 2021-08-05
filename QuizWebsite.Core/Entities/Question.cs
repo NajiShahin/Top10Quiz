@@ -15,5 +15,6 @@ namespace QuizWebsite.Core.Entities
         public ChangeFrequency ChangeFrequency { get; set; } //Frequency that you'll manually have to check if answers are correct
         public ICollection<CategoryQuestions> CategoryQuestions { get; set; }
         public ICollection<Answer> Answers { get; set; }
+        public ICollection<RoomQuestions> RoomQuestions { get; set; }
     }
 }

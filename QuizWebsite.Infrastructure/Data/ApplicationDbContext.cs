@@ -15,6 +15,7 @@ namespace QuizWebsite.Infrastructure.Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<CategoryQuestions> CategoryQuestions { get; set; }
+        public DbSet<RoomQuestions> RoomQuestions { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
         base(options)
@@ -32,6 +33,14 @@ namespace QuizWebsite.Infrastructure.Data
             modelBuilder.Entity<CategoryQuestions>()
                 .HasOne(ue => ue.Question)
                 .WithMany(u => u.CategoryQuestions)
+                .HasForeignKey(ue => ue.QuestionId);
+            modelBuilder.Entity<RoomQuestions>()
+                .HasOne(ue => ue.Room)
+                .WithMany(u => u.RoomQuestions)
+                .HasForeignKey(ue => ue.RoomId);
+            modelBuilder.Entity<RoomQuestions>()
+                .HasOne(ue => ue.Question)
+                .WithMany(u => u.RoomQuestions)
                 .HasForeignKey(ue => ue.QuestionId);
 
 
