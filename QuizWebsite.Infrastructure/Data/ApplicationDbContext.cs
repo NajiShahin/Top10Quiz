@@ -35,6 +35,9 @@ namespace QuizWebsite.Infrastructure.Data
                 .WithMany(u => u.CategoryQuestions)
                 .HasForeignKey(ue => ue.QuestionId);
             modelBuilder.Entity<RoomQuestions>()
+                .ToTable("RoomQuestions")
+                .HasKey(rq => new { rq.RoomId, rq.QuestionId });
+            modelBuilder.Entity<RoomQuestions>()
                 .HasOne(ue => ue.Room)
                 .WithMany(u => u.RoomQuestions)
                 .HasForeignKey(ue => ue.RoomId);
