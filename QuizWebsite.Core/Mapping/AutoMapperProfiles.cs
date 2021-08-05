@@ -41,14 +41,7 @@ namespace QuizWebsite.Core.Mapping
             CreateMap<Player, PlayerResponseDto>();
 
             CreateMap<RoomRequestDto, Room>();
-            CreateMap<Room, RoomResponseDto>()
-                .ForMember(dest => dest.Question,
-                    opt => opt.MapFrom(src => src.RoomQuestions
-                    .Select(c => new QuestionResponseDto
-                    {
-                        Id = c.QuestionId,
-                        QuestionText = c.Question.QuestionText
-                    })));
+            CreateMap<Room, RoomResponseDto>();
 
         }
     }
