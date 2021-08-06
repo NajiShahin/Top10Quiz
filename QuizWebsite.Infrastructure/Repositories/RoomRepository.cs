@@ -13,6 +13,7 @@ namespace QuizWebsite.Infrastructure.Repositories
     public class RoomRepository : EfRepository<Room>, IRoomRepository
     {
         int maxPeople = 6;
+        int questionAmount = 10;
         public RoomRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
         }
@@ -39,8 +40,10 @@ namespace QuizWebsite.Infrastructure.Repositories
                 {
                     Public = true,
                     Players = new List<Player>(),
-                    Name = RandomString(12)
+                    Name = RandomString(12),
+                    QuestionAmount = questionAmount,
                 };
+                room.RoomQuestions = GetRoomQuestions(room);
                 player.Room = room;
                 player.ColorCode = GetAvailableColor(room);
                 await _dbContext.SaveChangesAsync();
@@ -66,8 +69,8 @@ namespace QuizWebsite.Infrastructure.Repositories
                 var player = GetAllAsync()
                     .FirstOrDefault(p => p.Players.Any(a => a.ConnectionId == connectionid))
                     .Players.FirstOrDefault(p => p.ConnectionId == connectionid);
-                    _dbContext.Remove(player);
-                    await _dbContext.SaveChangesAsync();
+                _dbContext.Remove(player);
+                await _dbContext.SaveChangesAsync();
                 return room;
             }
             return null;
@@ -99,6 +102,40 @@ namespace QuizWebsite.Infrastructure.Repositories
             }
             Random rnd = new Random();
             return colors[rnd.Next(colors.Count)];
+        }
+
+        private List<RoomQuestions> GetRoomQuestions(Room room)
+        {
+            var roomQuestions = new List<RoomQuestions>();
+            var questions = _dbContext.Questions.ToList();
+            questions = Shuffle(questions);
+            for (int i = 0; i < room.QuestionAmount; i++)
+            {
+                roomQuestions.Add(
+                    new RoomQuestions
+                    {
+                        RoomId = room.Id,
+                        QuestionId = questions[i].Id
+                    }
+                    );
+            }
+            return roomQuestions;
+        }
+
+        private List<Question> Shuffle(List<Question> list)
+        {
+            Random rng = new Random();
+
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                var value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+            return list;
         }
     }
 }
