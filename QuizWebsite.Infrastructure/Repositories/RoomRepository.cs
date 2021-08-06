@@ -25,7 +25,8 @@ namespace QuizWebsite.Infrastructure.Repositories
         public override IQueryable<Room> GetAllAsync()
         {
             return _dbContext.Rooms.AsNoTracking()
-                .Include(r => r.Players);
+                .Include(r => r.Players)
+                .Include(r => r.RoomQuestions);
         }
 
         public async Task<Room> JoinPublicRoom(string connectionid)
@@ -44,6 +45,8 @@ namespace QuizWebsite.Infrastructure.Repositories
                     QuestionAmount = questionAmount,
                 };
                 room.RoomQuestions = GetRoomQuestions(room);
+                var question = room.RoomQuestions.FirstOrDefault(rq => rq.QuestionNumber == room.RoomQuestions.Min(rq => rq.QuestionNumber));
+                question.activeQuestion = true;
                 player.Room = room;
                 player.ColorCode = GetAvailableColor(room);
                 await _dbContext.SaveChangesAsync();
