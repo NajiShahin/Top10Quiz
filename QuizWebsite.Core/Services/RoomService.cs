@@ -5,6 +5,7 @@ using QuizWebsite.Core.Interfaces.Repositories;
 using QuizWebsite.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,13 +14,16 @@ namespace QuizWebsite.Core.Services
     public class RoomService : IRoomService
     {
         private readonly IRoomRepository roomRepository;
+        private readonly IQuestionRepository questionRepository;
         private readonly IMapper mapper;
 
         public RoomService(IRoomRepository roomRepository,
-            IMapper mapper)
+            IMapper mapper,
+            IQuestionRepository questionRepository)
         {
             this.roomRepository = roomRepository;
             this.mapper = mapper;
+            this.questionRepository = questionRepository;
         }
         public async Task<RoomResponseDto> AddAsync(RoomRequestDto roomRequest)
         {
@@ -39,6 +43,10 @@ namespace QuizWebsite.Core.Services
         {
             var result = await roomRepository.GetByIdAsync(id);
             var dto = mapper.Map<RoomResponseDto>(result);
+            var roomQuestion = result.RoomQuestions.FirstOrDefault(r => r.activeQuestion);
+            var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
+            var roomQuestionDto = mapper.Map<QuestionResponseDto>(question); dto.Question = new List<QuestionResponseDto>();
+            dto.Question.Add(roomQuestionDto);
             return dto;
         }
 
@@ -60,6 +68,15 @@ namespace QuizWebsite.Core.Services
         {
             var result = await roomRepository.ListAllAsync();
             var dto = mapper.Map<IEnumerable<RoomResponseDto>>(result);
+            foreach (var item in dto)
+            {
+                var roomQuestions = result.ToList().FirstOrDefault(r => r.Id == item.Id).RoomQuestions;
+                var roomQuestion = roomQuestions?.FirstOrDefault(r => r.activeQuestion);
+                var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
+                var roomQuestionDto = mapper.Map<QuestionResponseDto>(question);
+                item.Question = new List<QuestionResponseDto>();
+                item.Question.Add(roomQuestionDto);
+            }
             return dto;
         }
 
