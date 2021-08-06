@@ -6,7 +6,8 @@ namespace QuizWebsite.Core.Entities
 {
     public class RoomQuestions
     {
-        int questionNumber;
+        public int QuestionNumber { get; set; }
+        public bool activeQuestion { get; set; }
         public Guid RoomId { get; set; }
         public Guid QuestionId { get; set; }
         public Room Room { get; set; }
