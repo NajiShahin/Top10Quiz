@@ -58,7 +58,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 {
                     room.Players = new List<Player>();
                 }
-                player.Room = room;
+                player.RoomId = room.Id;
                 player.ColorCode = GetAvailableColor(room);
                 await _dbContext.SaveChangesAsync();
             }
@@ -118,8 +118,8 @@ namespace QuizWebsite.Infrastructure.Repositories
                 roomQuestions.Add(
                     new RoomQuestions
                     {
-                        RoomId = room.Id,
-                        QuestionId = questions[i].Id,
+                        Room = room,
+                        Question = questions[i],
                         QuestionNumber = i + 1
                     }
                     );
@@ -145,7 +145,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 
         public async Task<ReadyResponseDto> MakePlayerReady(string connectionId)
         {
-            var player = _dbContext.Players.FirstOrDefault(p => p.ConnectionId == connectionId);
+            var player = _dbContext.Players.Include(p => p.Room).FirstOrDefault(p => p.ConnectionId == connectionId);
             if (player.Ready)
                 return null;
             player.Ready = true;
