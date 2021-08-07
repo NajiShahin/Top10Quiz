@@ -16,5 +16,6 @@ namespace QuizWebsite.Core.Interfaces.Services
         Task<RoomResponseDto> UpdateAsync(RoomResponseDto roomRequest);
         Task DeleteAsync(Guid id);
         Task<RoomResponseDto> SearchByName(string name);
+        Task<ReadyResponseDto> MakePlayerReady(string connectionId); //If everyone is ready next question
     }
 }

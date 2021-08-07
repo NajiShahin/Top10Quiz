@@ -1,4 +1,5 @@
-﻿using QuizWebsite.Core.Entities;
+﻿using QuizWebsite.Core.Dtos;
+using QuizWebsite.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +9,9 @@ namespace QuizWebsite.Core.Interfaces.Repositories
 {
     public interface IRoomRepository : IRepository<Room>
     {
-        Task<Room> JoinPublicRoom(string connectionid);
-        Task<Room> LeavePublicRoom(string connectionid);
+        Task<Room> JoinPublicRoom(string connectionId);
+        Task<Room> LeavePublicRoom(string connectionId);
         Task<Room> SearchByName(string name);
+        Task<ReadyResponseDto> MakePlayerReady(string connectionId); //If everyone is ready next question
     }
 }
