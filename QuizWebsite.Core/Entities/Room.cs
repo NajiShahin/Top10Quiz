@@ -9,6 +9,7 @@ namespace QuizWebsite.Core.Entities
     {
         public string Name { get; set; }
         public bool Public { get; set; }
+        public bool Done { get; set; }
         public ICollection<Player> Players { get; set; }
         public int QuestionAmount { get; set; }
         public ICollection<RoomQuestions> RoomQuestions { get; set; }
