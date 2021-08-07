@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using QuizWebsite.Core.Dtos;
 using QuizWebsite.Core.Entities;
 using QuizWebsite.Core.Interfaces.Repositories;
 using QuizWebsite.Infrastructure.Data;
@@ -139,6 +140,45 @@ namespace QuizWebsite.Infrastructure.Repositories
                 list[n] = value;
             }
             return list;
+        }
+
+        public async Task<ReadyResponseDto> MakePlayerReady(string connectionId)
+        {
+            var player = _dbContext.Players.FirstOrDefault(p => p.ConnectionId == connectionId);
+            if (player.Ready)
+                return null;
+            player.Ready = true;
+            var amountOfReadyUsers = player.Room.Players.Where(p => p.Ready).Count();
+            var amountOfUsers = player.Room.Players.Count;
+
+            if (amountOfReadyUsers == amountOfUsers)
+            {
+                foreach (var p in player.Room.Players)
+                {
+                    p.Ready = false;
+                }
+                var oldQuestion = player.Room.RoomQuestions.FirstOrDefault(rq => rq.activeQuestion);
+                oldQuestion.activeQuestion = false;
+                if (oldQuestion.QuestionNumber == player.Room.QuestionAmount)
+                {
+                    player.Room.Done = true;
+                }
+                else
+                {
+                    var newQuestion = player.Room.RoomQuestions.FirstOrDefault(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1);
+                    newQuestion.activeQuestion = true;
+                }
+            }
+
+            var readyResponse = new ReadyResponseDto()
+            {
+                AmountOfReadyUsers = amountOfReadyUsers,
+                AmountOfUsers = amountOfUsers
+            };
+
+            await _dbContext.SaveChangesAsync();
+
+            return readyResponse;
         }
     }
 }
