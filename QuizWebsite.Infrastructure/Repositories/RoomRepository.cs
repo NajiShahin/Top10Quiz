@@ -120,7 +120,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                     {
                         RoomId = room.Id,
                         QuestionId = questions[i].Id,
-                        QuestionNumber = i + i
+                        QuestionNumber = i + 1
                     }
                     );
             }
