@@ -27,7 +27,8 @@ namespace QuizWebsite.Infrastructure.Repositories
         {
             return _dbContext.Rooms.AsNoTracking()
                 .Include(r => r.Players)
-                .Include(r => r.RoomQuestions);
+                .Include(r => r.RoomQuestions)
+                    .ThenInclude(rq => rq.Question);
         }
 
         public async Task<Room> JoinPublicRoom(string connectionid)
@@ -145,28 +146,30 @@ namespace QuizWebsite.Infrastructure.Repositories
 
         public async Task<ReadyResponseDto> MakePlayerReady(string connectionId)
         {
-            var player = _dbContext.Players.Include(p => p.Room).FirstOrDefault(p => p.ConnectionId == connectionId);
+            var player = await _dbContext.Players.Include(p => p.Room).FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
+            var room = await GetAllAsync()
+                .FirstOrDefaultAsync(r => r.Id == player.RoomId);
             if (player.Ready)
                 return null;
             player.Ready = true;
-            var amountOfReadyUsers = player.Room.Players.Where(p => p.Ready).Count();
-            var amountOfUsers = player.Room.Players.Count;
+            var amountOfReadyUsers = room.Players.Where(p => p.Ready).Count() + 1;
+            var amountOfUsers = room.Players.Count;
 
             if (amountOfReadyUsers == amountOfUsers)
             {
-                foreach (var p in player.Room.Players)
+                foreach (var p in room.Players)
                 {
                     p.Ready = false;
                 }
-                var oldQuestion = player.Room.RoomQuestions.FirstOrDefault(rq => rq.activeQuestion);
+                var oldQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
                 oldQuestion.activeQuestion = false;
-                if (oldQuestion.QuestionNumber == player.Room.QuestionAmount)
+                if (oldQuestion.QuestionNumber == room.QuestionAmount)
                 {
-                    player.Room.Done = true;
+                    room.Done = true;
                 }
                 else
                 {
-                    var newQuestion = player.Room.RoomQuestions.FirstOrDefault(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1);
+                    var newQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
                     newQuestion.activeQuestion = true;
                 }
             }
