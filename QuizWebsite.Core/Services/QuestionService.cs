@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using QuizWebsite.Core.Dtos;
 using QuizWebsite.Core.Entities;
+using QuizWebsite.Core.Extensions;
 using QuizWebsite.Core.Interfaces.Repositories;
 using QuizWebsite.Core.Interfaces.Services;
 using System;
@@ -75,7 +76,7 @@ namespace QuizWebsite.Core.Services
         {
             var question = await questionRepository.GetByIdAsync(QuestionId);
 
-            var answer = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => IsSimilar(answerRequest.AnswerText, a.AnswerText));
+            var answer = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => answerRequest.AnswerText.IsSimilar(a.AnswerText));
             var result = question.Answers.Where(a => a.Place == answer?.Place).OrderByDescending(a => a.AnswerText.Length).FirstOrDefault();
             if (result != null)
             {
@@ -95,89 +96,12 @@ namespace QuizWebsite.Core.Services
             return mapper.Map<IEnumerable<QuestionResponseDto>>(questions);
         }
 
-        private bool IsSimilar(string userAnswer, string answer) //userAnswer is what user answered, answer is the real answer
+        public Task<AnswerResponseDto> Answer(Guid QuestionId, AnswerRequestDto answerRequest, string connectionId)
         {
-            answer = answer.ToUpper().Replace("THE ", "").Replace("OF ", "")
-                .Replace("AND ", "").Replace(".", "").Replace("-", "")
-                .Replace("!", "");
-            answer = answer.Replace(" THE", "").Replace(" OF", "")
-                .Replace(" AND", "").Replace(" ", "");
-            userAnswer = userAnswer.ToUpper().Replace("THE ", "").Replace("OF ", "")
-                .Replace("AND ", "").Replace(".", "").Replace("-", "")
-                .Replace("!", "");
-            userAnswer = userAnswer.Replace(" THE", "").Replace(" OF", "")
-                .Replace(" AND", "").Replace(" ", "");
-            if (answer == userAnswer)
-                return true;
-
-            if (answer.Length == userAnswer.Length && answer.Length >= 5)
-            {
-                int count = 0;
-                for (int i = 0; i < answer.Length; i++)
-                {
-                    if (answer[i] != userAnswer[i])
-                        count++;
-                }
-                if (count <= 1)
-                    return true;
-                return false;
-            }
-            if (answer.Length == userAnswer.Length - 1 && answer.Length >= 5)
-            {
-                int count = 0;
-                for (int i = 0; i < userAnswer.Length + 1; i++)
-                {
-                    if (answer.Length != i)
-                    {
-                        if (answer[i] != userAnswer[i] && count == 0)
-                        {
-                            userAnswer = userAnswer.Remove(i, 1);
-                            count++;
-                            if (answer == userAnswer)
-                                return true;
-                        }
-                    }
-                    else
-                    {
-                        userAnswer = userAnswer.Remove(userAnswer.Length - 1, 1);
-                        if (answer == userAnswer)
-                            return true;
-                    }
-                }
-                if (answer == userAnswer)
-                    return true;
-                return false;
-            }
-            if (answer.Length == userAnswer.Length + 1 && answer.Length >= 5)
-            {
-                int count = 0;
-                for (int i = 0; i < userAnswer.Length; i++)
-                {
-                    if (userAnswer.Length != i)
-                    {
-                        if (answer[i] != userAnswer[i])
-                        {
-                            if (count == 0)
-                                count++;
-                            
-                            if (answer[i + 1] != userAnswer[i])
-                            {
-                                count++;
-                            }
-                        }
-                    }
-                }
-                if (count <= 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return false;
+            throw new NotImplementedException();
         }
+
+
 
         private void OrderByPlace(IEnumerable<Question> list)
         {
@@ -207,5 +131,6 @@ namespace QuizWebsite.Core.Services
             }
             return list;
         }
+
     }
 }
