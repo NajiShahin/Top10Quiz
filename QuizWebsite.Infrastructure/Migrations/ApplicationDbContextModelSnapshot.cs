@@ -49,7 +49,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("975f6d32-c8c2-40e0-a35f-5c42446e432c"),
+                            Id = new Guid("7e4c85e6-291b-4e1a-b286-d8d756e28828"),
                             AnswerText = "Russia",
                             ExtraInfo = "17,098,242 Km²",
                             Place = 1,
@@ -58,7 +58,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3c7fa6ee-86c2-4434-9e4a-246cc30c6d1e"),
+                            Id = new Guid("7f836668-2da5-4f5b-8908-9d6faf5f8d29"),
                             AnswerText = "Canada",
                             ExtraInfo = "9,984,670 Km²",
                             Place = 2,
@@ -67,7 +67,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ca5ac6ca-01a8-4780-bafc-f55bbe57d299"),
+                            Id = new Guid("c3ef2d71-5e1f-4957-b802-afa21fb94130"),
                             AnswerText = "USA",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -76,7 +76,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("503e38e9-fd5b-4e49-abb3-421146a9eacc"),
+                            Id = new Guid("48451c67-81da-4212-8b00-259009aeac90"),
                             AnswerText = "US",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -85,7 +85,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("74455cf9-bcc2-4a01-863d-f86f71e58726"),
+                            Id = new Guid("c7a49302-6fbb-4d2a-a49d-4be498ce2d9e"),
                             AnswerText = "United States",
                             ExtraInfo = "9,833,517 Km²",
                             Place = 3,
@@ -94,7 +94,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4e857b36-2ca6-456c-97f8-4da1506f436a"),
+                            Id = new Guid("86ea66a1-1973-4f57-a895-04179c94f33f"),
                             AnswerText = "China",
                             ExtraInfo = "9,596,960 Km²",
                             Place = 4,
@@ -103,7 +103,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f360f839-2bde-4179-8a0a-8b3b3d5176de"),
+                            Id = new Guid("2c1a2057-ef00-45d1-ae03-88e4e2c63e6e"),
                             AnswerText = "Brazil",
                             ExtraInfo = "8,515,770 Km²",
                             Place = 5,
@@ -112,7 +112,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5ce92993-9fb8-4699-aa13-a18bd5aee286"),
+                            Id = new Guid("30e1054c-0de3-4b0a-99f1-f2080087a699"),
                             AnswerText = "Australia",
                             ExtraInfo = "7,741,220 Km²",
                             Place = 6,
@@ -121,7 +121,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a3b8c6a1-7e67-46f1-b25e-ac52a81fd355"),
+                            Id = new Guid("d26c4ab7-3032-43eb-8246-58f9d3ce0d9a"),
                             AnswerText = "India",
                             ExtraInfo = "3,287,263 Km²",
                             Place = 7,
@@ -130,7 +130,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7a70af20-67fe-41e9-897e-ebd4de13bc05"),
+                            Id = new Guid("50f1790e-a3fc-46d5-b7f2-735d1deaed59"),
                             AnswerText = "Argentina",
                             ExtraInfo = "2,780,400 Km²",
                             Place = 8,
@@ -139,7 +139,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("30a6796f-6eb1-4f0f-ae22-b724d8c9efd5"),
+                            Id = new Guid("458fcfe3-80bf-42ed-98a6-25d208471463"),
                             AnswerText = "Kazakhstan",
                             ExtraInfo = "2,724,900 Km²",
                             Place = 9,
@@ -148,7 +148,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8b747c91-bf9c-4675-83d8-e9eb6a07e41e"),
+                            Id = new Guid("c72ae703-ed05-4bf7-8197-91baad2c4368"),
                             AnswerText = "Algeria",
                             ExtraInfo = "2,381,740 Km²",
                             Place = 10,
@@ -157,7 +157,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c8386927-c56d-4bae-a1e1-4819d796161a"),
+                            Id = new Guid("cf044caa-d964-4d48-8d07-fd22f1684982"),
                             AnswerText = "China",
                             ExtraInfo = "1,439,323,776",
                             Place = 1,
@@ -166,7 +166,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ec8223dc-f0b5-41af-9686-0bbd00b3f7b5"),
+                            Id = new Guid("28c53f1c-666b-46a5-9aa6-94744e505986"),
                             AnswerText = "India",
                             ExtraInfo = "1,380,004,385",
                             Place = 2,
@@ -175,7 +175,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8725a2e4-d3a5-4b5f-83ed-25a2f80cf527"),
+                            Id = new Guid("03093fd0-2035-433f-8b33-83e29d1a9c27"),
                             AnswerText = "USA",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -184,7 +184,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0c49bf06-8839-4273-8c53-564eec6ba38d"),
+                            Id = new Guid("66e1c113-fc61-41f8-99c6-4a799c7cacbd"),
                             AnswerText = "US",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -193,7 +193,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b0a3ced0-c7de-43dc-89ff-cf58cbc6f7c1"),
+                            Id = new Guid("a6b9d7de-b910-4eb0-805f-979939b8369c"),
                             AnswerText = "United States",
                             ExtraInfo = "331,002,651",
                             Place = 3,
@@ -202,7 +202,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e3fce592-c665-4c69-9421-4c42b2e16e16"),
+                            Id = new Guid("4246a530-4cf9-423f-ab72-145339afde11"),
                             AnswerText = "Indonesia",
                             ExtraInfo = "273,523,615",
                             Place = 4,
@@ -211,7 +211,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("01074638-f9f4-44c3-a39b-829f23525e77"),
+                            Id = new Guid("ac91b5eb-4190-4847-8cb9-d883ae3ad395"),
                             AnswerText = "Pakistan",
                             ExtraInfo = "220,892,340",
                             Place = 5,
@@ -220,7 +220,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fc26d1a7-2c12-47b4-8077-4b7ee58c53e7"),
+                            Id = new Guid("23b28353-51d5-41cc-b226-b3b7dbd9bd8e"),
                             AnswerText = "Brazil",
                             ExtraInfo = "212,559,417",
                             Place = 6,
@@ -229,7 +229,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fadac6de-45ab-4725-afc9-530a873abe28"),
+                            Id = new Guid("c9309933-20a4-44e6-a41f-a7b911946afa"),
                             AnswerText = "Nigeria",
                             ExtraInfo = "206,139,589",
                             Place = 7,
@@ -238,7 +238,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d2d5d1ca-b41b-45fe-bcf6-b357a88a0991"),
+                            Id = new Guid("aae3f1bf-cf7c-4df6-bac6-28b10e3502e7"),
                             AnswerText = "Bangladesh",
                             ExtraInfo = "164,689,383",
                             Place = 8,
@@ -247,7 +247,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e065236e-7ea8-46d0-a30e-0a25cf6549c3"),
+                            Id = new Guid("9abc2f83-d9c1-42df-ac27-7b56c3cd810b"),
                             AnswerText = "Russia",
                             ExtraInfo = "145,934,462",
                             Place = 9,
@@ -256,7 +256,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a66dc4bf-d5e7-4adf-bb28-e54e7ae8a79f"),
+                            Id = new Guid("09e496a9-ffab-4ca6-b31b-8a2a824d827b"),
                             AnswerText = "Mexico",
                             ExtraInfo = "128,932,753",
                             Place = 10,
@@ -4106,6 +4106,9 @@ namespace QuizWebsite.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("Answered")
+                        .HasColumnType("int");
+
                     b.Property<string>("ColorCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -4164,7 +4167,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000001"),
                             ChangeFrequency = 6,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 608, DateTimeKind.Local).AddTicks(2829),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 236, DateTimeKind.Local).AddTicks(8873),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the biggest countries of the world",
@@ -4174,7 +4177,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000002"),
                             ChangeFrequency = 4,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8232),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8306),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the biggest population",
@@ -4184,7 +4187,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("be90a71f-c2ee-4178-96c3-8adb2293b613"),
                             ChangeFrequency = 6,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8308),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8391),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the smallest countries of the world",
@@ -4194,7 +4197,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("3aa5a782-c701-4a75-b4f0-98bab8d144e2"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8316),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8399),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the happiest countries (according to the World Happiness Report in 2020)",
@@ -4204,7 +4207,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("98220fe9-135d-423b-ab8f-14d57eafcb38"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8321),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8405),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the biggest population of muslims",
@@ -4214,7 +4217,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("962c9cae-4ba2-4506-98c2-1ccdd9535b40"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8326),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8410),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the biggest population of catholics",
@@ -4224,7 +4227,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("8630be8d-b3e3-4b1e-babc-207819fe2f46"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8331),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8415),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the highest GDP (nominal)",
@@ -4234,7 +4237,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("26775c7d-97ea-415d-b73c-7629759656cf"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8337),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8419),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the highest GDP per capita",
@@ -4244,7 +4247,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("5c08cfa3-a2e0-43bd-a574-184cb3bde2d2"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8341),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8424),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the highest prison population",
@@ -4254,7 +4257,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("5a563a77-0a11-459a-8162-d886acf1f898"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8346),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8429),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the least happiest countries (according to the World Happiness Report in 2020)",
@@ -4264,7 +4267,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("59dddd6c-7a6e-4e43-9869-088ef430421f"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8351),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8433),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "Which countries spend the most on their military",
@@ -4274,7 +4277,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("6e9f33c2-9bd1-4c4d-b508-c09fd13d6040"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8357),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8438),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the most obese countries of the world (2016)",
@@ -4284,7 +4287,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("1f56b20c-54b1-40a3-9b60-c510f27912ae"),
                             ChangeFrequency = 6,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8361),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8442),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the first countries if you order them alphabetically (A-Z)",
@@ -4294,7 +4297,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("00437064-4748-470c-b77e-046703a2a19a"),
                             ChangeFrequency = 6,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8366),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8447),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the newest countries in the world",
@@ -4304,7 +4307,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("e75284fe-a777-4d85-aad5-e68b817b2d50"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8371),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8452),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the countries with the youngest median age (2020)",
@@ -4314,7 +4317,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("f1b44064-927d-45bf-9fe4-14c2d98d774c"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8376),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8456),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the countries with the oldest median age (2020)",
@@ -4324,7 +4327,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("43cb9f67-8568-4a8d-81c6-110a622787bb"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8380),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8461),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "Countries with most homicides per 100,000 people",
@@ -4334,7 +4337,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("f5b97548-cb81-44b5-8830-aba39f71c079"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8385),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8466),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the countries with the highest murder count per year",
@@ -4344,7 +4347,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("9cafb85f-730b-4a26-a661-b2d2dda74534"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8389),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8472),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the highest fertility rate (2019)",
@@ -4354,7 +4357,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("9429778e-df46-4c10-a0d4-80fecbfdf3f9"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8393),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8476),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the lowest fertility rate (2019)",
@@ -4364,7 +4367,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("62732694-8646-4ded-a4ac-c51dfce4dfc6"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8398),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8481),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have won the most gold medals at the olympics",
@@ -4374,7 +4377,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("db0edb42-f12b-432f-82ec-5d16a51f13f0"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8402),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8485),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the most amount of total immigrants",
@@ -4384,7 +4387,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("03744a50-cdd5-43c1-898d-b69df8168820"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8407),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8490),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the most percentage of immigrants",
@@ -4394,7 +4397,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("961761d2-f15d-4853-b8f9-91b9745be1b8"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8412),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8494),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the countries that drink the most beer per capita",
@@ -4404,7 +4407,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("4cfea5e6-dec6-40ea-8d7e-6f8034a45b82"),
                             ChangeFrequency = 4,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8418),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8499),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the countries with the most unesco world heritage sites",
@@ -4414,7 +4417,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("94e5f344-ef61-44c6-b209-9b805ca42880"),
                             ChangeFrequency = 3,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8422),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8503),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What are the most visited countries in the world (2019)",
@@ -4424,7 +4427,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("3e7b6791-8e14-4284-8201-87d7ddc0850b"),
                             ChangeFrequency = 2,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8427),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8507),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the most billionaires (2021)",
@@ -4434,7 +4437,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("f6d70c09-f3a9-4c9e-8baf-808916af4291"),
                             ChangeFrequency = 2,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8432),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8512),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "What countries have the most millionaires (2021)",
@@ -4444,7 +4447,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("7301c840-a51f-4e7e-9ead-a5d8e50d510b"),
                             ChangeFrequency = 6,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8439),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8516),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "Who were the first ten presidents of the United States",
@@ -4454,7 +4457,7 @@ namespace QuizWebsite.Infrastructure.Migrations
                         {
                             Id = new Guid("da899e4f-63f2-4560-b693-1c1f13a17d13"),
                             ChangeFrequency = 5,
-                            DateTimeChanged = new DateTime(2021, 8, 8, 0, 30, 47, 611, DateTimeKind.Local).AddTicks(8443),
+                            DateTimeChanged = new DateTime(2021, 8, 9, 23, 8, 36, 239, DateTimeKind.Local).AddTicks(8627),
                             Dislikes = 0,
                             Likes = 0,
                             QuestionText = "Who were the last ten presidents of the United States",
