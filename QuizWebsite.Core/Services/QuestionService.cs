@@ -96,9 +96,16 @@ namespace QuizWebsite.Core.Services
             return mapper.Map<IEnumerable<QuestionResponseDto>>(questions);
         }
 
-        public Task<AnswerResponseDto> Answer(Guid QuestionId, AnswerRequestDto answerRequest, string connectionId)
+        public async Task<AnswerResponseDto> Answer(Guid QuestionId, AnswerRequestDto answerRequest, string connectionId)
         {
-            throw new NotImplementedException();
+            var result = await questionRepository.Answer(QuestionId, answerRequest, connectionId);
+            if (result != null)
+            {
+                var dto = mapper.Map<AnswerResponseDto>(result);
+                return dto;
+            }
+
+            return new AnswerResponseDto();
         }
 
 
