@@ -14,7 +14,8 @@ namespace QuizWebsite.Core.Interfaces.Services
         Task<QuestionDetailResponseDto> AddAsync(QuestionRequestDto questionRequest);
         Task<QuestionDetailResponseDto> UpdateAsync(QuestionRequestDto questionRequest);
         Task DeleteAsync(Guid id);
-        Task<AnswerResponseDto> Answer(Guid QuestionId,AnswerRequestDto answerRequest);
+        Task<AnswerResponseDto> Answer(Guid QuestionId, AnswerRequestDto answerRequest);
+        Task<AnswerResponseDto> Answer(Guid QuestionId, AnswerRequestDto answerRequest, string connectionId);
         Task<IEnumerable<QuestionResponseDto>> SearchByCategoriesAndTypeRandom(string categoryIds, string type); //RandomOrder
 
     }
