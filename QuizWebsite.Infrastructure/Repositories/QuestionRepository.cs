@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using QuizWebsite.Core.Dtos;
 using QuizWebsite.Core.Entities;
+using QuizWebsite.Core.Extensions;
 using QuizWebsite.Core.Interfaces.Repositories;
 using QuizWebsite.Infrastructure.Data;
 using System;
@@ -69,6 +71,30 @@ namespace QuizWebsite.Infrastructure.Repositories
                     return questions;
                 }
             }
+        }
+
+        public async Task<Answer> Answer(Guid QuestionId, AnswerRequestDto answerRequest, string connectionId)
+        {
+            var question = await GetByIdAsync(QuestionId);
+            var player = await _dbContext.Players.FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
+
+            var answer = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => answerRequest.AnswerText.IsSimilar(a.AnswerText));
+            var result = question.Answers.Where(a => a.Place == answer?.Place).OrderByDescending(a => a.AnswerText.Length).FirstOrDefault();
+
+            if (result != null)
+            {
+                player.Score += result.Points;
+                player.Answered = result.Points;
+            }
+            else
+            {
+                player.Answered = -1;
+            }
+
+
+            await _dbContext.SaveChangesAsync();
+
+            return result;
         }
     }
 }
