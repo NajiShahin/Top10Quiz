@@ -10,6 +10,6 @@ namespace QuizWebsite.Core.Interfaces.Repositories
     public interface IQuestionRepository : IRepository<Question>
     {
         Task<IEnumerable<Question>> SearchByCategoryAndType(string categoryIds, string type); //Seperated by '&'
-        Task<Answer> Answer(Guid QuestionId, AnswerRequestDto answerRequest, string connectionId);
+        Task<Answer> Answer(AnswerRequestDto answerRequest, string connectionId);
     }
 }
