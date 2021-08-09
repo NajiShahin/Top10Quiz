@@ -96,7 +96,7 @@ namespace QuizWebsite.Api.Controllers
             return Ok(questionResponseDto);
         }
 
-        [HttpPost("{id}/answer/{connectionId}")]
+        [HttpPost("player/{connectionId}/answer")]
         public async Task<IActionResult> Answer(AnswerRequestDto answerRequest, string connectionId)
         {
             var questionResponseDto = await questionService.Answer(answerRequest, connectionId);
