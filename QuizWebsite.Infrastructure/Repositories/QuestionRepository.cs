@@ -62,7 +62,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                     }
                     return filteredQuestions;
                 }
-                else if(categoryIds == null && type != null)
+                else if (categoryIds == null && type != null)
                 {
                     return questions.Where(q => q.QuestionType == type);
                 }
@@ -81,26 +81,33 @@ namespace QuizWebsite.Infrastructure.Repositories
                     .ThenInclude(rq => rq.Question)
                     .ThenInclude(q => q.Answers)
                 .FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
-
-            var question = player.Room.RoomQuestions.FirstOrDefault(rq => rq.activeQuestion).Question;
-
-            var answer = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => answerRequest.AnswerText.IsSimilar(a.AnswerText));
-            var result = question.Answers.Where(a => a.Place == answer?.Place).OrderByDescending(a => a.AnswerText.Length).FirstOrDefault();
-
-            if (result != null)
+            if (player.Answered == 0)
             {
-                player.Score += result.Points;
-                player.Answered = result.Points;
+
+
+                var question = player.Room.RoomQuestions.FirstOrDefault(rq => rq.activeQuestion).Question;
+
+                var answer = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => answerRequest.AnswerText.IsSimilar(a.AnswerText));
+                var result = question.Answers.Where(a => a.Place == answer?.Place).OrderByDescending(a => a.AnswerText.Length).FirstOrDefault();
+
+                if (result != null)
+                {
+                    player.Score += result.Points;
+                    player.Answered = result.Points;
+                }
+                else
+                {
+                    player.Answered = -1;
+                }
+
+
+                await _dbContext.SaveChangesAsync();
+                return result;
             }
             else
             {
-                player.Answered = -1;
+                return null;
             }
-
-
-            await _dbContext.SaveChangesAsync();
-
-            return result;
         }
     }
 }
