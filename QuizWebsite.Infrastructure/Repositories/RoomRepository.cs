@@ -160,6 +160,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 foreach (var p in room.Players)
                 {
                     p.Ready = false;
+                    p.Answered = 0;
                 }
                 var oldQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
                 oldQuestion.activeQuestion = false;
