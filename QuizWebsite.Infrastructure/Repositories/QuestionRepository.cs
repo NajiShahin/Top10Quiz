@@ -80,6 +80,8 @@ namespace QuizWebsite.Infrastructure.Repositories
                     .ThenInclude(r => r.RoomQuestions)
                     .ThenInclude(rq => rq.Question)
                     .ThenInclude(q => q.Answers)
+                .Include(p => p.Room)
+                    .ThenInclude(r =>r.Players)
                 .FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
             if (player.Answered == 0)
             {
@@ -92,8 +94,10 @@ namespace QuizWebsite.Infrastructure.Repositories
 
                 if (result != null)
                 {
-                    player.Score += result.Points;
-                    player.Answered = result.Points;
+                    if (!player.Room.Players.Any(p => p.Answered == result.Place))
+                    {
+                        player.Score += result.Points;
+                    }
                 }
                 else
                 {
@@ -102,7 +106,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 
 
                 await _dbContext.SaveChangesAsync();
-                return result;
+                 return result;
             }
             else
             {
