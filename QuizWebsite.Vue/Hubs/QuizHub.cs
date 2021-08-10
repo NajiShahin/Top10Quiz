@@ -29,7 +29,7 @@ namespace QuizWebsite.Vue.Hubs
             var groupDto = JsonConvert.DeserializeObject<RoomResponseDto>(data);
             await Groups.AddToGroupAsync(Context.ConnectionId, groupDto.Name);
             var group = Clients.Group(groupDto.Name);
-            await Clients.Group(groupDto.Name).SendAsync("refresh");
+            await Clients.Group(groupDto.Name).SendAsync("userJoined");
             return groupDto.Name;
         }
 
@@ -49,7 +49,7 @@ namespace QuizWebsite.Vue.Hubs
             {
                 await httpClient.DeleteAsync("https://localhost:5001/api/Rooms/" + room.Id);
             }
-            await Clients.Group(room?.Name)?.SendAsync("refresh");
+            await Clients.Group(room?.Name)?.SendAsync("userLeft");
         }
 
         public async Task Send(string message)

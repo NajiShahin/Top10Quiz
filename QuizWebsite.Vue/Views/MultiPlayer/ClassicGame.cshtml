@@ -86,7 +86,14 @@
                                 app.room = response.data
                                 console.log(app.room)
                             })
-                        connection.on('refresh', function () {
+                        connection.on('userJoined', function () {
+                            axios
+                                .get(url + 'api/Rooms/?name=' + groupName)
+                                .then(response => {
+                                    app.room = response.data
+                                })
+                        });
+                        connection.on('userLeft', function () {
                             axios
                                 .get(url + 'api/Rooms/?name=' + groupName)
                                 .then(response => {
