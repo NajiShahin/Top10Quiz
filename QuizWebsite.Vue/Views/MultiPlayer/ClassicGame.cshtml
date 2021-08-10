@@ -17,26 +17,34 @@
         </div>
     </div>
     <div v-if="started">
-        <div class="m-3 flex-h-center">
-            <h3 class="text-center">{{room.question[0].questionText}}</h3>
-        </div>
-        <div class="center-block input-group mb-3 flex-h-center">
+        <div v-if="countDown != 0">
+            <div class="m-3 flex-h-center">
+                <h4>{{countDown}}</h4>
+            </div>
+            <div class="m-3 flex-h-center">
+                <h3 class="text-center">{{room.question[0].questionText}}</h3>
+            </div>
             <div class="center-block input-group mb-3 flex-h-center">
-                <input id="answer" type="text" name="name" value="" autocomplete="off" class="radius mr-4" />
-                <button class="btn btn-dark">Confirm</button>
+                <div class="center-block input-group mb-3 flex-h-center">
+                    <input id="answer" type="text" name="name" value="" autocomplete="off" class="radius mr-4" v-model="answer" v-on:keyup.enter="Submit" />
+                    <button class="btn btn-dark" v-on:click="Submit">Confirm</button>
+                </div>
+            </div>
+            <div class="horizontal-center">
+                <table class="w-100 horizontal-center">
+                    <tr v-for="y in 5" class="text-center">
+                        <td class="unanswered text-center">
+                            <b>{{y}}</b>
+                        </td>
+                        <td class="text-center unanswered">
+                            <b>{{y + 5}}</b>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <div class="horizontal-center">
-            <table class="w-100 horizontal-center">
-                <tr v-for="y in 5" class="text-center">
-                    <td class="unanswered text-center">
-                        <b>{{y}}</b>
-                    </td>
-                    <td class="text-center unanswered">
-                        <b>{{y + 5}}</b>
-                    </td>
-                </tr>
-            </table>
+        <div v-else>
+            Results
         </div>
     </div>
 </div>
@@ -49,31 +57,39 @@
     var app = new Vue({
         el: "#app",
         data: {
-            connectionId: "e",
+            connectionId: "",
             started: false,
+            countDown: 20,
+            answer: "",
             room: [{
 
             }]
         },
-        created: function () {
-
-
-            // Transport fallback functionality is now built into start.
-            connection.start()
-                .then(function () {
-                    console.log('connection started');
-                    connection.invoke('GetConnectionId')
-                        .then(id => {
-                            app.connectionId = id;
-                        });
-                })
-                .catch(error => {
-                    console.error(error.message);
-                });
-
-
-        },
         methods: {
+            Submit: function () {
+                if (this.countDown != 0) {
+                    let answerRequest = {
+                        answerText: this.answer
+                    }
+                    axios
+                        .post(url + 'api/Questions/player/' + this.connectionId + '/answer', answerRequest)
+                        .then(r => {
+                            if (r.data.place > 0) {
+                                connection.invoke('showAnswer', r.place,
+                                    answerRequest.answerText, this.room.players.filter(p => p.connectionId == this.connectionId)[0].colorCode)
+                            }
+                        })
+
+                }
+            },
+            countDownTimer() {
+                if (this.countDown > 0) {
+                    setTimeout(() => {
+                        this.countDown -= 1
+                        this.countDownTimer()
+                    }, 1000)
+                }
+            },
             AddToGroup: function () {
                 let groupName = ""
                 connection.invoke('AddToGroup', message.value)
@@ -84,13 +100,14 @@
                             .get(url + 'api/Rooms/?name=' + groupName)
                             .then(response => {
                                 app.room = response.data
-                                console.log(app.room)
+                                app.countDown = 20
                             })
                         connection.on('userJoined', function () {
                             axios
                                 .get(url + 'api/Rooms/?name=' + groupName)
                                 .then(response => {
                                     app.room = response.data
+                                    app.countDown = 20
                                 })
                         });
                         connection.on('userLeft', function () {
@@ -105,5 +122,25 @@
 
             }
         },
+        created: function () {
+
+
+            // Transport fallback functionality is now built into start.
+            connection.start()
+                .then(function () {
+                    console.log('connection started');
+                    connection.invoke('GetConnectionId')
+                        .then(id => {
+                            app.connectionId = id;
+                        });
+                    app.countDownTimer()
+                })
+                .catch(error => {
+                    console.error(error.message);
+                });
+
+
+        },
+
     });
 </script>
