@@ -97,6 +97,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                     if (!player.Room.Players.Any(p => p.Answered == result.Place))
                     {
                         player.Score += result.Points;
+                        player.Answered = result.Place;
                     }
                 }
                 else
