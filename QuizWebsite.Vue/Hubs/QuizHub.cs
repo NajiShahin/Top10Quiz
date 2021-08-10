@@ -13,6 +13,15 @@ namespace QuizWebsite.Vue.Hubs
 {
     public class QuizHub : Hub
     {
+        public async Task answer(int place, string answer, string color)
+        {
+            HttpClient httpClient = new HttpClient();
+            var result = await httpClient.GetAsync("https://localhost:5001/api/Player?connectionId=" + this.Context.ConnectionId);
+            var data = await result.Content.ReadAsStringAsync();
+            var player = JsonConvert.DeserializeObject<PlayerResponseDto>(data);
+            await Clients.Group(player.Room.Name).SendAsync("showAnswer", place, answer, color);
+        }
+
         public async Task<string> AddToGroup(string username)
         {
             HttpClient httpClient = new HttpClient();

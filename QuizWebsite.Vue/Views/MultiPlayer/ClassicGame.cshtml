@@ -33,8 +33,11 @@
             <div class="horizontal-center">
                 <table class="w-100 horizontal-center">
                     <tr v-for="y in 5" class="text-center">
-                        <td class="unanswered text-center">
+                        <td class="unanswered text-center" v-if="answered[y-1] == ''">
                             <b>{{y}}</b>
+                        </td>
+                        <td class="unanswered text-center" v-else>
+                            <b>{{answered[y-1]}}</b>
                         </td>
                         <td class="text-center unanswered">
                             <b>{{y + 5}}</b>
@@ -61,9 +64,14 @@
             started: false,
             countDown: 20,
             answer: "",
+            groupName: "",
             room: [{
 
-            }]
+            }],
+            answered: ["", "", "", "", "",
+                "", "", "", "", ""],
+            answeredColor: ["", "", "", "", "",
+                "", "", "", "", ""],
         },
         methods: {
             Submit: function () {
@@ -75,7 +83,8 @@
                         .post(url + 'api/Questions/player/' + this.connectionId + '/answer', answerRequest)
                         .then(r => {
                             if (r.data.place > 0) {
-                                connection.invoke('showAnswer', r.place,
+                                console.log(app.groupName)
+                                connection.invoke('answer', r.data.place,
                                     answerRequest.answerText, this.room.players.filter(p => p.connectionId == this.connectionId)[0].colorCode)
                             }
                         })
@@ -87,13 +96,14 @@
                     setTimeout(() => {
                         this.countDown -= 1
                         this.countDownTimer()
-                    }, 1000)
+                    }, 3000)
                 }
             },
             AddToGroup: function () {
                 let groupName = ""
                 connection.invoke('AddToGroup', message.value)
                     .then(p => {
+                        app.groupName = p;
                         groupName = p;
                         this.started = true;
                         axios
@@ -116,6 +126,20 @@
                                 .then(response => {
                                     app.room = response.data
                                 })
+                        });
+                        connection.on('showAnswer', function (place, answer, color) {
+
+                            axios
+                                .get(url + 'api/Rooms/?name=' + app.groupName)
+                                .then(r => {
+                                    app.room = r.data
+                                })
+
+                            for (var i = 0; i < 10; i++) {
+                                if (i == place - 1) {
+                                    app.answered[i] = answer
+                                }
+                            }
                         });
                     })
 
