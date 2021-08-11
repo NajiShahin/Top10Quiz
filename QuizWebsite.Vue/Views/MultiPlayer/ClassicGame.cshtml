@@ -36,11 +36,14 @@
                         <td class="unanswered text-center" v-if="answered[y-1] == ''">
                             <b>{{y}}</b>
                         </td>
-                        <td class="unanswered text-center" v-else>
+                        <td class="unanswered text-center" v-else v-bind:style="{ background: answeredColor[y-1]}">
                             <b>{{answered[y-1]}}</b>
                         </td>
-                        <td class="text-center unanswered">
+                        <td class="text-center unanswered" v-if="answered[y+4] == ''">
                             <b>{{y + 5}}</b>
+                        </td>
+                        <td class="unanswered text-center" v-else  v-bind:style="{ background: answeredColor[y+4]}">
+                            <b>{{answered[y+4]}}</b>
                         </td>
                     </tr>
                 </table>
@@ -138,6 +141,7 @@
                             for (var i = 0; i < 10; i++) {
                                 if (i == place - 1) {
                                     app.answered[i] = answer
+                                    app.answeredColor[i] = color
                                 }
                             }
                         });
