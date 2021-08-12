@@ -149,7 +149,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             var player = await _dbContext.Players.Include(p => p.Room).FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
             var room = await GetAllAsync()
                 .FirstOrDefaultAsync(r => r.Id == player.RoomId);
-            if (player.Ready)
+            if (player.Ready || room == null)
                 return null;
             player.Ready = true;
             var amountOfReadyUsers = room.Players.Where(p => p.Ready).Count() + 1;
@@ -157,10 +157,12 @@ namespace QuizWebsite.Infrastructure.Repositories
 
             if (amountOfReadyUsers == amountOfUsers)
             {
-                foreach (var p in room.Players)
+
+                var players = await _dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
+                for (int i = 0; i < players.Count; i++)
                 {
-                    p.Ready = false;
-                    p.Answered = 0;
+                    players[i].Ready = false;
+                    players[i].Answered = 0;
                 }
                 var oldQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
                 oldQuestion.activeQuestion = false;
