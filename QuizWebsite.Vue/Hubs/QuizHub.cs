@@ -58,7 +58,12 @@ namespace QuizWebsite.Vue.Hubs
             {
                 await httpClient.DeleteAsync("https://localhost:5001/api/Rooms/" + room.Id);
             }
-            await Clients.Group(room?.Name)?.SendAsync("userLeft");
+            await Clients.Group(room?.Name)?.SendAsync("userJoined");
+        }
+
+        public async Task Refresh(string groupName)
+        {
+            await Clients.Group(groupName)?.SendAsync("refresh");
         }
 
         public async Task Send(string message)
