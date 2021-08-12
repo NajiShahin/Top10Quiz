@@ -99,13 +99,13 @@
                     setTimeout(() => {
                         this.countDown -= 1
                         this.countDownTimer()
-                    }, 150)
+                    }, 250)
                 } else {
                     axios
                         .get(url + 'api/Rooms/Ready/' + this.connectionId)
                         .then(response => {
                             app.countDownTimer()
-                            if (response.data.AmountOfUsers == response.data.AmountOfReadyUsers) {
+                            if (response.data.amountOfUsers == response.data.amountOfReadyUsers) {
                                 connection.invoke('Refresh', app.groupName)
                             }
                         })
@@ -145,7 +145,6 @@
                                 .then(response => {
                                     app.room = response.data
                                     app.countDown = 20
-                                    console.log("evert")
                                 })
                         });
                         connection.on('showAnswer', function (place, answer, color) {
