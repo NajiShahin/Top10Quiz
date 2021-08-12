@@ -95,11 +95,20 @@
                 }
             },
             countDownTimer() {
-                if (this.countDown > 0) {
+                if (this.countDown >= 0) {
                     setTimeout(() => {
                         this.countDown -= 1
                         this.countDownTimer()
-                    }, 3000)
+                    }, 150)
+                } else {
+                    axios
+                        .get(url + 'api/Rooms/Ready/' + this.connectionId)
+                        .then(response => {
+                            app.countDownTimer()
+                            if (response.data.AmountOfUsers == response.data.AmountOfReadyUsers) {
+                                connection.invoke('Refresh', app.groupName)
+                            }
+                        })
                 }
             },
             AddToGroup: function () {
@@ -128,6 +137,15 @@
                                 .get(url + 'api/Rooms/?name=' + groupName)
                                 .then(response => {
                                     app.room = response.data
+                                })
+                        });
+                        connection.on('refresh', function () {
+                            axios
+                                .get(url + 'api/Rooms/?name=' + groupName)
+                                .then(response => {
+                                    app.room = response.data
+                                    app.countDown = 20
+                                    console.log("evert")
                                 })
                         });
                         connection.on('showAnswer', function (place, answer, color) {
