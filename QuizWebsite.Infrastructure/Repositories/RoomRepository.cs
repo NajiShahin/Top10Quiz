@@ -149,7 +149,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             var player = await _dbContext.Players.Include(p => p.Room).FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
             var room = await GetAllAsync()
                 .FirstOrDefaultAsync(r => r.Id == player.RoomId);
-            if (player.Ready || room == null)
+            if (player.Ready || room == null || room?.Done == true)
                 return null;
             player.Ready = true;
             var amountOfReadyUsers = room.Players.Where(p => p.Ready).Count() + 1;
