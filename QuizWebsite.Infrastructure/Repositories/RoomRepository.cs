@@ -168,16 +168,22 @@ namespace QuizWebsite.Infrastructure.Repositories
                 if (oldQuestion != null)
                 {
                     oldQuestion.activeQuestion = false;
-                }
-                if (oldQuestion.QuestionNumber == room.QuestionAmount)
-                {
-                    room.Done = true;
+
+                    if (oldQuestion.QuestionNumber == room.QuestionAmount)
+                    {
+                        room.Done = true;
+                    }
+                    else
+                    {
+                        var newQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
+                        newQuestion.activeQuestion = true;
+                    }
                 }
                 else
                 {
-                    var newQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
-                    newQuestion.activeQuestion = true;
+                    room.Done = true;
                 }
+
             }
 
             var readyResponse = new ReadyResponseDto()

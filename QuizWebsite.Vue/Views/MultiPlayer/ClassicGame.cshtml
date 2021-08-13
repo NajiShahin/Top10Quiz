@@ -68,6 +68,7 @@
             countDown: 20,
             answer: "",
             groupName: "",
+            ready: false,
             room: [{
 
             }],
@@ -100,15 +101,19 @@
                         this.countDown -= 1
                         this.countDownTimer()
                     }, 250)
+                    this.ready = false
                 } else {
-                    axios
-                        .get(url + 'api/Rooms/Ready/' + this.connectionId)
-                        .then(response => {
-                            app.countDownTimer()
-                            if (response.data.amountOfUsers == response.data.amountOfReadyUsers) {
-                                connection.invoke('Refresh', app.groupName)
-                            }
-                        })
+                    if (this.ready == false) {
+                        axios
+                            .get(url + 'api/Rooms/Ready/' + this.connectionId)
+                            .then(response => {
+                                app.countDownTimer()
+                                if (response.data.amountOfUsers == response.data.amountOfReadyUsers) {
+                                    connection.invoke('Refresh', app.groupName)
+                                }
+                                app.ready = true;
+                            })
+                    }
                 }
             },
             AddToGroup: function () {
@@ -121,6 +126,7 @@
                         axios
                             .get(url + 'api/Rooms/?name=' + groupName)
                             .then(response => {
+                                console.log(response.data)
                                 app.room = response.data
                                 app.countDown = 20
                             })
@@ -144,6 +150,7 @@
                                 .get(url + 'api/Rooms/?name=' + groupName)
                                 .then(response => {
                                     app.room = response.data
+                                    console.log(response.data)
                                     app.countDown = 20
                                 })
                         });
