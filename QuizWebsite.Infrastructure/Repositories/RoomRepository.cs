@@ -33,7 +33,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 
         public async Task<Room> JoinPublicRoom(string connectionid)
         {
-            var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public);
+            var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public && r.Done == false);
             var player = _dbContext.Players.FirstOrDefault(p => p.ConnectionId == connectionid);
             if (player == null)
                 return null;
@@ -165,7 +165,10 @@ namespace QuizWebsite.Infrastructure.Repositories
                     players[i].Answered = 0;
                 }
                 var oldQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
-                oldQuestion.activeQuestion = false;
+                if (oldQuestion != null)
+                {
+                    oldQuestion.activeQuestion = false;
+                }
                 if (oldQuestion.QuestionNumber == room.QuestionAmount)
                 {
                     room.Done = true;
