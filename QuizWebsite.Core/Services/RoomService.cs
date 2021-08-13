@@ -44,10 +44,13 @@ namespace QuizWebsite.Core.Services
             var result = await roomRepository.GetByIdAsync(id);
             var dto = mapper.Map<RoomResponseDto>(result);
             var roomQuestion = result.RoomQuestions?.FirstOrDefault(r => r.activeQuestion);
-            var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
-            var roomQuestionDto = mapper.Map<QuestionResponseDto>(question);
-            dto.Question = new List<QuestionResponseDto>();
-            dto.Question.Add(roomQuestionDto);
+            if (roomQuestion != null)
+            {
+                var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
+                var roomQuestionDto = mapper.Map<QuestionResponseDto>(question);
+                dto.Question = new List<QuestionResponseDto>();
+                dto.Question.Add(roomQuestionDto);
+            }
             return dto;
         }
 
