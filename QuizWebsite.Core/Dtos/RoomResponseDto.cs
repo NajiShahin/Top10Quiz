@@ -9,6 +9,7 @@ namespace QuizWebsite.Core.Dtos
     {
         public string Name { get; set; }
         public bool Public { get; set; }
+        public bool Done { get; set; }
         public List<PlayerResponseDto> Players { get; set; }
         public List<QuestionResponseDto> Question { get; set; }
     }
