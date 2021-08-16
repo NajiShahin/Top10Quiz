@@ -155,7 +155,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             if (player.Ready || room == null || room?.Done == true)
                 return null;
             player.Ready = true;
-            var amountOfReadyUsers = room.Players.Where(p => p.Ready).Count() + 1;
+            var amountOfReadyUsers = room.Players.Where(p => p.Ready).Count();
             var amountOfUsers = room.Players.Count;
 
             if (amountOfReadyUsers == amountOfUsers)
