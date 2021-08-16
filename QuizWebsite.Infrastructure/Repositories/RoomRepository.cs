@@ -147,7 +147,10 @@ namespace QuizWebsite.Infrastructure.Repositories
         public async Task<ReadyResponseDto> MakePlayerReady(string connectionId)
         {
             var player = await _dbContext.Players.Include(p => p.Room).FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
-            var room = await GetAllAsync()
+            var room = await _dbContext.Rooms
+                .Include(r => r.Players)
+                .Include(r => r.RoomQuestions)
+                    .ThenInclude(rq => rq.Question)
                 .FirstOrDefaultAsync(r => r.Id == player.RoomId);
             if (player.Ready || room == null || room?.Done == true)
                 return null;

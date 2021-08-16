@@ -76,10 +76,13 @@ namespace QuizWebsite.Core.Services
             {
                 var roomQuestions = result.ToList().FirstOrDefault(r => r.Id == item.Id).RoomQuestions;
                 var roomQuestion = roomQuestions?.FirstOrDefault(r => r.activeQuestion);
-                var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
-                var roomQuestionDto = mapper.Map<QuestionResponseDto>(question);
-                item.Question = new List<QuestionResponseDto>();
-                item.Question.Add(roomQuestionDto);
+                if (roomQuestion != null)
+                {
+                    var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
+                    var roomQuestionDto = mapper.Map<QuestionResponseDto>(question);
+                    item.Question = new List<QuestionResponseDto>();
+                    item.Question.Add(roomQuestionDto);
+                }
             }
             return dto;
         }

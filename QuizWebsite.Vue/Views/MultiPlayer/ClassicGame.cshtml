@@ -109,11 +109,12 @@
                 }
             },
             countDownTimer() {
-                if (this.countDown >= 0) {
+                console.log("BIbbers")
+                if (this.countDown > 0) {
                     setTimeout(() => {
                         this.countDown -= 1
                         this.countDownTimer()
-                    }, 1000)
+                    }, 100)
                     this.ready = false
                 } else {
                     if (this.ready == false) {
