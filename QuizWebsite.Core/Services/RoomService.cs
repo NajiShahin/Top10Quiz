@@ -43,7 +43,7 @@ namespace QuizWebsite.Core.Services
         {
             var result = await roomRepository.GetByIdAsync(id);
             var dto = mapper.Map<RoomResponseDto>(result);
-            var roomQuestion = result.RoomQuestions?.FirstOrDefault(r => r.activeQuestion);
+            var roomQuestion = result?.RoomQuestions?.FirstOrDefault(r => r.activeQuestion);
             if (roomQuestion != null)
             {
                 var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
