@@ -13,6 +13,27 @@ namespace QuizWebsite.Vue.Hubs
 {
     public class QuizHub : Hub
     {
+        private readonly IHubContext<QuizHub> _hubContext;
+        private Random rnd = new Random();
+        private static readonly System.Timers.Timer _timer = new System.Timers.Timer();
+
+        public QuizHub(IHubContext<QuizHub> hubContext)
+    {
+            _hubContext = hubContext;
+            _timer.Interval = 10000;
+            _timer.Elapsed += TimerElapsed;
+            _timer.Start();
+        }
+
+        void TimerElapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            int month = rnd.Next(1, 1000000);
+
+            _hubContext.Clients.All.SendAsync("blob", month);
+        }
+
+
+
         public async Task answer(int place, string answer, string color)
         {
             HttpClient httpClient = new HttpClient();

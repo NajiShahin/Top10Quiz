@@ -110,31 +110,31 @@
             },
             countDownTimer() {
                 console.log("BIbbers")
-                if (this.countDown > 0) {
-                    setTimeout(() => {
-                        this.countDown -= 1
-                        this.countDownTimer()
-                    }, 100)
-                    this.ready = false
-                } else {
-                    if (this.ready == false) {
-                        axios
-                            .get(url + 'api/Rooms/Ready/' + this.connectionId)
-                            .then(response => {
+                //if (this.countDown > 0) {
+                //    setTimeout(() => {
+                //        this.countDown -= 1
+                //        this.countDownTimer()
+                //    }, 100)
+                //    this.ready = false
+                //} else {
+                //    if (this.ready == false) {
+                //        axios
+                //            .get(url + 'api/Rooms/Ready/' + this.connectionId)
+                //            .then(response => {
 
-                                app.answered = ["", "", "", "", "",
-                                    "", "", "", "", ""]
-                                app.answeredColor = ["", "", "", "", "",
-                                    "", "", "", "", ""]
+                //                app.answered = ["", "", "", "", "",
+                //                    "", "", "", "", ""]
+                //                app.answeredColor = ["", "", "", "", "",
+                //                    "", "", "", "", ""]
 
-                                if (response.data.amountOfUsers == response.data.amountOfReadyUsers) {
-                                    connection.invoke('Refresh', app.groupName)
-                                }
+                //                if (response.data.amountOfUsers == response.data.amountOfReadyUsers) {
+                //                    connection.invoke('Refresh', app.groupName)
+                //                }
 
-                                app.ready = true;
-                            })
-                    }
-                }
+                //                app.ready = true;
+                //            })
+                //    }
+                //}
             },
             AddToGroup: function () {
                 let groupName = ""
@@ -164,6 +164,9 @@
                                 .then(response => {
                                     app.room = response.data
                                 })
+                        });
+                        connection.on('blob', function () {
+                            app.countDown = 
                         });
                         connection.on('refresh', function () {
                             axios
