@@ -36,21 +36,21 @@ namespace QuizWebsite.Api
 
             services.AddCors();
 
-            services.AddScoped<IQuestionRepository, QuestionRepository>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IPlayerRepository, PlayerRepository>();
-            services.AddScoped<IRoomRepository, RoomRepository>();
+            services.AddTransient<IQuestionRepository, QuestionRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IPlayerRepository, PlayerRepository>();
+            services.AddTransient<IRoomRepository, RoomRepository>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<IQuestionService, QuestionService>();
-            services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IPlayerService, PlayerService>();
-            services.AddScoped<IRoomService, RoomService>();
+            services.AddTransient<IQuestionService, QuestionService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IPlayerService, PlayerService>();
+            services.AddTransient<IRoomService, RoomService>();
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")), ServiceLifetime.Transient);
 
             services.AddSwaggerGen(c =>
             {
