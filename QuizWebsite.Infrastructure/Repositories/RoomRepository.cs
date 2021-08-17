@@ -96,6 +96,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 if (oldQuestion.QuestionNumber == room.QuestionAmount)
                 {
                     room.Done = true;
+                    _timer.Stop();
                 }
                 else
                 {
