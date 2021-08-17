@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using QuizWebsite.Core.Dtos;
 using QuizWebsite.Core.Entities;
 using QuizWebsite.Core.Interfaces.Repositories;
@@ -15,8 +16,14 @@ namespace QuizWebsite.Infrastructure.Repositories
     {
         int maxPeople = 6;
         int questionAmount = 10;
-        public RoomRepository(ApplicationDbContext dbContext) : base(dbContext)
+        private static readonly System.Timers.Timer _timer = new System.Timers.Timer();
+        private readonly IServiceProvider a;
+        private readonly IServiceScopeFactory serviceFactory;
+
+        public RoomRepository(ApplicationDbContext dbContext, IServiceProvider a, IServiceScopeFactory serviceFactory) : base(dbContext)
         {
+            this.a = a;
+            this.serviceFactory = serviceFactory;
         }
 
         public override async Task<Room> GetByIdAsync(Guid id)
@@ -63,7 +70,46 @@ namespace QuizWebsite.Infrastructure.Repositories
                 player.ColorCode = GetAvailableColor(room);
                 await _dbContext.SaveChangesAsync();
             }
+
+            _timer.Interval = 3000;
+            _timer.Elapsed += async (sender, e) => await TimerElapsedAsync(sender, e, room);
+            _timer.Start();
+
             return room;
+        }
+
+        async Task TimerElapsedAsync(object sender, System.Timers.ElapsedEventArgs e, Room room)
+        {
+            var scope = serviceFactory.CreateScope();
+            await using var dbContext = scope.ServiceProvider.GetService<ApplicationDbContext>();
+            var players = await dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
+            for (int i = 0; i < players.Count; i++)
+            {
+                players[i].Ready = false;
+                players[i].Answered = 0;
+            }
+            var oldQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
+            if (oldQuestion != null)
+            {
+                oldQuestion.activeQuestion = false;
+
+                if (oldQuestion.QuestionNumber == room.QuestionAmount)
+                {
+                    room.Done = true;
+                }
+                else
+                {
+                    var newQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
+                    newQuestion.activeQuestion = true;
+                }
+            }
+            else
+            {
+                room.Done = true;
+                _timer.Stop();
+            }
+            await dbContext.SaveChangesAsync();
+
         }
 
         public async Task<Room> LeavePublicRoom(string connectionid)

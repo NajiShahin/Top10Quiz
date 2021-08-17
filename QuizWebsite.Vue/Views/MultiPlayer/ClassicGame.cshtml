@@ -109,32 +109,16 @@
                 }
             },
             countDownTimer() {
-                console.log("BIbbers")
-                //if (this.countDown > 0) {
-                //    setTimeout(() => {
-                //        this.countDown -= 1
-                //        this.countDownTimer()
-                //    }, 100)
-                //    this.ready = false
-                //} else {
-                //    if (this.ready == false) {
-                //        axios
-                //            .get(url + 'api/Rooms/Ready/' + this.connectionId)
-                //            .then(response => {
-
-                //                app.answered = ["", "", "", "", "",
-                //                    "", "", "", "", ""]
-                //                app.answeredColor = ["", "", "", "", "",
-                //                    "", "", "", "", ""]
-
-                //                if (response.data.amountOfUsers == response.data.amountOfReadyUsers) {
-                //                    connection.invoke('Refresh', app.groupName)
-                //                }
-
-                //                app.ready = true;
-                //            })
-                //    }
-                //}
+                    setTimeout(() => {
+                        axios
+                            .get(url + 'api/Rooms/?name=' + this.groupName)
+                            .then(response => {
+                                console.log(response.data)
+                                app.room = response.data
+                                app.countDown = 20
+                            })
+                        this.countDownTimer()
+                    }, 100)
             },
             AddToGroup: function () {
                 let groupName = ""
