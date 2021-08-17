@@ -71,7 +71,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 await _dbContext.SaveChangesAsync();
             }
 
-            _timer.Interval = 3000;
+            _timer.Interval = 1000;
             _timer.Elapsed += async (sender, e) => await TimerElapsedAsync(sender, e, room);
             _timer.Start();
 
@@ -95,7 +95,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 
                 if (oldQuestion.QuestionNumber == room.QuestionAmount)
                 {
-                    room.Done = true;
+                    dbContext.Rooms.FirstOrDefault(r => r.Id == room.Id).Done = true;
                     _timer.Stop();
                 }
                 else
@@ -103,11 +103,6 @@ namespace QuizWebsite.Infrastructure.Repositories
                     var newQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
                     newQuestion.activeQuestion = true;
                 }
-            }
-            else
-            {
-                room.Done = true;
-                _timer.Stop();
             }
             await dbContext.SaveChangesAsync();
 
