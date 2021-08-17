@@ -165,8 +165,8 @@
                                     app.room = response.data
                                 })
                         });
-                        connection.on('blob', function () {
-                            app.countDown = 
+                        connection.on('blob', function (a) {
+                            app.countDown = a
                         });
                         connection.on('refresh', function () {
                             axios
