@@ -50,7 +50,11 @@ namespace QuizWebsite.Core.Mapping
                 {
                     Id = c.CategoryId,
                     Name = c.Category.Name
-                })));
+                })))
+                .ForMember(dest => dest.QuestionText,
+                opt => opt.MapFrom(src => src.Question.QuestionText))
+                .ForMember(dest => dest.QuestionId,
+                opt => opt.MapFrom(src => src.Question.Id));
         }
     }
 }
