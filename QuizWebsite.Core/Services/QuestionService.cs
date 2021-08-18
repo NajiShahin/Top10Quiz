@@ -42,6 +42,7 @@ namespace QuizWebsite.Core.Services
         {
             var result = await questionRepository.GetByIdAsync(id);
             OrderByPlace(result);
+
             var dto = mapper.Map<QuestionDetailResponseDto>(result);
             return dto;
         }
@@ -120,7 +121,7 @@ namespace QuizWebsite.Core.Services
 
         private void OrderByPlace(Question question)
         {
-            question.Answers = question.Answers.OrderBy(e => e.Place).ToList();
+            question.Answers = question.Answers.OrderBy(e => e.Place).ThenByDescending(e => e.AnswerText.Length).ToList();
         }
 
         private List<Question> Shuffle(List<Question> list)
