@@ -41,7 +41,7 @@ namespace QuizWebsite.Infrastructure.Repositories
         public async Task<Room> JoinPublicRoom(string connectionid)
         {
             var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public && r.Done == false);
-            var player = _dbContext.Players.FirstOrDefault(p => p.ConnectionId == connectionid);
+            var player = await _dbContext.Players.FirstOrDefaultAsync(p => p.ConnectionId == connectionid);
             if (player == null)
                 return null;
             if (room == null)
@@ -53,12 +53,16 @@ namespace QuizWebsite.Infrastructure.Repositories
                     Name = RandomString(12),
                     QuestionAmount = questionAmount,
                 };
-                room.RoomQuestions = GetRoomQuestions(room);
+                room.RoomQuestions = await GetRoomQuestionsAsync(room);
                 var question = room.RoomQuestions.FirstOrDefault(rq => rq.QuestionNumber == room.RoomQuestions.Min(rq => rq.QuestionNumber));
                 question.activeQuestion = true;
                 player.Room = room;
                 player.ColorCode = GetAvailableColor(room);
                 await _dbContext.SaveChangesAsync();
+
+                _timer.Interval = 1000;
+                _timer.Elapsed += async (sender, e) => await TimerElapsedAsync(sender, e, room);
+                _timer.Start();
             }
             else
             {
@@ -70,10 +74,6 @@ namespace QuizWebsite.Infrastructure.Repositories
                 player.ColorCode = GetAvailableColor(room);
                 await _dbContext.SaveChangesAsync();
             }
-
-            _timer.Interval = 1000;
-            _timer.Elapsed += async (sender, e) => await TimerElapsedAsync(sender, e, room);
-            _timer.Start();
 
             return room;
         }
@@ -100,7 +100,8 @@ namespace QuizWebsite.Infrastructure.Repositories
 
                         if (oldQuestion.QuestionNumber == room.QuestionAmount)
                         {
-                            dbContext.Rooms.FirstOrDefault(r => r.Id == room.Id).Done = true;
+                            var r = await dbContext.Rooms.FirstOrDefaultAsync(r => r.Id == room.Id);
+                            r.Done = true;
                             _timer.Stop();
                         }
                         else
@@ -116,7 +117,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 
         public async Task<Room> LeavePublicRoom(string connectionid)
         {
-            var room = GetAllAsync().FirstOrDefault(r => r.Players.Any(a => a.ConnectionId == connectionid));
+            var room = await GetAllAsync().FirstOrDefaultAsync(r => r.Players.Any(a => a.ConnectionId == connectionid));
             if (room != null)
             {
                 var player = GetAllAsync()
@@ -157,10 +158,10 @@ namespace QuizWebsite.Infrastructure.Repositories
             return colors[rnd.Next(colors.Count)];
         }
 
-        private List<RoomQuestions> GetRoomQuestions(Room room)
+        private async Task<List<RoomQuestions>> GetRoomQuestionsAsync(Room room)
         {
             var roomQuestions = new List<RoomQuestions>();
-            var questions = _dbContext.Questions.ToList();
+            var questions = await _dbContext.Questions.ToListAsync();
             questions = Shuffle(questions);
             var time = DateTimeOffset.Now.AddSeconds(1).ToUnixTimeMilliseconds();
             long seconds = 0;
