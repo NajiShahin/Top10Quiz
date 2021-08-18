@@ -111,13 +111,20 @@
             countDownTimer() {
                 var start = Date.now();
                 setInterval(function () {
-                    var delta = app.room.question[0].questionEnd - Date.now(); // milliseconds elapsed since start
-                    app.countDown = Math.floor(delta / 1000); // in seconds
-                    if (app.countDown <= 0) {
+                    if (app.countDown >= 1) {
+                        var delta = app.room.question[0].questionEnd - Date.now(); // milliseconds elapsed since start
+                        app.countDown = Math.floor(delta / 1000); // in seconds
+                        console.log(!app.room.done)
+
+                    }
+                    else {
                         axios
                             .get(url + 'api/Rooms/?name=' + app.groupName)
                             .then(response => {
-                                if (app.questionId != response.data.question[0].questionId) {
+                                console.log(response.data.done)
+                                if (response.data.done) {
+                                    app.room = response.data
+                                }else if (app.questionId != response.data.question[0].questionId) {
                                     app.room = response.data
                                     delta = app.room.question[0].questionEnd - Date.now(); // milliseconds elapsed since start
                                     app.countDown = Math.floor(delta / 1000); // in seconds
