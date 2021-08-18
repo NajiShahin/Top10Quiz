@@ -7,6 +7,7 @@ namespace QuizWebsite.Core.Dtos
 {
     public class RoomQuestionsResponseDto : BaseDto
     {
+        public Guid QuestionId { get; set; }
         public string QuestionText { get; set; }
         public ICollection<CategoryResponseDto> Category { get; set; }
         public int QuestionNumber { get; set; }
