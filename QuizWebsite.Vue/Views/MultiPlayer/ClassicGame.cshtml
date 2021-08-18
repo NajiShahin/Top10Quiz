@@ -121,10 +121,15 @@
                             .then(response => {
                                 if (response.data.done) {
                                     app.room = response.data
-                                }else if (app.questionId != response.data.question[0].questionId) {
+                                } else if (app.questionId != response.data.question[0].questionId) {
                                     app.room = response.data
+                                    app.questionId = response.data.question[0].questionId
                                     delta = app.room.question[0].questionEnd - Date.now(); // milliseconds elapsed since start
                                     app.countDown = Math.floor(delta / 1000); // in seconds
+                                    app.answered = ["", "", "", "", "",
+                                        "", "", "", "", ""]
+                                    app.answeredColor = ["", "", "", "", "",
+                                        "", "", "", "", ""]
                                 } else {
                                     axios
                                         .get(url + 'api/Questions/' + app.questionId)
@@ -132,7 +137,7 @@
                                             app.answered = []
                                             for (var i = 0; i < 10; i++) {
                                                 app.answered.push(response.data.answers.filter(function (el) {
-                                                    return el.place == i+1
+                                                    return el.place == i + 1
                                                 })[0].answerText);
                                             }
                                         })
