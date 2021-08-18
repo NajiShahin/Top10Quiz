@@ -43,6 +43,14 @@ namespace QuizWebsite.Core.Mapping
             CreateMap<RoomRequestDto, Room>();
             CreateMap<Room, RoomResponseDto>();
 
+            CreateMap<RoomQuestions, RoomQuestionsResponseDto>()
+                .ForMember(dest => dest.Category,
+                opt => opt.MapFrom(src => src.Question.CategoryQuestions
+                .Select(c => new CategoryResponseDto
+                {
+                    Id = c.CategoryId,
+                    Name = c.Category.Name
+                })));
         }
     }
 }

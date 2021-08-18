@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QuizWebsite.Core.Dtos
 {
-    public class QuestionRoomResponseDto : BaseDto
+    public class RoomQuestionsResponseDto : BaseDto
     {
         public string QuestionText { get; set; }
         public ICollection<CategoryResponseDto> Category { get; set; }

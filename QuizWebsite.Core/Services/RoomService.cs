@@ -47,8 +47,8 @@ namespace QuizWebsite.Core.Services
             if (roomQuestion != null)
             {
                 var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
-                var roomQuestionDto = mapper.Map<QuestionRoomResponseDto>(question);
-                dto.Question = new List<QuestionRoomResponseDto>();
+                var roomQuestionDto = mapper.Map<RoomQuestionsResponseDto>(question);
+                dto.Question = new List<RoomQuestionsResponseDto>();
                 dto.Question.Add(roomQuestionDto);
             }
             return dto;
@@ -79,8 +79,8 @@ namespace QuizWebsite.Core.Services
                 if (roomQuestion != null)
                 {
                     var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
-                    var roomQuestionDto = mapper.Map<QuestionRoomResponseDto>(question);
-                    item.Question = new List<QuestionRoomResponseDto>();
+                    var roomQuestionDto = mapper.Map<RoomQuestionsResponseDto>(question);
+                    item.Question = new List<RoomQuestionsResponseDto>();
                     item.Question.Add(roomQuestionDto);
                 }
             }
@@ -95,8 +95,8 @@ namespace QuizWebsite.Core.Services
             if (roomQuestion != null)
             {
                 var question = await questionRepository.GetByIdAsync(roomQuestion.QuestionId);
-                var roomQuestionDto = mapper.Map<QuestionRoomResponseDto>(question);
-                dto.Question = new List<QuestionRoomResponseDto>();
+                var roomQuestionDto = mapper.Map<RoomQuestionsResponseDto>(question);
+                dto.Question = new List<RoomQuestionsResponseDto>();
                 dto.Question.Add(roomQuestionDto);
             }
             return dto;

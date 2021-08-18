@@ -11,6 +11,6 @@ namespace QuizWebsite.Core.Dtos
         public bool Public { get; set; }
         public bool Done { get; set; }
         public List<PlayerResponseDto> Players { get; set; }
-        public List<QuestionRoomResponseDto> Question { get; set; }
+        public List<RoomQuestionsResponseDto> Question { get; set; }
     }
 }

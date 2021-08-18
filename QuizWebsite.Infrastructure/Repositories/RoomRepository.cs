@@ -17,12 +17,12 @@ namespace QuizWebsite.Infrastructure.Repositories
         int maxPeople = 6;
         int questionAmount = 10;
         private static readonly System.Timers.Timer _timer = new System.Timers.Timer();
-        private readonly IServiceProvider a;
+        private readonly IServiceProvider ServiceProvider;
         private readonly IServiceScopeFactory serviceFactory;
 
-        public RoomRepository(ApplicationDbContext dbContext, IServiceProvider a, IServiceScopeFactory serviceFactory) : base(dbContext)
+        public RoomRepository(ApplicationDbContext dbContext, IServiceProvider ServiceProvider, IServiceScopeFactory serviceFactory) : base(dbContext)
         {
-            this.a = a;
+            this.ServiceProvider = ServiceProvider;
             this.serviceFactory = serviceFactory;
         }
 
