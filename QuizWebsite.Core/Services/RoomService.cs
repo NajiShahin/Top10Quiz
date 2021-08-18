@@ -87,12 +87,6 @@ namespace QuizWebsite.Core.Services
             return dto;
         }
 
-        public async Task<ReadyResponseDto> MakePlayerReady(string connectionId)
-        {
-            var result = await roomRepository.MakePlayerReady(connectionId);
-            return result;
-        }
-
         public async Task<RoomResponseDto> SearchByName(string name)
         {
             var result = await roomRepository.SearchByName(name);

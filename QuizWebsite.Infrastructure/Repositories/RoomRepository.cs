@@ -85,7 +85,6 @@ namespace QuizWebsite.Infrastructure.Repositories
             var players = await dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
             for (int i = 0; i < players.Count; i++)
             {
-                players[i].Ready = false;
                 players[i].Answered = 0;
             }
             var oldQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
@@ -186,60 +185,5 @@ namespace QuizWebsite.Infrastructure.Repositories
             return list;
         }
 
-        public async Task<ReadyResponseDto> MakePlayerReady(string connectionId)
-        {
-            var player = await _dbContext.Players.Include(p => p.Room).FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
-            var room = await _dbContext.Rooms
-                .Include(r => r.Players)
-                .Include(r => r.RoomQuestions)
-                    .ThenInclude(rq => rq.Question)
-                .FirstOrDefaultAsync(r => r.Id == player.RoomId);
-            if (player.Ready || room == null || room?.Done == true)
-                return null;
-            player.Ready = true;
-            var amountOfReadyUsers = room.Players.Where(p => p.Ready).Count();
-            var amountOfUsers = room.Players.Count;
-
-            if (amountOfReadyUsers == amountOfUsers)
-            {
-
-                var players = await _dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
-                for (int i = 0; i < players.Count; i++)
-                {
-                    players[i].Ready = false;
-                    players[i].Answered = 0;
-                }
-                var oldQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
-                if (oldQuestion != null)
-                {
-                    oldQuestion.activeQuestion = false;
-
-                    if (oldQuestion.QuestionNumber == room.QuestionAmount)
-                    {
-                        room.Done = true;
-                    }
-                    else
-                    {
-                        var newQuestion = await _dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
-                        newQuestion.activeQuestion = true;
-                    }
-                }
-                else
-                {
-                    room.Done = true;
-                }
-
-            }
-
-            var readyResponse = new ReadyResponseDto()
-            {
-                AmountOfReadyUsers = amountOfReadyUsers,
-                AmountOfUsers = amountOfUsers
-            };
-
-            await _dbContext.SaveChangesAsync();
-
-            return readyResponse;
-        }
     }
 }

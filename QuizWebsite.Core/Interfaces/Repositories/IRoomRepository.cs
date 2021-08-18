@@ -12,6 +12,5 @@ namespace QuizWebsite.Core.Interfaces.Repositories
         Task<Room> JoinPublicRoom(string connectionId);
         Task<Room> LeavePublicRoom(string connectionId);
         Task<Room> SearchByName(string name);
-        Task<ReadyResponseDto> MakePlayerReady(string connectionId); //If everyone is ready next question
     }
 }

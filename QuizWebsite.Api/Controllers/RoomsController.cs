@@ -48,13 +48,6 @@ namespace QuizWebsite.Api.Controllers
             return Ok(question);
         }
 
-        [HttpGet("Ready/{connectionId}")]
-        public async Task<IActionResult> Ready(string connectionId)
-        {
-            var response = await roomService.MakePlayerReady(connectionId);
-            return Ok(response);
-        }
-
         [HttpGet("Leave/{connectionId}")]
         public async Task<IActionResult> Leave(string connectionId)
         {
