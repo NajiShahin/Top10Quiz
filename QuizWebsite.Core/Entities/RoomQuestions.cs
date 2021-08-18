@@ -8,8 +8,8 @@ namespace QuizWebsite.Core.Entities
     {
         public int QuestionNumber { get; set; }
         public bool activeQuestion { get; set; }
-        public DateTime QuestionStart { get; set; }
-        public DateTime QuestionEnd { get; set; }
+        public long QuestionStart { get; set; }
+        public long QuestionEnd { get; set; }
         public Guid RoomId { get; set; }
         public Guid QuestionId { get; set; }
         public Room Room { get; set; }

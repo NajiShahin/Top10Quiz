@@ -118,7 +118,7 @@
                                 app.countDown = 20
                             })
                         this.countDownTimer()
-                    }, 100)
+                    }, 1000)
             },
             AddToGroup: function () {
                 let groupName = ""
@@ -148,9 +148,6 @@
                                 .then(response => {
                                     app.room = response.data
                                 })
-                        });
-                        connection.on('blob', function (a) {
-                            app.countDown = a
                         });
                         connection.on('refresh', function () {
                             axios

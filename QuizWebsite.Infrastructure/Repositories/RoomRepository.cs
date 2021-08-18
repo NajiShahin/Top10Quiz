@@ -83,31 +83,34 @@ namespace QuizWebsite.Infrastructure.Repositories
             var scope = serviceFactory.CreateScope();
             await using var dbContext = scope.ServiceProvider.GetService<ApplicationDbContext>();
             var oldQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
-
-            if (DateTime.Now >= oldQuestion.QuestionEnd.AddSeconds(5))
+            if (oldQuestion != null)
             {
-
-                var players = await dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
-                for (int i = 0; i < players.Count; i++)
+                if (DateTimeOffset.Now.ToUnixTimeMilliseconds() >= oldQuestion?.QuestionEnd + 5)
                 {
-                    players[i].Answered = 0;
-                }
-                if (oldQuestion != null)
-                {
-                    oldQuestion.activeQuestion = false;
+                    long unixSeconds = DateTimeOffset.Now.ToUnixTimeSeconds();
 
-                    if (oldQuestion.QuestionNumber == room.QuestionAmount)
+                    var players = await dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
+                    for (int i = 0; i < players.Count; i++)
                     {
-                        dbContext.Rooms.FirstOrDefault(r => r.Id == room.Id).Done = true;
-                        _timer.Stop();
+                        players[i].Answered = 0;
                     }
-                    else
+                    if (oldQuestion != null)
                     {
-                        var newQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
-                        newQuestion.activeQuestion = true;
+                        oldQuestion.activeQuestion = false;
+
+                        if (oldQuestion.QuestionNumber == room.QuestionAmount)
+                        {
+                            dbContext.Rooms.FirstOrDefault(r => r.Id == room.Id).Done = true;
+                            _timer.Stop();
+                        }
+                        else
+                        {
+                            var newQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.QuestionNumber == oldQuestion.QuestionNumber + 1 && rq.RoomId == room.Id);
+                            newQuestion.activeQuestion = true;
+                        }
                     }
+                    await dbContext.SaveChangesAsync();
                 }
-                await dbContext.SaveChangesAsync();
             }
         }
 
@@ -159,7 +162,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             var roomQuestions = new List<RoomQuestions>();
             var questions = _dbContext.Questions.ToList();
             questions = Shuffle(questions);
-            var time = DateTime.Now.AddSeconds(1);
+            var time = DateTimeOffset.Now.AddSeconds(1).ToUnixTimeSeconds();
             var seconds = 0;
             for (int i = 0; i < room.QuestionAmount; i++)
             {
@@ -169,8 +172,8 @@ namespace QuizWebsite.Infrastructure.Repositories
                         Room = room,
                         Question = questions[i],
                         QuestionNumber = i + 1,
-                        QuestionStart = time.AddSeconds(seconds),
-                        QuestionEnd = time.AddSeconds(seconds + 25)
+                        QuestionStart = time + seconds,
+                        QuestionEnd = time + seconds + 25
                     }
                     );
                 seconds += 30;
