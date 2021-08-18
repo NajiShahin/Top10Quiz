@@ -87,7 +87,8 @@ namespace QuizWebsite.Infrastructure.Repositories
             {
 
 
-                var question = player.Room.RoomQuestions.FirstOrDefault(rq => rq.activeQuestion).Question;
+                var roomQuestion = player.Room.RoomQuestions.FirstOrDefault(rq => rq.activeQuestion);
+                var question = roomQuestion.Question;
 
                 var answer = question.Answers.OrderByDescending(a => a.Place).FirstOrDefault(a => answerRequest.AnswerText.IsSimilar(a.AnswerText));
                 var result = question.Answers.Where(a => a.Place == answer?.Place).OrderByDescending(a => a.AnswerText.Length).FirstOrDefault();
