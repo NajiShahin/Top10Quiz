@@ -85,9 +85,9 @@ namespace QuizWebsite.Infrastructure.Repositories
             var oldQuestion = await dbContext.RoomQuestions.FirstOrDefaultAsync(rq => rq.RoomId == room.Id && rq.activeQuestion);
             if (oldQuestion != null)
             {
-                if (DateTimeOffset.Now.ToUnixTimeMilliseconds() >= oldQuestion?.QuestionEnd + 5)
+                long unixSeconds = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                if (unixSeconds >= oldQuestion?.QuestionEnd + 5000)
                 {
-                    long unixSeconds = DateTimeOffset.Now.ToUnixTimeSeconds();
 
                     var players = await dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
                     for (int i = 0; i < players.Count; i++)
@@ -162,8 +162,8 @@ namespace QuizWebsite.Infrastructure.Repositories
             var roomQuestions = new List<RoomQuestions>();
             var questions = _dbContext.Questions.ToList();
             questions = Shuffle(questions);
-            var time = DateTimeOffset.Now.AddSeconds(1).ToUnixTimeSeconds();
-            var seconds = 0;
+            var time = DateTimeOffset.Now.AddSeconds(1).ToUnixTimeMilliseconds();
+            long seconds = 0;
             for (int i = 0; i < room.QuestionAmount; i++)
             {
                 roomQuestions.Add(
@@ -173,10 +173,10 @@ namespace QuizWebsite.Infrastructure.Repositories
                         Question = questions[i],
                         QuestionNumber = i + 1,
                         QuestionStart = time + seconds,
-                        QuestionEnd = time + seconds + 25
+                        QuestionEnd = time + seconds + 25000
                     }
                     );
-                seconds += 30;
+                seconds += 30000;
             }
             return roomQuestions;
         }
