@@ -85,8 +85,6 @@ namespace QuizWebsite.Infrastructure.Repositories
                 .FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
             if (player.AnsweredNumber == 0)
             {
-
-
                 var roomQuestion = player.Room.RoomQuestions.FirstOrDefault(rq => rq.activeQuestion);
                 var question = roomQuestion.Question;
 
@@ -99,6 +97,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                     {
                         player.Score += result.Points;
                         player.AnsweredNumber = result.Place;
+                        player.AnsweredText = result.AnswerText;
                     }
                 }
                 else
