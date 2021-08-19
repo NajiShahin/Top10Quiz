@@ -102,7 +102,7 @@
                         .then(r => {
                             if (r.data.place > 0) {
                                 connection.invoke('answer', r.data.place,
-                                    answerRequest.answerText, this.room.players.filter(p => p.connectionId == this.connectionId)[0].colorCode)
+                                    r.data.answerText, this.room.players.filter(p => p.connectionId == this.connectionId)[0].colorCode)
                             }
                         })
                 }
