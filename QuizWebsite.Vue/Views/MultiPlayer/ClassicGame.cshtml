@@ -65,19 +65,23 @@
         data: {
             connectionId: "",
             started: false,
-            countDown: 25,
+            countDown: "",
             answer: "",
             groupName: "",
             questionId: "",
             ready: false,
             room: [{
+                done: false,
                 id: "",
                 name: "",
                 players: [{
                     colorCode: "",
                     connectionId: "",
                     id: "",
-                    name: ""
+                    name: "",
+                    answeredNumber: 0,
+                    answeredText: "",
+                    score: 0,
                 }],
                 public: true,
                 question: [{
@@ -157,6 +161,15 @@
                             .get(url + 'api/Rooms/?name=' + groupName)
                             .then(response => {
                                 app.room = response.data
+
+                                for (var i = 0; i < app.room.players.length; i++) {
+                                    if (app.room.players[i].answeredNumber != 0) {
+                                        app.answered[app.room.players[i].answeredNumber - 1] = app.room.players[i].answeredText
+                                        app.answeredColor[app.room.players[i].answeredNumber - 1] = app.room.players[i].colorCode
+                                    }
+                                }
+
+
                                 app.questionId = response.data.question[0].questionId
                                 app.countDown = 20
                             })
@@ -205,8 +218,6 @@
             }
         },
         created: function () {
-
-
             // Transport fallback functionality is now built into start.
             connection.start()
                 .then(function () {
@@ -220,8 +231,6 @@
                 .catch(error => {
                     console.error(error.message);
                 });
-
-
         },
 
     });
