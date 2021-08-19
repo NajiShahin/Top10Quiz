@@ -83,7 +83,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 .Include(p => p.Room)
                     .ThenInclude(r =>r.Players)
                 .FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
-            if (player.Answered == 0)
+            if (player.AnsweredNumber == 0)
             {
 
 
@@ -95,15 +95,15 @@ namespace QuizWebsite.Infrastructure.Repositories
 
                 if (result != null)
                 {
-                    if (!player.Room.Players.Any(p => p.Answered == result.Place))
+                    if (!player.Room.Players.Any(p => p.AnsweredNumber == result.Place))
                     {
                         player.Score += result.Points;
-                        player.Answered = result.Place;
+                        player.AnsweredNumber = result.Place;
                     }
                 }
                 else
                 {
-                    player.Answered = -1;
+                    player.AnsweredNumber = -1;
                 }
 
 
