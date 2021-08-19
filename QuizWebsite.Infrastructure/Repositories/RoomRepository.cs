@@ -92,7 +92,8 @@ namespace QuizWebsite.Infrastructure.Repositories
                     var players = await dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
                     for (int i = 0; i < players.Count; i++)
                     {
-                        players[i].Answered = 0;
+                        players[i].AnsweredNumber = 0;
+                        players[i].AnsweredText = "";
                     }
                     if (oldQuestion != null)
                     {
