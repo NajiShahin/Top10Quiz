@@ -105,8 +105,15 @@
                         .post(url + 'api/Questions/player/' + this.connectionId + '/answer', answerRequest)
                         .then(r => {
                             if (r.data.place > 0) {
-                                connection.invoke('answer', r.data.place,
-                                    r.data.answerText, this.room.players.filter(p => p.connectionId == this.connectionId)[0].colorCode)
+                                var audio = new Audio('../audio/correct.mp3');
+                                audio.play();
+                                if (app.answered[r.data.place - 1] == "") {
+                                    connection.invoke('answer', r.data.place,
+                                        r.data.answerText, this.room.players.filter(p => p.connectionId == this.connectionId)[0].colorCode)
+                                }
+                            } else {
+                                var audio = new Audio('../audio/wrong.mp3');
+                                audio.play();
                             }
                         })
                 }
