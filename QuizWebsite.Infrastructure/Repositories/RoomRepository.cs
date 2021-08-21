@@ -124,7 +124,7 @@ namespace QuizWebsite.Infrastructure.Repositories
                 var player = GetAllAsync()
                     .FirstOrDefault(p => p.Players.Any(a => a.ConnectionId == connectionid))
                     .Players.FirstOrDefault(p => p.ConnectionId == connectionid);
-                _dbContext.Remove(player);
+                player.IsDeleted = true;
                 await _dbContext.SaveChangesAsync();
                 return room;
             }
