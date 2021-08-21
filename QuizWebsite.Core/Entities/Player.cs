@@ -13,6 +13,7 @@ namespace QuizWebsite.Core.Entities
         public string AnsweredText { get; set; }
         public int Score { get; set; }
         public string ColorCode { get; set; }
+        public bool IsDeleted { get; set; }
         public Guid? RoomId { get; set; }
         public Room Room { get; set; }
     }

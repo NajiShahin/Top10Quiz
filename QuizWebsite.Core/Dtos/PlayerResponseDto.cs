@@ -13,6 +13,7 @@ namespace QuizWebsite.Core.Dtos
         public int AnsweredNumber { get; set; } //0 = not answered yet, -1 = answered wrong, 1-10 = what user answered
         public string AnsweredText { get; set; }
         public string ColorCode { get; set; }
+        public bool IsDeleted { get; set; }
         public RoomResponseDto Room { get; set; }
     }
 }
