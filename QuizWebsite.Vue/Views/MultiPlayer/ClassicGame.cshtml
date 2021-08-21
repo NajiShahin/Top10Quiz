@@ -5,7 +5,8 @@
         <input class="btn btn-primary mt-5 w-100" type="button" v-on:click="AddToGroup" value="Play" />
     </div>
     <div class="sidebar" v-if="started">
-        <div id="playersScreen" class="player-field text-center" v-for="player in room.players" v-bind:style="{ background: player.colorCode}">
+        {{room.players}}
+        <div id="playersScreen" class="player-field text-center" v-for="player in room.players.filter(p => p.isDeleted == false)" v-bind:style="{ background: player.colorCode}">
             <span v-if="connectionId == player.connectionId">
                 <b class="text-white">(You){{player.name}}</b><br />
                 <b class="text-white">Score: {{player.score}}</b>
@@ -58,7 +59,6 @@
     var connection = new signalR.HubConnectionBuilder()
         .withUrl('/quiz')
         .build();
-
 
     var app = new Vue({
         el: "#app",

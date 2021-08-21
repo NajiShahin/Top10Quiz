@@ -88,12 +88,15 @@ namespace QuizWebsite.Infrastructure.Repositories
                 long unixSeconds = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                 if (unixSeconds >= oldQuestion?.QuestionEnd + 5000)
                 {
-
                     var players = await dbContext.Players.Where(p => p.RoomId == room.Id).ToListAsync();
                     for (int i = 0; i < players.Count; i++)
                     {
                         players[i].AnsweredNumber = 0;
                         players[i].AnsweredText = "";
+                        if (players[i].IsDeleted)
+                        {
+                            dbContext.Players.Remove(players[i]);
+                        }
                     }
                     if (oldQuestion != null)
                     {
@@ -121,9 +124,8 @@ namespace QuizWebsite.Infrastructure.Repositories
             var room = await GetAllAsync().FirstOrDefaultAsync(r => r.Players.Any(a => a.ConnectionId == connectionid));
             if (room != null)
             {
-                var player = GetAllAsync()
-                    .FirstOrDefault(p => p.Players.Any(a => a.ConnectionId == connectionid))
-                    .Players.FirstOrDefault(p => p.ConnectionId == connectionid);
+                var player = await _dbContext.Players
+                    .FirstOrDefaultAsync(p => p.ConnectionId == connectionid);
                 player.IsDeleted = true;
                 await _dbContext.SaveChangesAsync();
                 return room;
