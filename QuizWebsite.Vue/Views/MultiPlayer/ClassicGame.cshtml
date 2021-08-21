@@ -5,7 +5,6 @@
         <input class="btn btn-primary mt-5 w-100" type="button" v-on:click="AddToGroup" value="Play" />
     </div>
     <div class="sidebar" v-if="started">
-        {{room.players}}
         <div id="playersScreen" class="player-field text-center" v-for="player in room.players.filter(p => p.isDeleted == false)" v-bind:style="{ background: player.colorCode}">
             <span v-if="connectionId == player.connectionId">
                 <b class="text-white">(You){{player.name}}</b><br />
@@ -178,14 +177,13 @@
 
 
                                 app.questionId = response.data.question[0].questionId
-                                app.countDown = 20
+                                app.countDown = 25
                             })
                         connection.on('userJoined', function () {
                             axios
                                 .get(url + 'api/Rooms/?name=' + groupName)
                                 .then(response => {
                                     app.room = response.data
-                                    app.countDown = 20
                                 })
                         });
                         connection.on('userLeft', function () {
@@ -200,7 +198,7 @@
                                 .get(url + 'api/Rooms/?name=' + groupName)
                                 .then(response => {
                                     app.room = response.data
-                                    app.countDown = 20
+                                    app.countDown = 25
                                     app.countDownTimer()
                                 })
                         });
