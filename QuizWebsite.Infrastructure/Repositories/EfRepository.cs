@@ -78,7 +78,7 @@ namespace QuizWebsite.Infrastructure.Repositories
             return entity;
         }
 
-        public async Task<T> DeleteAsync(Guid id)
+        public virtual async Task<T> DeleteAsync(Guid id)
         {
             var entity = await GetByIdAsync(id);
             await DeleteAsync(entity);

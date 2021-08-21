@@ -27,6 +27,14 @@ namespace QuizWebsite.Infrastructure.Repositories
                     .AsNoTracking();
         }
 
+        public override async Task<Player> DeleteAsync(Guid id)
+        {
+            var player = await _dbContext.Players.FirstOrDefaultAsync(p => p.Id == id);
+            player.IsDeleted = true;
+            await _dbContext.SaveChangesAsync();
+            return player;
+        }
+
         public async Task<Player> SearchByConnectionId(string connectionId)
         {
             return await GetAllAsync().FirstOrDefaultAsync(p => p.ConnectionId == connectionId);
