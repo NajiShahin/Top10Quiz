@@ -18,11 +18,13 @@
     </div>
     <div v-if="started">
         <div v-if="!room.done">
-            <div class="m-3 flex-h-center">
-                <h4>{{countDown}}</h4>
-            </div>
-            <div class="m-3 flex-h-center">
-                <h3 class="text-center">{{room.question[0].questionText}}</h3>
+            <div class="question">
+                <div class="m-3 flex-h-center">
+                    <h4>{{countDown}}</h4>
+                </div>
+                <div class="m-3 flex-h-center">
+                    <h3 class="text-center">{{room.question[0].questionText}}</h3>
+                </div>
             </div>
             <div class="center-block input-group mb-3 flex-h-center">
                 <div class="center-block input-group mb-3 flex-h-center">
