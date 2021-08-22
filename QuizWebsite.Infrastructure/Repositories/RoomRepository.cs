@@ -40,7 +40,7 @@ namespace QuizWebsite.Infrastructure.Repositories
 
         public async Task<Room> JoinPublicRoom(string connectionid)
         {
-            var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public && r.Done == false);
+            var room = GetAllAsync().FirstOrDefault(r => r.Players.Count < maxPeople && r.Public && r.Done == false && r.Players.Count != 0);
             var player = await _dbContext.Players.FirstOrDefaultAsync(p => p.ConnectionId == connectionid);
             if (player == null)
                 return null;
